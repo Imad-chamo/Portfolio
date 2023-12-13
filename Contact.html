@@ -11,7 +11,7 @@
   <nav class="navbar">
     <div class="content">
       <div class="logo">
-        <a href="#">Imad's <span style="color: rgb(255, 71, 71);">Word</span></a>
+        <a href="index.html">Imad's <span style="color: rgb(255, 71, 71);">Word</span></a>
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
@@ -31,33 +31,17 @@
   <div class="banner">
     <section id="profile">
         <div class="section__text">
-        <div class="feedback-card">
-            <div class="feedback-header">lets talk about tech !!</div>
-            <form class="feedback-body">
-                <input class="feedback-body__email" placeholder="Email" type="email">
-                <textarea class="feedback-body__message" placeholder="Message" type="text"></textarea>
-                <button class="feedback-body__submit">SEND</button>
-            </form>
+         <div class="contact-form">
+          <p><strong>Prêt à relever de nouveaux défis. Contactez-moi :)</strong> </p>
+          <form>      
+            <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+            <input name="email" type="text" class="feedback-input" placeholder="Email" />
+            <input name="objet" type="text" class="feedback-input" placeholder="Objet" />
+            <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+            <input type="submit" value="Envoyer"/>
+          </form>  
+         </div>        
         </div>
-    </div>
-<!-- 
-      <div class="section__text">
-        <p class="section__text__p1">Hello, Je suis</p>
-        <h1 class="title">Imad CHAMKHI</h1>
-        <p class="section__text__p2">Développeur informatique</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/CV-PORTFOLIO.pdf')"
-          >
-            Telecharger  CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='mailto:chamkhiimad5@gmail.com'"><a href="mailto:chamkhiimad5@gmail.com"></a></p>
-            Contacter moi</div>
-          </button>
-        </div>
-      </div>
-      -->
     </section>
   </div>
 <!-- 
@@ -268,7 +252,7 @@
 -->
 
 
-  <script src="js.js"></script>
+  <script src="contact.js"></script>
 
   <script>
     const body = document.querySelector("body");
