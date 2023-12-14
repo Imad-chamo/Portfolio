@@ -62,6 +62,7 @@
 }
 .menu-list li a:hover{
   color: #ff0000;
+  font-size: larger;
 }
 .banner{
   background: url("banner.jpg") no-repeat;
@@ -195,6 +196,7 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
+  
 }
 
 .btn-color-1,
@@ -202,6 +204,10 @@ section {
   background-color:rgb(0, 0, 0) ;
   border: rgb(53, 53, 53) 0.1rem solid;
   color: #fff;
+}
+.btn.btn-color-1 a {
+  color: inherit; 
+  text-decoration: none; 
 }
 
 .btn-color-1:hover,
@@ -347,6 +353,14 @@ article .icon {
   flex-direction: column;
   height: 70vh;
 }
+#contact a {
+  color: inherit; 
+  text-decoration: none; 
+}
+#contact a:hover {
+  color: rgb(255, 71, 71);
+  font-size: larger;
+}
 
 .contact-info-upper-container {
   display: flex;
@@ -369,6 +383,8 @@ article .icon {
 
 .contact-info-container p {
   font-size: larger;
+  color: inherit;
+  text-decoration: none;
 }
 
 .contact-icon {
