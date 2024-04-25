@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="VT.css">
+  <title>Veille Technologique</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#">Imad's <span style="color: rgb(255, 71, 71);">World</span></a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#about">A propos</a></li>
+        <li><a href="#experience">Compétences</a></li>
+        <li><a href="#projects">projets(stages)</a></li>
+        <li><a href="#projects">Missions</a></li>
+        <li><a href="#projects">Veille Technologique</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="banner">
+    <section id="profile">
+      <div class="section__text">
+        <p class="section__text__p1">Bienvenue dans la </p>
+        <h1 class="title">Veille Technologique</h1>
+      </div>
+    </section>
+  </div>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">A propos du moi </h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets/profile picture.png" alt="Profile picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+            <h3>Experience</h3><br />
+            <p><strong>IRIS MEDIASCHOOL STRASBOURG</strong><br />
+              <strong> Fonction: </strong>Stagiaire en développement web, maîtrisant la
+              création d'un serveur web et la configuration de
+              WordPress avec WooCommerce.
+              <br /><strong>Période: 22 janvier 28 février 2024</strong>
+            </p>
+            <br />
+            <br />
+            <p><strong>AGENCE DE PUBLICITÉ TROISETPLUS</strong>
+              <strong> Fonction: </strong>Stagiaire en développement web,
+              maîtrisant WordPress, Shopify et les langages
+              HTML/CSS/PHP/JavaScript. Compétences en
+              webdesign et maintenance de sites.
+              <br /><strong>Période: 1er juin à 11 juillet 2023</strong>
+            </p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <h3>Education</h3><br />
+            <strong> 2022-2024 </strong>: BTS Services informatiques aux
+            organisations à IRIS compus medischool Strasbourg.<br /><br />
+            <strong> 2021-2022 </strong>: une année en DTS ( diplôme technicien spécialise )
+            en développement digitale a l'institut du nouvelles
+            technologies de l'information et de la communication à <strong> </strong>rabat Maroc</strong>.<br /><br />
+
+            <strong>2019-2020</strong> lycée Qualifiant Sbihi, Baccalauréat Science
+            physique chimie.
+
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            Étudiant en 2ème année de BTS SIO option SLAM,
+            <strong>( Conception et développement d'applications )</strong>
+            passionné par l'informatique et les technologies émergentes,
+            à la recherche d'une alternance pour ma 3ème année de
+            Bachelor en Développement Informatique.
+          </p>
+        </div>
+        <br>
+        <div class="text-container">
+          <p>
+          <H2><strong>Bilan de mon BTS SIO</strong></H2><BR>
+          Le BTS Services Informatiques aux Organisations est un diplôme reconnu par l’état de niveau BAC+2.
+          Il remplace depuis Septembre 2011, l’ancien BTS IG (Informatique de gestion). En effet, cette nouvelle
+          formule
+          réponds aux attentes de la profession en matière de qualification.
+          Le programme a évolué en fonction de la place et du rôle des TIC (Technologies de l’Information et de la
+          Communication) et propose deux spécialités bien distinctes : Le BTS SIO Option <strong>SISR </strong>et
+          Option <strong>SLAM</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+  </section>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section contact">
+        <h2>IMAD'S <span style="color: rgb(255, 71, 71);">World</span></h2>
+        <p>Route de la wantzenau, Strabourg,France</p>
+        <p><a href="mailto:chamkhiimad5@gmail.com">chamkhiimad5@gmail.com</a></p>
+        <br>
+        <a href="legal.html">Mentions légales</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 | Tous droits réservés
+    </div>
+  </footer>
+
+  <script src="js.js"></script>
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = () => {
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = () => {
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = () => {
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+</body>
+
+</html>

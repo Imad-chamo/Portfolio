@@ -67,7 +67,7 @@
 .banner{
   background: url("banner.jpg") no-repeat;
   background-color: #000000;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -112,7 +112,7 @@ a,
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: 130vh;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -268,6 +268,10 @@ section {
   border-color: rgb(163, 163, 163);
   text-align: center;
 }
+.small-container {
+  width: 40%; /* adjust this value to make the card smaller */
+  margin: 0 auto; /* centers the card */
+}
 
 .section-container {
   gap: 4rem;
@@ -323,6 +327,7 @@ article .icon {
 
 #projects {
   position: relative;
+  height: 95vh;
 }
 
 .color-container {
@@ -349,9 +354,8 @@ article .icon {
 
 #contact {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 50vh;
 }
 #contact a {
   color: inherit; 
@@ -369,7 +373,7 @@ article .icon {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   background: (250, 250, 250);
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 0.5rem;
 }
 
@@ -395,6 +399,69 @@ article .icon {
 .email-icon {
   height: 2.5rem;
 }
+
+
+footer {
+  width: 100p;
+  background: #000000;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  background: #ff0000;
+}
+
+.footer-section .button:hover {
+  background-color: white; 
+  color: black; 
+}
+.footer-section a {
+  color: #fff; 
+  text-decoration: none; 
+  margin-right: 15px; 
+}
+
+.footer-section a:hover {
+  color: #ff0000; 
+}
+
+@media (max-width: 800px) {
+  .footer-content {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 1230px) {
+.content{
+  padding: 0 60px;
+}
+}
+@media (max-width: 1100px) {
+.content{
+  padding: 0 40px;
+}
+}
+@media (max-width: 900px) {
+.content{
+  padding: 0 30px;
+}
+}
+
+
+
 
 @media (max-width: 1230px) {
   .content{
