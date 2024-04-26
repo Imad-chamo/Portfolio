@@ -193,6 +193,15 @@
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
+
+  <section id="Tableau_de_compétences">
+    <p class="section__text__p1">Voir</p>
+    <h1 class="title">Tableau de compétences</h1>
+    <div class="center-img"></div>
+    <img src="assets/tableau.png" alt="Image" class="experience-img" /> </div>
+  </section>
+
+
   <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Missions</h1>
@@ -203,7 +212,8 @@
           <div class="article-container">
             <img src="./assets/Atelier-h.jpg" alt="Project 1" class="project-img" />
           </div>
-          <h2 class="experience-sub-title project-title">Atelier H <span style="color: rgb(255, 71, 71);">(stage 1)</span></h2>
+          <h2 class="experience-sub-title project-title">Atelier H <span style="color: rgb(255, 71, 71);">(stage
+              1)</span></h2>
           <div class="btn-container">
             <button class="btn btn-color-2 project-btn" onclick="location.href='https://atelierh-alsace.fr/'">
               Voir le site
@@ -215,7 +225,8 @@
           <div class="article-container">
             <img src="./assets/matoucreationlogo.png" alt="Project 1" class="project-img" />
           </div>
-          <h2 class="experience-sub-title project-title">Matou Creations <span style="color: rgb(255, 71, 71);">(stage 2)</span></h2>
+          <h2 class="experience-sub-title project-title">Matou Creations <span style="color: rgb(255, 71, 71);">(stage
+              2)</span></h2>
           <div class="btn-container">
             <button class="btn btn-color-2 project-btn" onclick="location.href='assets/Stage2.pdf'">
               Voir plus
@@ -251,7 +262,7 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects_2">
     <div class="experience-details-container">
       <div class="about-containers">
 
@@ -307,6 +318,7 @@
     </div>
   </section>
 
+
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
@@ -321,6 +333,8 @@
       </div>
     </div>
   </section>
+
+
 
   <footer>
     <div class="footer-content">
@@ -337,6 +351,13 @@
       &copy; 2024 | Tous droits réservés
     </div>
   </footer>
+
+  <div id="cookie-popup" class="cookie-popup">
+    <p>We use cookies to improve your experience on our website. By browsing this website, you agree to our use of
+      cookies.</p>
+    <button id="accept-cookies-btn">Accept</button>
+    <button id="refuse-cookies-btn">Refuse</button>
+  </div>
 
   <script src="js.js"></script>
 
@@ -359,6 +380,39 @@
       this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cookiePopup = document.getElementById('cookie-popup');
+      const acceptCookiesBtn = document.getElementById('accept-cookies-btn');
+      const refuseCookiesBtn = document.getElementById('refuse-cookies-btn');
+
+      acceptCookiesBtn.addEventListener('click', function () {
+
+        cookiePopup.style.display = 'none';
+
+        document.cookie = "cookies_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+      });
+
+      refuseCookiesBtn.addEventListener('click', function () {
+        // Cacher le pop-up de cookies
+        cookiePopup.style.display = 'none';
+
+      });
+
+      if (!getCookie('cookies_accepted')) {
+        // Afficher le pop-up de cookies si l'utilisateur n'a pas encore accepté les cookies
+        cookiePopup.style.display = 'block';
+      }
+
+      // Fonction pour récupérer la valeur d'un cookie
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+    });
+  </script>
+
 </body>
 
 </html>
