@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="Style/Legal.css">
+
+  <title>Politique de Confidentialité</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#">Imad's <span style="color: rgb(255, 71, 71);">World</span></a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="index.html">A propos</a></li>
+        <li><a href="index.html">Tableau de compétences</a></li>
+        <li><a href="index.html">Mes Missions E4</a></li>
+        <li><a href="VT.html">Veille Technologique</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="banner">
+    <section id="profile">
+      <div class="section__text">
+        <p class="section__text__p1">Bienvenue dans nos </p>
+        <h1 class="title">Politique de Confidentialité</h1>
+      </div>
+    </section>
+  </div>
+
+  <section id="about">
+    <div class="about__container">
+      <div class="about__text">
+        <h1 class="title">Votre confidentialité est importante pour nous</h1>
+        <p>Cette politique de confidentialité décrit comment vos informations personnelles sont collectées, utilisées et
+          partagées lorsque vous visitez ou faites une commande sur mon portfolio en ligne.</p>
+        <br>
+        <h1 class="title">Informations personnelles collectées</h1>
+        <p>Lorsque vous visitez le portfolio, je peux collecter automatiquement certaines informations vous concernant,
+          comme votre adresse IP, le type de navigateur et de périphérique que vous utilisez, les pages que vous
+          consultez, l'heure et la date de votre visite.
+
+          Je peux également collecter toute autre information que vous me fournissez volontairement, comme lorsque vous
+          remplissez un formulaire de contact ou m'envoyez un message. Cette information peut inclure votre nom, votre
+          adresse e-mail, votre numéro de téléphone, etc.
+        </p>
+        <br>
+        <h1 class="title">Utilisation des informations</h1>
+        <p>Les informations collectées me permettent de :<br>
+          - Gérer et améliorer mon portfolio<br>
+          - Communiquer avec vous <br>
+          - Vous envoyer des candidatures au futur si vous y avez consenti<br>
+          - Protéger mon portfolio et vous protéger contre la fraude
+        </p>
+        <br>
+        <h1 class="title">Partage des informations</h1>
+        <p>Je ne partage vos informations personnelles avec aucun tiers,
+          sauf si cela est nécessaire pour exploiter mon portfolio, me conformer à la loi ou protéger mes droits.
+        </p>
+        <br>
+        <h1 class="title">Vos droits</h1>
+        <p>Vous avez le droit d'accéder, de rectifier, de limiter, de supprimer ou de vous opposer au traitement de vos
+          données personnelles. Pour exercer ces droits, contactez-moi à l'adresse e-mail fournie sur mon portfolio.</p>
+      </div>
+      <br>
+      <h1 class="title">Sécurité</h1>
+      <p>Je mets en place des mesures de sécurité techniques et organisationnelles pour protéger vos données contre la
+        perte, l'utilisation abusive, l'accès non autorisé, la divulgation, la modification ou la destruction.</p>
+      <br>
+      <h1 class="title">Modifications de la politique</h1>
+      <p>Je me réserve le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera
+        publiée sur cette page.</p>
+      <br>
+      <h1 class="title">Contact</h1>
+      <p>Pour toute question ou préoccupation concernant cette politique de confidentialité, n'hésitez pas à me
+        contacter à travers le formlaire de contact ou par l'adresse e-mail fournie sur mon portfolio.</p>
+      <br>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section contact">
+          <h2>Contact</h2>
+          <p>Route de la wantzenau, Strabourg,France</p>
+          <p><a href="mailto:chamkhiimad5@gmail.com">chamkhiimad5@gmail.com</a></p>
+          <button class="button"><a href="Contact.html">Contact</a></button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+      </div>
+    </footer>
+  </section>
+  
+
+  <script src="js.js"></script>
+
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = () => {
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = () => {
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = () => {
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+</body>
+
+</html>
