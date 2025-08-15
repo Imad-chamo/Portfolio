@@ -1,78 +1,424 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="stylesheet" href="Style/Contact.css">
-    <title>Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Imad Chamkhi - Développeur Informatique pour vos projets web">
+  <meta name="author" content="Imad Chamkhi">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/icon.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Style/Home.css">
+  <link rel="stylesheet" href="Style/Contact.css">
+  
+  <title>Contact | Imad Chamkhi</title>
 </head>
+
 <body>
-  <nav class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
     <div class="content">
       <div class="logo">
-        <a href="index.html">Imad's <span style="color: rgb(255, 71, 71);">Word</span></a>
+        <a href="index.html">Imad's <span style="color: var(--primary-color);">World</span></a>
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="index.html#experience">Compétences</a></li>
+        <li><a href="index.html#projects">Projets</a></li>
+        <li><a href="Contact.html">Contact</a></li>
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
-  <div class="banner">
-    <section id="profile">
-        <div class="section__text">
-         <div class="contact-form">
-          <p><strong>Prêt à relever de nouveaux défis. Contactez-moi :)</strong> </p>
-          <form action="https://formspree.io/f/mpzvaaoq" method="POST">      
-            <input name="name" type="text" class="feedback-input" placeholder="Name" />   
-            <input name="email" type="text" class="feedback-input" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required />
-            <input name="objet" type="text" class="feedback-input" placeholder="Objet" />
-            <textarea name="message" class="feedback-input" placeholder="Comment"></textarea>
-            <input type="checkbox" name="accept" required>
-            <label for="accept" style="color: aliceblue;">I accept the terms and conditions</label>
-            <input type="submit" value="Send"/>
-          </form>  
-         </div>        
+
+  <!-- Contact Page -->
+  <main class="contact-page">
+    <div class="content">
+      <!-- Header Section -->
+      <section class="contact-header">
+        <div class="back-button">
+          <a href="index.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+          </a>
         </div>
-    </section>
+        <h1 class="page-title">Contactez-moi</h1>
+        <p class="page-subtitle">Parlons de votre projet ensemble</p>
+      </section>
+
+      <!-- Contact Content -->
+      <div class="contact-content">
+        <!-- Contact Info Cards -->
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>imad.chamkhi@gmail.com</p>
+            <a href="mailto:imad.chamkhi@gmail.com" class="card-btn">
+              <i class="fas fa-paper-plane"></i> Envoyer un email
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <h3>LinkedIn</h3>
+            <p>Connectons-nous professionnellement</p>
+            <a href="https://linkedin.com/in/imad-chamkhi" class="card-btn" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i> Voir le profil
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3>GitHub</h3>
+            <p>Découvrez mes projets</p>
+            <a href="https://github.com/imad-chamo" class="card-btn" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Voir les projets
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <div class="form-container">
+            <h2><i class="fas fa-comments"></i> Envoyez-moi un message</h2>
+            <p class="form-description">Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter.</p>
+            
+            <form class="contact-form" action="export_csv.php" method="POST">
+              <div class="form-group">
+                <label for="name">
+                  <i class="fas fa-user"></i> Nom complet *
+                </label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">
+                  <i class="fas fa-envelope"></i> Email *
+                </label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">
+                  <i class="fas fa-phone"></i> Téléphone
+                </label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">
+                  <i class="fas fa-tag"></i> Sujet *
+                </label>
+                <select id="subject" name="subject" required>
+                  <option value="">Sélectionnez un sujet</option>
+                  <option value="site-web">Création de site web</option>
+                  <option value="application">Développement d'application</option>
+                  <option value="ecommerce">Site e-commerce</option>
+                  <option value="maintenance">Maintenance/Support</option>
+                  <option value="seo">Optimisation SEO</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">
+                  <i class="fas fa-euro-sign"></i> Budget estimé
+                </label>
+                <select id="budget" name="budget">
+                  <option value="">Sélectionnez votre budget</option>
+                  <option value="moins-1000">Moins de 1 000€</option>
+                  <option value="1000-3000">1 000€ - 3 000€</option>
+                  <option value="3000-5000">3 000€ - 5 000€</option>
+                  <option value="5000-10000">5 000€ - 10 000€</option>
+                  <option value="plus-10000">Plus de 10 000€</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">
+                  <i class="fas fa-comment-dots"></i> Message *
+                </label>
+                <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet, vos besoins, vos objectifs..." required></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="consent" name="consent" required>
+                  <span class="checkmark"></span>
+                  J'accepte que mes données soient utilisées pour me recontacter concernant ma demande *
+                </label>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="additional-info">
+          <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h3>Disponibilité</h3>
+            <p>Je réponds généralement sous 24h</p>
+          </div>
+          
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Localisation</h3>
+            <p>Strasbourg, France</p>
+          </div>
+          
+          <div class="info-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Collaboration</h3>
+            <p>Ouvert aux projets freelance et missions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="content">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Imad Chamkhi</h3>
+          <p>Développeur Informatique passionné par la création de solutions digitales innovantes et performantes.</p>
+          <a href="Contact.html" class="button">
+            <i class="fas fa-envelope"></i> Me contacter
+          </a>
+        </div>
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <p><a href="index.html#about">• À propos de moi</a></p>
+          <p><a href="index.html#experience">• Mes compétences</a></p>
+          <p><a href="index.html#projects">• Mes projets</a></p>
+          <p><a href="projects.html">• Portfolio détaillé</a></p>
+          <p><a href="Contact.html">• Me contacter</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Réseaux Sociaux</h3>
+          <p><a href="https://linkedin.com/in/imad-chamkhi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+          <p><a href="https://github.com/imad-chamo" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+          <p><a href="mailto:imad.chamkhi@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+          <p><a href="./assets/cv-3.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger CV</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Imad Chamkhi. Tous droits réservés. | 
+          <a href="legal.html">Mentions légales</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="Style/Home.js"></script>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <div class="cookie-header">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Gestion des Cookies</h3>
+      </div>
+      <p>
+        Ce site utilise des cookies pour améliorer votre expérience de navigation et analyser l'utilisation du site. 
+        En continuant à naviguer, vous acceptez notre utilisation des cookies.
+      </p>
+      <div class="cookie-buttons">
+        <button id="acceptAllCookies" class="cookie-btn primary">
+          <i class="fas fa-check"></i> Accepter tout
+        </button>
+        <button id="acceptNecessary" class="cookie-btn secondary">
+          <i class="fas fa-cog"></i> Nécessaires uniquement
+        </button>
+        <button id="customizeCookies" class="cookie-btn tertiary">
+          <i class="fas fa-sliders-h"></i> Personnaliser
+        </button>
+      </div>
+      <div class="cookie-links">
+        <a href="legal.html" target="_blank">
+          <i class="fas fa-info-circle"></i> Plus d'informations
+        </a>
+      </div>
+    </div>
   </div>
 
-  <script src="contact.js"></script>
+  <!-- Cookie Settings Modal -->
+  <div id="cookieModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+        <h3><i class="fas fa-cog"></i> Paramètres des Cookies</h3>
+        <button id="closeCookieModal" class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cookie-modal-body">
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Nécessaires</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="necessaryCookies" checked disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Analytiques</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="analyticsCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies nous aident à comprendre comment vous utilisez le site pour améliorer votre expérience.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies de Performance</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="performanceCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies collectent des informations sur les performances du site.</p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button id="savePreferences" class="cookie-btn primary">
+          <i class="fas fa-save"></i> Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Cookie Script -->
   <script>
-    const body = document.querySelector("body");
-    const navbar = document.querySelector(".navbar");
-    const menuBtn = document.querySelector(".menu-btn");
-    const cancelBtn = document.querySelector(".cancel-btn");
-    menuBtn.onclick = ()=>{
-      navbar.classList.add("show");
-      menuBtn.classList.add("hide");
-      body.classList.add("disabled");
-    }
-    cancelBtn.onclick = ()=>{
-      body.classList.remove("disabled");
-      navbar.classList.remove("show");
-      menuBtn.classList.remove("hide");
-    }
-    window.onscroll = ()=>{
-      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
-    }
-
-function validateForm() {
-    var emailInput = document.querySelector('input[name="email"]');
-    if (!emailInput.checkValidity()) {
-        // Display a custom error message
-        emailInput.setCustomValidity("Please enter a valid email address.");
-        return false;
-    }
-    return true;
-}
+    // Cookie Consent Management
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieConsent = document.getElementById('cookieConsent');
+      const cookieModal = document.getElementById('cookieModal');
+      const acceptAllBtn = document.getElementById('acceptAllCookies');
+      const acceptNecessaryBtn = document.getElementById('acceptNecessary');
+      const customizeBtn = document.getElementById('customizeCookies');
+      const closeCookieModalBtn = document.getElementById('closeCookieModal');
+      const savePreferencesBtn = document.getElementById('savePreferences');
+      
+      // Check if user has already made a choice
+      const cookiePreference = localStorage.getItem('cookieConsent');
+      if (!cookiePreference) {
+        // Show cookie consent after a small delay
+        setTimeout(() => {
+          cookieConsent.style.display = 'block';
+          setTimeout(() => {
+            cookieConsent.classList.add('show');
+          }, 100);
+        }, 1000);
+      }
+      
+      // Accept all cookies
+      acceptAllBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: true,
+          performance: true
+        });
+        hideCookieConsent();
+      });
+      
+      // Accept only necessary cookies
+      acceptNecessaryBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: false,
+          performance: false
+        });
+        hideCookieConsent();
+      });
+      
+      // Show customization modal
+      customizeBtn.addEventListener('click', function() {
+        cookieModal.style.display = 'flex';
+        setTimeout(() => {
+          cookieModal.classList.add('show');
+        }, 100);
+      });
+      
+      // Close modal
+      closeCookieModalBtn.addEventListener('click', function() {
+        closeCookieModal();
+      });
+      
+      // Close modal when clicking outside
+      cookieModal.addEventListener('click', function(e) {
+        if (e.target === cookieModal) {
+          closeCookieModal();
+        }
+      });
+      
+      // Save custom preferences
+      savePreferencesBtn.addEventListener('click', function() {
+        const preferences = {
+          necessary: true, // Always true
+          analytics: document.getElementById('analyticsCookies').checked,
+          performance: document.getElementById('performanceCookies').checked
+        };
+        setCookiePreferences(preferences);
+        closeCookieModal();
+        hideCookieConsent();
+      });
+      
+      function setCookiePreferences(preferences) {
+        localStorage.setItem('cookieConsent', JSON.stringify(preferences));
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        
+        // Here you would typically initialize analytics/tracking scripts based on preferences
+        if (preferences.analytics) {
+          // Initialize Google Analytics or other analytics
+          console.log('Analytics cookies accepted');
+        }
+        if (preferences.performance) {
+          // Initialize performance monitoring
+          console.log('Performance cookies accepted');
+        }
+      }
+      
+      function hideCookieConsent() {
+        cookieConsent.classList.remove('show');
+        setTimeout(() => {
+          cookieConsent.style.display = 'none';
+        }, 300);
+      }
+      
+      function closeCookieModal() {
+        cookieModal.classList.remove('show');
+        setTimeout(() => {
+          cookieModal.style.display = 'none';
+        }, 300);
+      }
+    });
   </script>
 </body>
 </html>

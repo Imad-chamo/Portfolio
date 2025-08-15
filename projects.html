@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets détaillés d'Imad Chamkhi - Développeur Informatique. Découvrez mes réalisations web et applications.">
+  <meta name="author" content="Imad Chamkhi">
+  <meta name="keywords" content="Imad Chamkhi, projets web, portfolio détaillé, applications, développement">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/icon.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Style/Home.css">
+  <link rel="stylesheet" href="Style/Projects.css">
+  
+  <title>Mes Projets | Imad Chamkhi</title>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="index.html">Imad's <span style="color: var(--primary-color);">World</span></a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="index.html#experience">Compétences</a></li>
+        <li><a href="index.html#projects">Projets</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Page -->
+  <main class="projects-page">
+    <div class="content">
+      <!-- Header Section -->
+      <section class="projects-header">
+        <div class="back-button">
+          <a href="index.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+          </a>
+        </div>
+        <h1 class="page-title">Mes Projets</h1>
+        <p class="page-subtitle">Une vue détaillée de mes réalisations et expériences techniques</p>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th"></i> Tous
+          </button>
+          <button class="filter-btn" data-filter="web">
+            <i class="fas fa-globe"></i> Sites Web
+          </button>
+          <button class="filter-btn" data-filter="ecommerce">
+            <i class="fas fa-shopping-cart"></i> E-commerce
+          </button>
+          <button class="filter-btn" data-filter="app">
+            <i class="fas fa-mobile-alt"></i> Applications
+          </button>
+        </div>
+      </section>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: AniimalCorner -->
+        <article class="project-card" data-category="ecommerce" id="aniimalcorner">
+          <div class="project-image">
+            <img src="./assets/project-1.png" alt="AniimalCorner" />
+            <div class="project-overlay">
+              <div class="project-badges">
+                <span class="badge">E-commerce</span>
+                <span class="badge">WordPress</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h2>AniimalCorner</h2>
+              <div class="project-meta">
+                <span><i class="fas fa-calendar"></i> 2024</span>
+                <span><i class="fas fa-clock"></i> 3 mois</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Plateforme e-commerce complète dédiée aux produits pour animaux domestiques. 
+              Développement d'un système de commande intégré avec gestion des stocks, 
+              paiements sécurisés et interface d'administration.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">WordPress</span>
+              <span class="tech-badge">WooCommerce</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">CSS3</span>
+            </div>
+            <div class="project-features">
+              <h4><i class="fas fa-star"></i> Fonctionnalités clés</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Catalogue produits avec filtres avancés</li>
+                <li><i class="fas fa-check"></i> Système de panier et commandes</li>
+                <li><i class="fas fa-check"></i> Gestion des utilisateurs et comptes client</li>
+                <li><i class="fas fa-check"></i> Interface d'administration</li>
+                <li><i class="fas fa-check"></i> Intégration paiements sécurisés</li>
+              </ul>
+            </div>
+            <div class="project-actions">
+              <a href="./assets/M3-AniimalCorner.pdf" class="btn-primary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Voir le rapport
+              </a>
+              <button class="btn-secondary" onclick="toggleDetails(this)">
+                <i class="fas fa-info-circle"></i> Plus de détails
+              </button>
+            </div>
+            <div class="project-details" style="display: none;">
+              <div class="detail-section">
+                <h5><i class="fas fa-bullseye"></i> Objectifs du projet</h5>
+                <p>Créer une boutique en ligne moderne et intuitive pour la vente de produits animaliers, 
+                avec une expérience utilisateur optimisée et un système de gestion complet.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-cogs"></i> Défis techniques</h5>
+                <p>Intégration de multiples moyens de paiement, optimisation des performances pour 
+                un large catalogue, et mise en place d'un système de gestion des stocks en temps réel.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-chart-line"></i> Résultats</h5>
+                <p>Site web entièrement fonctionnel avec interface responsive, temps de chargement 
+                optimisé et système de commande fluide. Formation du client à l'utilisation de l'interface d'administration.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: AllSafe Security -->
+        <article class="project-card" data-category="app" id="allsafe">
+          <div class="project-image">
+            <img src="./assets/project-2.png" alt="AllSafe Security" />
+            <div class="project-overlay">
+              <div class="project-badges">
+                <span class="badge">Sécurité</span>
+                <span class="badge">Application</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h2>AllSafe Security</h2>
+              <div class="project-meta">
+                <span><i class="fas fa-calendar"></i> 2024</span>
+                <span><i class="fas fa-clock"></i> 4 mois</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Application de sécurité avancée avec système d'authentification multi-niveaux, 
+              gestion des utilisateurs et monitoring en temps réel. Interface d'administration 
+              complète pour la surveillance et le contrôle d'accès.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Bootstrap</span>
+            </div>
+            <div class="project-features">
+              <h4><i class="fas fa-star"></i> Fonctionnalités clés</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Authentification multi-facteurs</li>
+                <li><i class="fas fa-check"></i> Gestion des rôles et permissions</li>
+                <li><i class="fas fa-check"></i> Monitoring temps réel</li>
+                <li><i class="fas fa-check"></i> Audit et logs de sécurité</li>
+                <li><i class="fas fa-check"></i> Interface d'administration</li>
+              </ul>
+            </div>
+            <div class="project-actions">
+              <a href="./assets/M4-allsafe.pdf" class="btn-primary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Voir le rapport
+              </a>
+              <button class="btn-secondary" onclick="toggleDetails(this)">
+                <i class="fas fa-info-circle"></i> Plus de détails
+              </button>
+            </div>
+            <div class="project-details" style="display: none;">
+              <div class="detail-section">
+                <h5><i class="fas fa-bullseye"></i> Objectifs du projet</h5>
+                <p>Développer une solution de sécurité robuste pour la gestion des accès et 
+                la surveillance des systèmes d'information d'entreprise.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-cogs"></i> Défis techniques</h5>
+                <p>Implémentation de protocoles de sécurité avancés, chiffrement des données, 
+                et création d'une architecture scalable pour gérer de nombreux utilisateurs simultanés.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-chart-line"></i> Résultats</h5>
+                <p>Application sécurisée déployée avec succès, réduction des incidents de sécurité 
+                et amélioration de 40% de l'efficacité de la gestion des accès.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Matou Creations -->
+        <article class="project-card" data-category="web" id="matou">
+          <div class="project-image">
+            <img src="./assets/project-3.png" alt="Matou Creations" />
+            <div class="project-overlay">
+              <div class="project-badges">
+                <span class="badge">Site Vitrine</span>
+                <span class="badge">Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h2>Matou Creations</h2>
+              <div class="project-meta">
+                <span><i class="fas fa-calendar"></i> 2024</span>
+                <span><i class="fas fa-clock"></i> 2 mois</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Site vitrine créatif pour une entreprise artistique. Design moderne et responsive 
+              avec galerie interactive, animations CSS avancées et interface utilisateur optimisée 
+              pour l'expérience mobile.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">GSAP</span>
+              <span class="tech-badge">Responsive</span>
+            </div>
+            <div class="project-features">
+              <h4><i class="fas fa-star"></i> Fonctionnalités clés</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Design responsive et moderne</li>
+                <li><i class="fas fa-check"></i> Galerie interactive avec lightbox</li>
+                <li><i class="fas fa-check"></i> Animations CSS et JavaScript</li>
+                <li><i class="fas fa-check"></i> Optimisation SEO</li>
+                <li><i class="fas fa-check"></i> Formulaire de contact intégré</li>
+              </ul>
+            </div>
+            <div class="project-actions">
+              <a href="./assets/M6-Matous Creations.pdf" class="btn-primary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Voir le rapport
+              </a>
+              <button class="btn-secondary" onclick="toggleDetails(this)">
+                <i class="fas fa-info-circle"></i> Plus de détails
+              </button>
+            </div>
+            <div class="project-details" style="display: none;">
+              <div class="detail-section">
+                <h5><i class="fas fa-bullseye"></i> Objectifs du projet</h5>
+                <p>Créer un site vitrine élégant qui reflète la créativité de l'entreprise tout 
+                en offrant une navigation intuitive et une présentation attrayante des créations.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-cogs"></i> Défis techniques</h5>
+                <p>Optimisation des performances pour les médias lourds, création d'animations 
+                fluides, et assurance d'une compatibilité parfaite sur tous les appareils.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-chart-line"></i> Résultats</h5>
+                <p>Augmentation de 60% du temps passé sur le site, amélioration du taux de conversion 
+                des contacts et excellent retour client sur l'expérience utilisateur.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Atelier H -->
+        <article class="project-card" data-category="web" id="atelier">
+          <div class="project-image">
+            <img src="./assets/Atelier-h.jpg" alt="Atelier H" />
+            <div class="project-overlay">
+              <div class="project-badges">
+                <span class="badge">Professionnel</span>
+                <span class="badge">WordPress</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h2>Atelier H</h2>
+              <div class="project-meta">
+                <span><i class="fas fa-calendar"></i> 2023</span>
+                <span><i class="fas fa-clock"></i> 6 semaines</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Site web professionnel pour un atelier d'architecture avec galerie de projets, 
+              présentation des services et système de contact avancé. Design épuré et moderne 
+              mettant en valeur les réalisations de l'atelier.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">WordPress</span>
+              <span class="tech-badge">Custom Theme</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">SEO</span>
+            </div>
+            <div class="project-features">
+              <h4><i class="fas fa-star"></i> Fonctionnalités clés</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Galerie de projets interactive</li>
+                <li><i class="fas fa-check"></i> Présentation des services</li>
+                <li><i class="fas fa-check"></i> Système de contact avancé</li>
+                <li><i class="fas fa-check"></i> Blog intégré</li>
+                <li><i class="fas fa-check"></i> Optimisation mobile</li>
+              </ul>
+            </div>
+            <div class="project-actions">
+              <a href="./assets/M1-Atelier H.pdf" class="btn-primary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Voir le rapport
+              </a>
+              <button class="btn-secondary" onclick="toggleDetails(this)">
+                <i class="fas fa-info-circle"></i> Plus de détails
+              </button>
+            </div>
+            <div class="project-details" style="display: none;">
+              <div class="detail-section">
+                <h5><i class="fas fa-bullseye"></i> Objectifs du projet</h5>
+                <p>Développer une présence web professionnelle pour un atelier d'architecture, 
+                mettant en avant leur expertise et leurs réalisations.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-cogs"></i> Défis techniques</h5>
+                <p>Création d'un thème WordPress personnalisé, optimisation des images haute résolution, 
+                et intégration d'une galerie performante pour les projets architecturaux.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-chart-line"></i> Résultats</h5>
+                <p>Site web professionnel livré dans les délais, formation de l'équipe à la gestion 
+                du contenu et augmentation significative de la visibilité en ligne.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Formatech -->
+        <article class="project-card" data-category="web" id="formatech">
+          <div class="project-image">
+            <img src="./assets/Formatech.png" alt="Formatech" />
+            <div class="project-overlay">
+              <div class="project-badges">
+                <span class="badge">E-learning</span>
+                <span class="badge">LMS</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h2>Formatech</h2>
+              <div class="project-meta">
+                <span><i class="fas fa-calendar"></i> 2023</span>
+                <span><i class="fas fa-clock"></i> 5 mois</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Plateforme de formation en ligne complète avec gestion des cours, système d'inscription 
+              des étudiants, suivi des progrès et interface d'administration pour les formateurs. 
+              Solution LMS (Learning Management System) sur mesure.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">Vue.js</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">API REST</span>
+            </div>
+            <div class="project-features">
+              <h4><i class="fas fa-star"></i> Fonctionnalités clés</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Gestion des cours et modules</li>
+                <li><i class="fas fa-check"></i> Système d'inscription et paiement</li>
+                <li><i class="fas fa-check"></i> Suivi des progrès des étudiants</li>
+                <li><i class="fas fa-check"></i> Interface formateur/administrateur</li>
+                <li><i class="fas fa-check"></i> Certificats de formation automatiques</li>
+              </ul>
+            </div>
+            <div class="project-actions">
+              <a href="./assets/M2-Formatech.pdf" class="btn-primary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Voir le rapport
+              </a>
+              <button class="btn-secondary" onclick="toggleDetails(this)">
+                <i class="fas fa-info-circle"></i> Plus de détails
+              </button>
+            </div>
+            <div class="project-details" style="display: none;">
+              <div class="detail-section">
+                <h5><i class="fas fa-bullseye"></i> Objectifs du projet</h5>
+                <p>Créer une plateforme e-learning moderne permettant aux organismes de formation 
+                de digitaliser leurs cours et d'offrir une expérience d'apprentissage en ligne complète.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-cogs"></i> Défis techniques</h5>
+                <p>Développement d'une architecture scalable, intégration de systèmes de paiement, 
+                création d'un système de progression gamifié et optimisation pour la diffusion vidéo.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-chart-line"></i> Résultats</h5>
+                <p>Plateforme déployée avec succès, formation de 500+ étudiants la première année, 
+                et retour très positif des formateurs sur l'interface d'administration.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Experty -->
+        <article class="project-card" data-category="app" id="experty">
+          <div class="project-image">
+            <img src="./assets/Experty.png" alt="Experty" />
+            <div class="project-overlay">
+              <div class="project-badges">
+                <span class="badge">Marketplace</span>
+                <span class="badge">React</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h2>Experty</h2>
+              <div class="project-meta">
+                <span><i class="fas fa-calendar"></i> 2024</span>
+                <span><i class="fas fa-clock"></i> 6 mois</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Application web de mise en relation entre experts et clients avec système de réservation 
+              intégré, paiements sécurisés, chat en temps réel et système d'évaluation. 
+              Marketplace complète pour services de conseil.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge">React.js</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Express</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">Socket.io</span>
+            </div>
+            <div class="project-features">
+              <h4><i class="fas fa-star"></i> Fonctionnalités clés</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Mise en relation experts/clients</li>
+                <li><i class="fas fa-check"></i> Système de réservation en ligne</li>
+                <li><i class="fas fa-check"></i> Chat temps réel intégré</li>
+                <li><i class="fas fa-check"></i> Paiements sécurisés</li>
+                <li><i class="fas fa-check"></i> Système d'évaluations et avis</li>
+              </ul>
+            </div>
+            <div class="project-actions">
+              <a href="./assets/M7-Experty.pdf" class="btn-primary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Voir le rapport
+              </a>
+              <button class="btn-secondary" onclick="toggleDetails(this)">
+                <i class="fas fa-info-circle"></i> Plus de détails
+              </button>
+            </div>
+            <div class="project-details" style="display: none;">
+              <div class="detail-section">
+                <h5><i class="fas fa-bullseye"></i> Objectifs du projet</h5>
+                <p>Développer une marketplace innovante connectant experts et clients pour des 
+                consultations personnalisées dans divers domaines d'expertise.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-cogs"></i> Défis techniques</h5>
+                <p>Création d'une architecture temps réel, intégration de multiples APIs de paiement, 
+                développement d'un système de matching intelligent et optimisation des performances.</p>
+              </div>
+              <div class="detail-section">
+                <h5><i class="fas fa-chart-line"></i> Résultats</h5>
+                <p>Application lancée avec succès, 200+ experts inscrits, 1000+ consultations réalisées 
+                et taux de satisfaction client de 4.8/5.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Call to Action -->
+      <section class="cta-section">
+        <div class="cta-card">
+          <h2><i class="fas fa-lightbulb"></i> Un projet en tête ?</h2>
+          <p>Discutons ensemble de votre vision et créons quelque chose d'exceptionnel.</p>
+          <a href="Contact.html" class="cta-btn">
+            <i class="fas fa-rocket"></i> Démarrer un projet
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="content">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Imad Chamkhi</h3>
+          <p>Développeur Informatique passionné par la création de solutions digitales innovantes et performantes.</p>
+          <a href="Contact.html" class="button">
+            <i class="fas fa-envelope"></i> Me contacter
+          </a>
+        </div>
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <p><a href="index.html#about">• À propos de moi</a></p>
+          <p><a href="index.html#experience">• Mes compétences</a></p>
+          <p><a href="index.html#projects">• Mes projets</a></p>
+          <p><a href="projects.html">• Portfolio détaillé</a></p>
+          <p><a href="Contact.html">• Me contacter</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Réseaux Sociaux</h3>
+          <p><a href="https://linkedin.com/in/imad-chamkhi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+          <p><a href="https://github.com/imad-chamo" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+          <p><a href="mailto:imad.chamkhi@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+          <p><a href="./assets/cv-3.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger CV</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Imad Chamkhi. Tous droits réservés. | 
+          <a href="legal.html">Mentions légales</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="Style/Home.js"></script>
+  <script src="Style/Projects.js"></script>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <div class="cookie-header">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Gestion des Cookies</h3>
+      </div>
+      <p>
+        Ce site utilise des cookies pour améliorer votre expérience de navigation et analyser l'utilisation du site. 
+        En continuant à naviguer, vous acceptez notre utilisation des cookies.
+      </p>
+      <div class="cookie-buttons">
+        <button id="acceptAllCookies" class="cookie-btn primary">
+          <i class="fas fa-check"></i> Accepter tout
+        </button>
+        <button id="acceptNecessary" class="cookie-btn secondary">
+          <i class="fas fa-cog"></i> Nécessaires uniquement
+        </button>
+        <button id="customizeCookies" class="cookie-btn tertiary">
+          <i class="fas fa-sliders-h"></i> Personnaliser
+        </button>
+      </div>
+      <div class="cookie-links">
+        <a href="legal.html" target="_blank">
+          <i class="fas fa-info-circle"></i> Plus d'informations
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Settings Modal -->
+  <div id="cookieModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+        <h3><i class="fas fa-cog"></i> Paramètres des Cookies</h3>
+        <button id="closeCookieModal" class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cookie-modal-body">
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Nécessaires</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="necessaryCookies" checked disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Analytiques</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="analyticsCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies nous aident à comprendre comment vous utilisez le site pour améliorer votre expérience.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies de Performance</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="performanceCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies collectent des informations sur les performances du site.</p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button id="savePreferences" class="cookie-btn primary">
+          <i class="fas fa-save"></i> Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Script -->
+  <script>
+    // Cookie Consent Management
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieConsent = document.getElementById('cookieConsent');
+      const cookieModal = document.getElementById('cookieModal');
+      const acceptAllBtn = document.getElementById('acceptAllCookies');
+      const acceptNecessaryBtn = document.getElementById('acceptNecessary');
+      const customizeBtn = document.getElementById('customizeCookies');
+      const closeCookieModalBtn = document.getElementById('closeCookieModal');
+      const savePreferencesBtn = document.getElementById('savePreferences');
+      
+      // Check if user has already made a choice
+      const cookiePreference = localStorage.getItem('cookieConsent');
+      if (!cookiePreference) {
+        // Show cookie consent after a small delay
+        setTimeout(() => {
+          cookieConsent.style.display = 'block';
+          setTimeout(() => {
+            cookieConsent.classList.add('show');
+          }, 100);
+        }, 1000);
+      }
+      
+      // Accept all cookies
+      acceptAllBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: true,
+          performance: true
+        });
+        hideCookieConsent();
+      });
+      
+      // Accept only necessary cookies
+      acceptNecessaryBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: false,
+          performance: false
+        });
+        hideCookieConsent();
+      });
+      
+      // Show customization modal
+      customizeBtn.addEventListener('click', function() {
+        cookieModal.style.display = 'flex';
+        setTimeout(() => {
+          cookieModal.classList.add('show');
+        }, 100);
+      });
+      
+      // Close modal
+      closeCookieModalBtn.addEventListener('click', function() {
+        closeCookieModal();
+      });
+      
+      // Close modal when clicking outside
+      cookieModal.addEventListener('click', function(e) {
+        if (e.target === cookieModal) {
+          closeCookieModal();
+        }
+      });
+      
+      // Save custom preferences
+      savePreferencesBtn.addEventListener('click', function() {
+        const preferences = {
+          necessary: true, // Always true
+          analytics: document.getElementById('analyticsCookies').checked,
+          performance: document.getElementById('performanceCookies').checked
+        };
+        setCookiePreferences(preferences);
+        closeCookieModal();
+        hideCookieConsent();
+      });
+      
+      function setCookiePreferences(preferences) {
+        localStorage.setItem('cookieConsent', JSON.stringify(preferences));
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        
+        // Here you would typically initialize analytics/tracking scripts based on preferences
+        if (preferences.analytics) {
+          // Initialize Google Analytics or other analytics
+          console.log('Analytics cookies accepted');
+        }
+        if (preferences.performance) {
+          // Initialize performance monitoring
+          console.log('Performance cookies accepted');
+        }
+      }
+      
+      function hideCookieConsent() {
+        cookieConsent.classList.remove('show');
+        setTimeout(() => {
+          cookieConsent.style.display = 'none';
+        }, 300);
+      }
+      
+      function closeCookieModal() {
+        cookieModal.classList.remove('show');
+        setTimeout(() => {
+          cookieModal.style.display = 'none';
+        }, 300);
+      }
+    });
+  </script>
+</body>
+</html>

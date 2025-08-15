@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.imadchamkhi.com/sitemap.xml
+
+# Disallow unnecessary files
+Disallow: /*.pdf$
+Disallow: /assets/*.pdf$
+Disallow: /Style/
+
+# Allow important CSS and JS files for rendering
+Allow: /Style/Home.css
+Allow: /Style/translations.js
+Allow: /Style/Home.js
+Allow: /Style/Projects.js
+
+# Crawl delay (optional)
+Crawl-delay: 1

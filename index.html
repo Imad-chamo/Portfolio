@@ -1,32 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio & agence web d'Imad Chamkhi - Développeur web freelance à Strasbourg, expert en sites WordPress, e-commerce, SEO, et développement full stack.">
+  
+  <!-- SEO Meta Tags -->
+  <title>Imad Chamkhi | Développeur Full Stack - Portfolio 2025</title>
+  <meta name="description" content="Portfolio d'Imad Chamkhi, développeur Full Stack spécialisé en JavaScript, PHP, React. Création de sites web, applications e-commerce et solutions digitales à Strasbourg. Contactez-moi pour vos projets web.">
+  <meta name="keywords" content="Imad Chamkhi, développeur web, full stack, JavaScript, PHP, React, portfolio, sites web, applications, e-commerce, Strasbourg, développeur freelance, WordPress, Shopify">
   <meta name="author" content="Imad Chamkhi">
-  <meta name="keywords" content="Imad Chamkhi, développeur web Strasbourg, création site internet, freelance WordPress, agence web, SEO, e-commerce, Laravel, Symfony, React">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="fr">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Imad Chamkhi | Développeur Full Stack - Portfolio 2025">
+  <meta property="og:description" content="Développeur Full Stack passionné par la création de solutions digitales innovantes. Spécialisé en JavaScript, PHP, React. Découvrez mes projets et réalisations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imad-chamo.github.io/My-portfolio/">
+  <meta property="og:image" content="https://imad-chamo.github.io/My-portfolio/assets/profile%20picture.png">
+  <meta property="og:site_name" content="Portfolio Imad Chamkhi">
+  <meta property="og:locale" content="fr_FR">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Imad Chamkhi | Développeur Full Stack">
+  <meta name="twitter:description" content="Développeur Full Stack spécialisé en JavaScript, PHP, React. Création de sites web et applications innovantes.">
+  <meta name="twitter:image" content="https://imad-chamo.github.io/My-portfolio/assets/profile%20picture.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://imad-chamo.github.io/My-portfolio/">
+  
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="Style/Home.css">
-  <title>Imad Chamkhi | Portfolio & Agence Web</title>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Imad Chamkhi",
+    "jobTitle": "Développeur Full Stack",
+    "description": "Développeur Full Stack spécialisé en JavaScript, PHP, React et création de solutions digitales innovantes",
+    "url": "https://imad-chamo.github.io/My-portfolio/",
+    "image": "https://imad-chamo.github.io/My-portfolio/assets/profile%20picture.png",
+    "sameAs": [
+      "https://linkedin.com/in/imad-chamkhi",
+      "https://github.com/imad-chamo"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Strasbourg",
+      "addressCountry": "France"
+    },
+    "email": "imad.chamkhi@gmail.com",
+    "knowsAbout": [
+      "JavaScript",
+      "PHP",
+      "React.js",
+      "HTML5",
+      "CSS3",
+      "WordPress",
+      "Shopify",
+      "MySQL",
+      "PostgreSQL",
+      "Symfony",
+      "Laravel"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <nav class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
     <div class="content">
       <div class="logo">
-        <a href="#">Imad's <span style="color: rgb(255, 71, 71);">World</span></a>
+        <a href="#home">Imad's <span style="color: var(--primary-color);">World</span></a>
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#experience">Compétences</a></li>
-        <li><a href="#projects">Expériences</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="#about" data-translate="nav.about">À propos</a></li>
+        <li><a href="#experience" data-translate="nav.skills">Compétences</a></li>
+        <li><a href="#projects" data-translate="nav.projects">Projets</a></li>
+        <li><a href="Contact.html" data-translate="nav.contact">Contact</a></li>
+        <li class="language-selector">
+          <div class="language-dropdown">
+            <button class="lang-btn" id="currentLang">
+              <i class="fas fa-globe"></i>
+              <span>FR</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="lang-options" id="langOptions">
+              <div class="lang-option" data-lang="fr">
+                <img src="https://flagcdn.com/w20/fr.png" alt="Français">
+                <span>Français</span>
+              </div>
+              <div class="lang-option" data-lang="en">
+                <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                <span>English</span>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
@@ -34,400 +125,545 @@
     </div>
   </nav>
 
-  <div class="banner">
-    <section id="profile">
-      <div class="section__text">
-        <p class="section__text__p1">Hello, Je suis</p>
-        <h1 class="title">Imad CHAMKHI</h1>
-        <p class="section__text__p2">Développeur informatique</p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./assets/cv-3.pdf')">
-            Telecharger CV
-          </button>
-          <button class="btn btn-color-1"><a href="Contact.html">Contacter moi </a></p></button>
-          </button>
-        </div>
-      </div>
-    </section>
-  </div>
-  
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">À propos de moi</h1>
-    <div class="section-container">
+  <!-- Hero Section -->
+  <section class="banner" id="home">
+    <div id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile picture.png" alt="Profile picture" class="about-pic" />
+        <img src="assets/profile picture.png" alt="Imad Chamkhi - Développeur Full Stack spécialisé en JavaScript, PHP et React" />
       </div>
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <h2>Experience</h2><br />
-            <p><strong> SILVER PLAQUE  –  Télétravail (Toulouse, France)</strong><br />
-              <strong> Fonction: </strong>Stagiaire chargé de projet digital, développement
-              et intégration de sites web, optimisation SEO.
-              <br /><strong>Période: Mars 2025 à avril 2025</strong>
-            </p>
-            <br />
-            <br />
-
-            <p><strong>SCIENDI ( cabinet de conseil ) STRASBOURG</strong><br />
-              <strong> Fonction: </strong>Stagiaire en développement web, maîtrisant la
-              création d'un serveur web et la configuration de WordPress
-              avec WooCommerce.
-              <br /><strong>Période: 22 janvier 28 février 2024</strong>
-            </p>
-            <br />
-            <br />
-
-            <p><strong>AGENCE DE PUBLICITÉ TROISETPLUS</strong>
-              <strong> Fonction: </strong>Stagiaire en développement web,
-              maîtrisant WordPress, Shopify et les langages
-              HTML/CSS/PHP/JavaScript. Compétences en
-              webdesign et maintenance de sites.
-              <br /><strong>Période: 1er juin à 11 juillet 2023</strong>
-            </p>
-            <br />
-            <br />
-
-            <p><strong>WELINK (Cabinet De Conseil IT) ,Rabat, Maroc.</strong><br />
-              <strong> Fonction: </strong>Stagiaire en développement back-end,
-              responsable de l’intégration de fonctionnalités serveur.
-              <br /><strong>Période:  1er juin - 30 août 2022</strong>
-            </p>
-
-          </div>
-          <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h2>Education</h2><br />
-
-            <strong> 2024-2025 </strong>: Bachelor Concepteur solutions digitales
-            à IRIS Mediaschool.<strong> à Strasbourg, France</strong><br /><br />
-
-            <strong> 2022-2024 </strong>: BTS Services informatiques aux
-            organisations à IRIS compus medischool.<strong> à Strasbourg, France</strong><br /><br />
-
-            <strong> 2021-2022 </strong>: une année en DTS ( diplôme technicien spécialise )
-            en développement digitale a l'institut du nouvelles
-            technologies de l'information et de la communication <strong> à Rabat, Maroc </strong><br /><br />
-
-            <strong>2019-2020</strong> Lycée Qualifiant Sbihi, Baccalauréat Science
-            physique chimie.<strong> à Rabat, Maroc </strong>
-
-          </div>
+      <div class="section__text">
+        <p class="section__text__p1" data-translate="hero.greeting">Bonjour, je suis</p>
+        <h1 class="title">Imad CHAMKHI</h1>
+        <p class="section__text__p2" data-translate="hero.role">Développeur Informatique</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./assets/cv-3.pdf')" aria-label="Télécharger le CV d'Imad Chamkhi en PDF">
+            <i class="fas fa-download" aria-hidden="true"></i> <span data-translate="hero.downloadCV">Télécharger CV</span>
+          </button>
+          <a href="Contact.html" class="btn btn-color-1" aria-label="Contacter Imad Chamkhi pour vos projets web">
+            <i class="fas fa-envelope" aria-hidden="true"></i> <span data-translate="hero.contact">Me contacter</span>
+          </a>
         </div>
       </div>
     </div>
-    <img src="assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
   </section>
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Compétences</h1>
-    <div class="experience-details-container">
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="content">
+      <h1 class="title" data-translate="about.title">À propos de moi</h1>
       <div class="about-containers">
         <div class="details-container">
-          <h2 class="experience-sub-title">Compétences en informatique</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Langages </h3>
-                <p>HTML5, CSS3, PHP (Symfony, Laravel),
-                  JavaScript (React.js), Java, C#, Python</p>
+          <i class="fas fa-briefcase" style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h3 data-translate="about.experience.title">Expérience Professionnelle</h3>
+          <p><strong>SILVER PLAQUE – Toulouse</strong><br />
+            Chargé de projet digital, développement et intégration de sites web, optimisation SEO.
+            <br /><em>Mars - Avril 2025</em></p>
+          
+          <p><strong>SCIENDI – Strasbourg</strong><br />
+            Développement web, création de serveur et configuration WordPress avec WooCommerce.
+            <br /><em>Janvier - Février 2024</em></p>
+          
+          <p><strong>AGENCE TROISETPLUS</strong><br />
+            Développement web avec WordPress, Shopify. Webdesign et maintenance de sites.
+            <br /><em>Juin - Juillet 2023</em></p>
+          
+          <p><strong>WELINK – Rabat, Maroc</strong><br />
+            Développement back-end et intégration de fonctionnalités serveur.
+            <br /><em>Juin - Août 2022</em></p>
+        </div>
+        
+        <div class="details-container">
+          <i class="fas fa-graduation-cap" style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h3 data-translate="about.education.title">Formation</h3>
+          <p><strong>2024-2025</strong><br />
+            Bachelor Concepteur solutions digitales<br />
+            <em>IRIS Mediaschool, Strasbourg</em></p>
+          
+          <p><strong>2022-2024</strong><br />
+            BTS Services informatiques aux organisations<br />
+            <em>IRIS Mediaschool, Strasbourg</em></p>
+          
+          <p><strong>2021-2022</strong><br />
+            DTS Développement digital<br />
+            <em>INTIC, Rabat</em></p>
+          
+          <p><strong>2019-2020</strong><br />
+            Baccalauréat Sciences physique-chimie<br />
+            <em>Lycée Sbihi, Rabat</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience/Skills Section -->
+  <section class="experience" id="experience">
+    <div class="content">
+      <h1 class="title" data-translate="skills.title">Mes Compétences</h1>
+      <div class="skills-grid">
+        <!-- Technologies Section -->
+        <div class="skills-category technologies">
+          <div class="category-header">
+            <i class="fas fa-code"></i>
+            <h2 data-translate="skills.technologies">Technologies</h2>
+          </div>
+          <div class="skills-content">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fab fa-html5"></i>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
+              <div class="skill-info">
+                <h3>Frontend</h3>
+                <p>HTML5, CSS3, JavaScript, React.js</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="skill-info">
+                <h3>Backend</h3>
+                <p>PHP, Symfony, Laravel, Python</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="skill-info">
                 <h3>Base de données</h3>
-                <p>MySQL, PostgreSQL, MongoDB,
-                  MariaDB</p>
+                <p>MySQL, PostgreSQL, MongoDB</p>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Création de sites web vitrine</h3>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fab fa-wordpress"></i>
+              </div>
+              <div class="skill-info">
+                <h3>CMS & E-commerce</h3>
                 <p>WordPress, WooCommerce, Shopify</p>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Outils Dev </h3>
-                <p>Git, GitHub, Figma, Canva, Power BI</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fab fa-git-alt"></i>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Systèmes</h3>
-                <p> Windows 11, Ubuntu, Debian</p>
+              <div class="skill-info">
+                <h3>Outils Dev</h3>
+                <p>Git, GitHub, Figma, Power BI</p>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Méthodes </h3>
-                <p>Agile / Scrum, gestion de projet</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-search"></i>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Cloud & Sécurité </h3>
-                <p>AWS (notions), cybersécurité,
-                  virtualisation, IoT</p>
+              <div class="skill-info">
+                <h3>SEO & Marketing</h3>
+                <p>Optimisation technique, on-page, off-page</p>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>SEO </h3>
-                <p>Optimisation on-page, off-page, technique/p>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Compétence générale</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Capacité à suivre des instructions et à
-                  obtenir des résultats de qualité.</h3>
+        
+        <!-- Soft Skills Section -->
+        <div class="skills-category soft-skills">
+          <div class="category-header">
+            <i class="fas fa-user-friends"></i>
+            <h2 data-translate="skills.general">Compétences Générales</h2>
+          </div>
+          <div class="skills-content">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-users"></i>
               </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Travail d'équipe, polyvalence et attention
-                  particulière aux détails.</h3>
+              <div class="skill-info">
+                <h3>Travail d'équipe</h3>
+                <p>Collaboration efficace, communication</p>
               </div>
-            </article>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <div class="skill-info">
+                <h3>Gestion de projet</h3>
+                <p>Méthodes Agile, Scrum, organisation</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <div class="skill-info">
+                <h3>Langues</h3>
+                <p>Français (natif), Arabe (natif), Anglais</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="skill-info">
+                <h3>Créativité</h3>
+                <p>Design, innovation, résolution de problèmes</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
   </section>
 
-
-  <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Mes expériences</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/Atelier-h.jpg" alt="Project 1" class="project-img" />
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="content">
+      <h1 class="title" data-translate="projects.title">Mes Projets</h1>
+      <p style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary); font-size: 1.1rem;" data-translate="projects.subtitle">
+        Découvrez une sélection de mes réalisations récentes
+      </p>
+      <div class="projects-container">
+        <article class="color-container">
+          <img src="./assets/project-1.png" alt="AniimalCorner - Plateforme e-commerce pour produits animaliers développée par Imad Chamkhi" class="project-img" />
+          <h2 class="project-title">AniimalCorner</h2>
+          <p>Plateforme e-commerce dédiée aux produits pour animaux avec système de commande intégré.</p>
+          <div class="project-actions">
+            <a href="projects.html#aniimalcorner" class="project-btn" aria-label="Voir les détails du projet AniimalCorner">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Détails
+            </a>
+            <a href="./assets/M3-AniimalCorner.pdf" class="project-btn secondary" target="_blank" aria-label="Télécharger le PDF du projet AniimalCorner">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+            </a>
           </div>
-          <h2 class="experience-sub-title project-title">Atelier H <span style="color: #ff4747;">(stage
-              1)</span></h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://atelierh-alsace.fr/'">
-              Voir le site
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M1-Atelier H.pdf '">
-              Voir la documentation
-            </button>
+        </article>
+        
+        <article class="color-container">
+          <img src="./assets/project-2.png" alt="AllSafe Security - Application de sécurité avec authentification développée par Imad Chamkhi" class="project-img" />
+          <h2 class="project-title">AllSafe Security</h2>
+          <p>Application de sécurité avec système d'authentification et gestion des utilisateurs.</p>
+          <div class="project-actions">
+            <a href="projects.html#allsafe" class="project-btn" aria-label="Voir les détails du projet AllSafe Security">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Détails
+            </a>
+            <a href="./assets/M4-allsafe.pdf" class="project-btn secondary" target="_blank" aria-label="Télécharger le PDF du projet AllSafe">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+            </a>
           </div>
-        </div>
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/MATOU.png" alt="Project 1" class="project-img" />
+        </article>
+        
+        <article class="color-container">
+          <img src="./assets/project-3.png" alt="Matou Creations - Site vitrine créatif avec design moderne développé par Imad Chamkhi" class="project-img" />
+          <h2 class="project-title">Matou Creations</h2>
+          <p>Site vitrine créatif avec design moderne et interface utilisateur optimisée.</p>
+          <div class="project-actions">
+            <a href="projects.html#matou" class="project-btn" aria-label="Voir les détails du projet Matou Creations">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Détails
+            </a>
+            <a href="./assets/M6-Matous Creations.pdf" class="project-btn secondary" target="_blank" aria-label="Télécharger le PDF du projet Matou Creations">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+            </a>
           </div>
-          <h2 class="experience-sub-title project-title">Matou Creations (WordPress) <span style="color: rgb(255, 71, 71);">(stage
-              2)</span></h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M6-Matous Creations.pdf'">
-              Voir la documentation
-            </button>
+        </article>
+        
+        <article class="color-container">
+          <img src="./assets/Atelier-h.jpg" alt="Atelier H - Site web professionnel avec galerie développé par Imad Chamkhi" class="project-img" />
+          <h2 class="project-title">Atelier H</h2>
+          <p>Site web professionnel pour un atelier avec galerie et système de contact.</p>
+          <div class="project-actions">
+            <a href="projects.html#atelier" class="project-btn" aria-label="Voir les détails du projet Atelier H">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Détails
+            </a>
+            <a href="./assets/M1-Atelier H.pdf" class="project-btn secondary" target="_blank" aria-label="Télécharger le PDF du projet Atelier H">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+            </a>
           </div>
-        </div>
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/Aniimalcorner.png" alt="Project 2" class="project-img" />
+        </article>
+        
+        <article class="color-container">
+          <img src="./assets/Formatech.png" alt="Formatech - Plateforme de formation en ligne développée par Imad Chamkhi" class="project-img" />
+          <h2 class="project-title">Formatech</h2>
+          <p>Plateforme de formation en ligne avec gestion des cours et des étudiants.</p>
+          <div class="project-actions">
+            <a href="projects.html#formatech" class="project-btn" aria-label="Voir les détails du projet Formatech">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Détails
+            </a>
+            <a href="./assets/M2-Formatech.pdf" class="project-btn secondary" target="_blank" aria-label="Télécharger le PDF du projet Formatech">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+            </a>
           </div>
-          <h2 class="experience-sub-title project-title">Aniimalcorner (shopify)</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://aniimalcorner.com/'">
-              Voir le site
-            </button>
-            <button class="btn btn-color-2 project-btn" aria-label="Voir la documentation du projet" onclick="location.href='assets/M3-Aniimalcorner.pdf'">
-              Voir la documentation
-            </button>
+        </article>
+        
+        <article class="color-container">
+          <img src="./assets/Experty.png" alt="Experty - Application de mise en relation experts-clients développée par Imad Chamkhi" class="project-img" />
+          <h2 class="project-title">Experty</h2>
+          <p>Application web de mise en relation entre experts et clients avec système de réservation.</p>
+          <div class="project-actions">
+            <a href="projects.html#experty" class="project-btn" aria-label="Voir les détails du projet Experty">
+              <i class="fas fa-info-circle" aria-hidden="true"></i> Détails
+            </a>
+            <a href="./assets/M7-Experty.pdf" class="project-btn secondary" target="_blank" aria-label="Télécharger le PDF du projet Experty">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+            </a>
           </div>
-        </div>
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/Formatech.png" alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Formatech</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://imadchamkhi.alwaysdata.net/formatech/index.html'">
-              Voir le site
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M2-Formatech.pdf'">
-              Voir la documentation
-            </button>
-          </div>
-        </div>
-
+        </article>
+      </div>
+      
+      <!-- View All Projects Button -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="projects.html" class="btn btn-color-1" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; font-size: 1.1rem;">
+          <i class="fas fa-rocket"></i> <span data-translate="projects.viewAll">Voir tous mes projets</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="projects_2">
-    <div class="experience-details-container">
-      <div class="about-containers">
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/Allsafe.png" alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title"> Projet Cybersécurité Allsafe </h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M4-allsafe.pdf'">
-              Voir la documentation
-            </button>
-          </div>
-        </div>
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/Brico-brac.png" alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title"> Brico-Brac </h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M5-Brico.pdf'">
-              Voir la documentation
-            </button>
-          </div>
-        </div>
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/Experty.png" alt="Project 2" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title"> EXPERTY </h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M7-Experty.pdf'">
-              Voir la documentation
-            </button>
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/imadsworld.png" alt="Project 2" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title"> Imad'sworld (portfolio) </h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='assets/M8-portfolio.pdf'">
-              Voir la documentation
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
+  <!-- Contact Section -->
   <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:chamkhiimad5@gmail.com">chamkhiimad5@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/imad-chamkhi-57a4a5246/">LinkedIn</a></p>
+    <div class="content">
+      <h1 class="title" data-translate="contact.title">Contactez-moi</h1>
+      <p style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary);" data-translate="contact.subtitle">
+        N'hésitez pas à me contacter pour discuter de vos projets ou opportunités
+      </p>
+      <div class="contact-info-upper-container">
+        <a href="mailto:chamkhiimad5@gmail.com" class="contact-info-container">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p>chamkhiimad5@gmail.com</p>
+        </a>
+        <a href="https://linkedin.com/in/imad-chamkhi" class="contact-info-container" target="_blank">
+          <i class="fab fa-linkedin contact-icon"></i>
+          <p>LinkedIn</p>
+        </a>
+        <a href="https://github.com/imad-chamo" class="contact-info-container" target="_blank">
+          <i class="fab fa-github contact-icon"></i>
+          <p>GitHub</p>
+        </a>
       </div>
     </div>
   </section>
 
-
-
+  <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section contact">
-        <h2>IMAD'S <span style="color: rgb(255, 71, 71);">World</span></h2>
-        <p>Route de la Wantzenau, Strasbourg, France</p>
-        <p><a href="mailto:chamkhiimad5@gmail.com">chamkhiimad5@gmail.com</a></p>
-        <br>
-        <a href="legal.html">Mentions légales</a>
-        <a href="Contact.html">Contact</a>
+    <div class="content">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Imad Chamkhi</h3>
+          <p data-translate="footer.description">Développeur Informatique passionné par la création de solutions digitales innovantes et performantes.</p>
+          <a href="Contact.html" class="button">
+            <i class="fas fa-envelope"></i> <span data-translate="footer.contactMe">Me contacter</span>
+          </a>
+        </div>
+        <div class="footer-section">
+          <h3 data-translate="footer.navigation">Navigation</h3>
+          <p><a href="#about">• <span data-translate="footer.aboutMe">À propos de moi</span></a></p>
+          <p><a href="#experience">• <span data-translate="footer.mySkills">Mes compétences</span></a></p>
+          <p><a href="#projects">• <span data-translate="footer.myProjects">Mes projets</span></a></p>
+          <p><a href="projects.html">• <span data-translate="footer.detailedPortfolio">Portfolio détaillé</span></a></p>
+          <p><a href="Contact.html">• <span data-translate="footer.contactMe">Me contacter</span></a></p>
+        </div>
+        <div class="footer-section">
+          <h3 data-translate="footer.socialNetworks">Réseaux Sociaux</h3>
+          <p><a href="https://linkedin.com/in/imad-chamkhi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+          <p><a href="https://github.com/imad-chamo" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+          <p><a href="mailto:chamkhiimad5@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+          <p><a href="./assets/cv-3.pdf" target="_blank"><i class="fas fa-file-pdf"></i> <span data-translate="footer.downloadCV">Télécharger CV</span></a></p>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2024 | Tous droits réservés
+      <div class="footer-bottom">
+        <p>&copy; 2025 Imad Chamkhi. <span data-translate="footer.rights">Tous droits réservés.</span> | 
+          <a href="legal.html"><span data-translate="footer.legalMentions">Mentions légales</span></a>
+        </p>
+      </div>
     </div>
   </footer>
 
-  <div id="cookie-popup" class="cookie-popup">
-    <p>We use cookies to improve your experience on our website. By browsing this website, you agree to our use of
-      cookies.</p>
-    <button id="accept-cookies-btn">Accept</button>
-    <button id="refuse-cookies-btn">Refuse</button>
+  <!-- JavaScript -->
+  <script src="Style/translations.js"></script>
+  <script src="Style/Home.js"></script>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <div class="cookie-header">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Gestion des Cookies</h3>
+      </div>
+      <p>
+        Ce site utilise des cookies pour améliorer votre expérience de navigation et analyser l'utilisation du site. 
+        En continuant à naviguer, vous acceptez notre utilisation des cookies.
+      </p>
+      <div class="cookie-buttons">
+        <button id="acceptAllCookies" class="cookie-btn primary">
+          <i class="fas fa-check"></i> Accepter tout
+        </button>
+        <button id="acceptNecessary" class="cookie-btn secondary">
+          <i class="fas fa-cog"></i> Nécessaires uniquement
+        </button>
+        <button id="customizeCookies" class="cookie-btn tertiary">
+          <i class="fas fa-sliders-h"></i> Personnaliser
+        </button>
+      </div>
+      <div class="cookie-links">
+        <a href="legal.html" target="_blank">
+          <i class="fas fa-info-circle"></i> Plus d'informations
+        </a>
+      </div>
+    </div>
   </div>
-  <script src="script.js"></script>
 
+  <!-- Cookie Settings Modal -->
+  <div id="cookieModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+        <h3><i class="fas fa-cog"></i> Paramètres des Cookies</h3>
+        <button id="closeCookieModal" class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cookie-modal-body">
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Nécessaires</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="necessaryCookies" checked disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Analytiques</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="analyticsCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies nous aident à comprendre comment vous utilisez le site pour améliorer votre expérience.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies de Performance</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="performanceCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies collectent des informations sur les performances du site.</p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button id="savePreferences" class="cookie-btn primary">
+          <i class="fas fa-save"></i> Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Script -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const body = document.querySelector("body");
-      const navbar = document.querySelector(".navbar");
-      const menuBtn = document.querySelector(".menu-btn");
-      const cancelBtn = document.querySelector(".cancel-btn");
-
-      menuBtn.onclick = () => {
-        navbar.classList.add("show");
-        menuBtn.classList.add("hide");
-        body.classList.add("disabled");
-      };
-
-      cancelBtn.onclick = () => {
-        body.classList.remove("disabled");
-        navbar.classList.remove("show");
-        menuBtn.classList.remove("hide");
-      };
-
-      window.onscroll = () => {
-        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
-      };
-
-      const cookiePopup = document.getElementById('cookie-popup');
-      const acceptCookiesBtn = document.getElementById('accept-cookies-btn');
-      const refuseCookiesBtn = document.getElementById('refuse-cookies-btn');
-
-      acceptCookiesBtn.addEventListener('click', function () {
-        cookiePopup.style.display = 'none';
-        document.cookie = "cookies_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-      });
-
-      refuseCookiesBtn.addEventListener('click', function () {
-        cookiePopup.style.display = 'none';
-      });
-
-      if (!getCookie('cookies_accepted')) {
-        cookiePopup.style.display = 'block';
+    // Cookie Consent Management
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieConsent = document.getElementById('cookieConsent');
+      const cookieModal = document.getElementById('cookieModal');
+      const acceptAllBtn = document.getElementById('acceptAllCookies');
+      const acceptNecessaryBtn = document.getElementById('acceptNecessary');
+      const customizeBtn = document.getElementById('customizeCookies');
+      const closeCookieModalBtn = document.getElementById('closeCookieModal');
+      const savePreferencesBtn = document.getElementById('savePreferences');
+      
+      // Check if user has already made a choice
+      const cookiePreference = localStorage.getItem('cookieConsent');
+      if (!cookiePreference) {
+        // Show cookie consent after a small delay
+        setTimeout(() => {
+          cookieConsent.style.display = 'block';
+          setTimeout(() => {
+            cookieConsent.classList.add('show');
+          }, 100);
+        }, 1000);
       }
-
-      function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
+      
+      // Accept all cookies
+      acceptAllBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: true,
+          performance: true
+        });
+        hideCookieConsent();
+      });
+      
+      // Accept only necessary cookies
+      acceptNecessaryBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: false,
+          performance: false
+        });
+        hideCookieConsent();
+      });
+      
+      // Show customization modal
+      customizeBtn.addEventListener('click', function() {
+        cookieModal.style.display = 'flex';
+        setTimeout(() => {
+          cookieModal.classList.add('show');
+        }, 100);
+      });
+      
+      // Close modal
+      closeCookieModalBtn.addEventListener('click', function() {
+        closeCookieModal();
+      });
+      
+      // Close modal when clicking outside
+      cookieModal.addEventListener('click', function(e) {
+        if (e.target === cookieModal) {
+          closeCookieModal();
+        }
+      });
+      
+      // Save custom preferences
+      savePreferencesBtn.addEventListener('click', function() {
+        const preferences = {
+          necessary: true, // Always true
+          analytics: document.getElementById('analyticsCookies').checked,
+          performance: document.getElementById('performanceCookies').checked
+        };
+        setCookiePreferences(preferences);
+        closeCookieModal();
+        hideCookieConsent();
+      });
+      
+      function setCookiePreferences(preferences) {
+        localStorage.setItem('cookieConsent', JSON.stringify(preferences));
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        
+        // Here you would typically initialize analytics/tracking scripts based on preferences
+        if (preferences.analytics) {
+          // Initialize Google Analytics or other analytics
+          console.log('Analytics cookies accepted');
+        }
+        if (preferences.performance) {
+          // Initialize performance monitoring
+          console.log('Performance cookies accepted');
+        }
+      }
+      
+      function hideCookieConsent() {
+        cookieConsent.classList.remove('show');
+        setTimeout(() => {
+          cookieConsent.style.display = 'none';
+        }, 300);
+      }
+      
+      function closeCookieModal() {
+        cookieModal.classList.remove('show');
+        setTimeout(() => {
+          cookieModal.style.display = 'none';
+        }, 300);
       }
     });
   </script>
-
 </body>
-
 </html>

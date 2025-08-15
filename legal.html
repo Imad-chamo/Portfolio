@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="description" content="Mentions légales du portfolio d'Imad Chamkhi - Développeur Informatique">
+  <meta name="author" content="Imad Chamkhi">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/icon.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Style/Home.css">
   <link rel="stylesheet" href="Style/Legal.css">
-
-  <title>Politique de Confidentialité</title>
+  
+  <title>Mentions Légales | Imad Chamkhi</title>
 </head>
 
 <body>
-  <nav class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
     <div class="content">
       <div class="logo">
-        <a href="#">Imad's <span style="color: rgb(255, 71, 71);">World</span></a>
+        <a href="index.html">Imad's <span style="color: var(--primary-color);">World</span></a>
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="index.html">A propos</a></li>
-        <li><a href="index.html">Tableau de compétences</a></li>
-        <li><a href="index.html">Mes Missions E4</a></li>
-        <li><a href="VT.html">Veille Technologique</a></li>
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="index.html#experience">Compétences</a></li>
+        <li><a href="index.html#projects">Projets</a></li>
         <li><a href="Contact.html">Contact</a></li>
       </ul>
       <div class="icon menu-btn">
@@ -31,82 +38,150 @@
       </div>
     </div>
   </nav>
-  <div class="banner">
-    <section id="profile">
-      <div class="section__text">
-        <p class="section__text__p1">Bienvenue dans nos </p>
-        <h1 class="title">Politique de Confidentialité</h1>
-      </div>
-    </section>
-  </div>
 
-  <section id="about">
-    <div class="about__container">
-      <div class="about__text">
-        <h1 class="title">Votre confidentialité est importante pour nous</h1>
-        <p>Cette politique de confidentialité décrit comment vos informations personnelles sont collectées, utilisées et
-          partagées lorsque vous visitez ou faites une commande sur mon portfolio en ligne.</p>
-        <br>
-        <h1 class="title">Informations personnelles collectées</h1>
-        <p>Lorsque vous visitez le portfolio, je peux collecter automatiquement certaines informations vous concernant,
-          comme votre adresse IP, le type de navigateur et de périphérique que vous utilisez, les pages que vous
-          consultez, l'heure et la date de votre visite.
+  <!-- Legal Content -->
+  <main class="legal-page">
+    <div class="content">
+      <!-- Header Section -->
+      <section class="legal-header">
+        <div class="back-button">
+          <a href="index.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+          </a>
+        </div>
+        <h1 class="page-title">Mentions Légales</h1>
+        <p class="page-subtitle">Informations légales concernant ce site web</p>
+      </section>
 
-          Je peux également collecter toute autre information que vous me fournissez volontairement, comme lorsque vous
-          remplissez un formulaire de contact ou m'envoyez un message. Cette information peut inclure votre nom, votre
-          adresse e-mail, votre numéro de téléphone, etc.
-        </p>
-        <br>
-        <h1 class="title">Utilisation des informations</h1>
-        <p>Les informations collectées me permettent de :<br>
-          - Gérer et améliorer mon portfolio<br>
-          - Communiquer avec vous <br>
-          - Vous envoyer des candidatures au futur si vous y avez consenti<br>
-          - Protéger mon portfolio et vous protéger contre la fraude
-        </p>
-        <br>
-        <h1 class="title">Partage des informations</h1>
-        <p>Je ne partage vos informations personnelles avec aucun tiers,
-          sauf si cela est nécessaire pour exploiter mon portfolio, me conformer à la loi ou protéger mes droits.
-        </p>
-        <br>
-        <h1 class="title">Vos droits</h1>
-        <p>Vous avez le droit d'accéder, de rectifier, de limiter, de supprimer ou de vous opposer au traitement de vos
-          données personnelles. Pour exercer ces droits, contactez-moi à l'adresse e-mail fournie sur mon portfolio.</p>
+      <!-- Legal Sections -->
+      <div class="legal-content">
+        <section class="legal-section">
+          <h2><i class="fas fa-user"></i> Éditeur du site</h2>
+          <div class="legal-info">
+            <p><strong>Nom :</strong> Imad CHAMKHI</p>
+            <p><strong>Statut :</strong> Développeur Informatique</p>
+            <p><strong>Email :</strong> <a href="mailto:imad.chamkhi@gmail.com">imad.chamkhi@gmail.com</a></p>
+            <p><strong>Localisation :</strong> Strasbourg, France</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-globe"></i> Hébergement</h2>
+          <div class="legal-info">
+            <p><strong>Hébergeur :</strong> GitHub Pages</p>
+            <p><strong>Société :</strong> GitHub, Inc.</p>
+            <p><strong>Adresse :</strong> 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</p>
+            <p><strong>Site web :</strong> <a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a></p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-shield-alt"></i> Propriété intellectuelle</h2>
+          <div class="legal-info">
+            <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+            <p>La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du propriétaire.</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-user-shield"></i> Protection des données personnelles</h2>
+          <div class="legal-info">
+            <p>Ce site ne collecte aucune donnée personnelle sans votre consentement explicite. Les seules données collectées sont celles que vous fournissez volontairement via le formulaire de contact.</p>
+            <p>Conformément à la loi "Informatique et Libertés" du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+            <p>Pour exercer ces droits, contactez-moi à l'adresse : <a href="mailto:imad.chamkhi@gmail.com">imad.chamkhi@gmail.com</a></p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-cookie-bite"></i> Cookies</h2>
+          <div class="legal-info">
+            <p>Ce site n'utilise pas de cookies de tracking ou de publicité. Seuls des cookies techniques nécessaires au bon fonctionnement du site peuvent être utilisés.</p>
+            <p>Ces cookies ne collectent aucune information personnelle et ne sont pas partagés avec des tiers.</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-exclamation-triangle"></i> Responsabilité</h2>
+          <div class="legal-info">
+            <p>Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes.</p>
+            <p>Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email à l'adresse <a href="mailto:imad.chamkhi@gmail.com">imad.chamkhi@gmail.com</a> en décrivant le problème de la manière la plus précise possible.</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-link"></i> Liens hypertextes</h2>
+          <div class="legal-info">
+            <p>Ce site peut contenir des liens vers d'autres sites web. Je ne peux être tenu responsable du contenu de ces sites externes.</p>
+            <p>Les liens vers ce site sont autorisés, sous réserve de respecter l'intégrité des contenus et de mentionner clairement l'origine.</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-balance-scale"></i> Droit applicable</h2>
+          <div class="legal-info">
+            <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents.</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2><i class="fas fa-calendar-alt"></i> Mise à jour</h2>
+          <div class="legal-info">
+            <p><strong>Dernière mise à jour :</strong> 15 août 2025</p>
+            <p>Ces mentions légales peuvent être modifiées à tout moment. La version en vigueur est celle présente sur le site.</p>
+          </div>
+        </section>
       </div>
-      <br>
-      <h1 class="title">Sécurité</h1>
-      <p>Je mets en place des mesures de sécurité techniques et organisationnelles pour protéger vos données contre la
-        perte, l'utilisation abusive, l'accès non autorisé, la divulgation, la modification ou la destruction.</p>
-      <br>
-      <h1 class="title">Modifications de la politique</h1>
-      <p>Je me réserve le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera
-        publiée sur cette page.</p>
-      <br>
-      <h1 class="title">Contact</h1>
-      <p>Pour toute question ou préoccupation concernant cette politique de confidentialité, n'hésitez pas à me
-        contacter à travers le formlaire de contact ou par l'adresse e-mail fournie sur mon portfolio.</p>
-      <br>
+
+      <!-- Contact Section -->
+      <section class="legal-contact">
+        <div class="contact-card">
+          <h3><i class="fas fa-envelope"></i> Une question ?</h3>
+          <p>Pour toute question concernant ces mentions légales ou ce site web, n'hésitez pas à me contacter.</p>
+          <a href="Contact.html" class="btn btn-color-1">
+            <i class="fas fa-paper-plane"></i> Me contacter
+          </a>
+        </div>
+      </section>
     </div>
+  </main>
 
-    <footer>
+  <!-- Footer -->
+  <footer>
+    <div class="content">
       <div class="footer-content">
-        <div class="footer-section contact">
-          <h2>Contact</h2>
-          <p>Route de la wantzenau, Strabourg,France</p>
-          <p><a href="mailto:chamkhiimad5@gmail.com">chamkhiimad5@gmail.com</a></p>
-          <button class="button"><a href="Contact.html">Contact</a></button>
+        <div class="footer-section">
+          <h3>Imad Chamkhi</h3>
+          <p>Développeur Informatique passionné par la création de solutions digitales innovantes et performantes.</p>
+          <a href="Contact.html" class="button">
+            <i class="fas fa-envelope"></i> Me contacter
+          </a>
+        </div>
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <p><a href="index.html#about">• À propos de moi</a></p>
+          <p><a href="index.html#experience">• Mes compétences</a></p>
+          <p><a href="index.html#projects">• Mes projets</a></p>
+          <p><a href="projects.html">• Portfolio détaillé</a></p>
+          <p><a href="Contact.html">• Me contacter</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Réseaux Sociaux</h3>
+          <p><a href="https://linkedin.com/in/imad-chamkhi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+          <p><a href="https://github.com/imad-chamo" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+          <p><a href="mailto:imad.chamkhi@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+          <p><a href="./assets/cv-3.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger CV</a></p>
         </div>
       </div>
       <div class="footer-bottom">
+        <p>&copy; 2025 Imad Chamkhi. Tous droits réservés. | 
+          <a href="legal.html">Mentions légales</a>
+        </p>
       </div>
-    </footer>
-  </section>
-  
+    </div>
+  </footer>
 
-  <script src="js.js"></script>
-
-
+  <!-- JavaScript -->
+  <script src="Style/Home.js"></script>
   <script>
     const body = document.querySelector("body");
     const navbar = document.querySelector(".navbar");
@@ -125,6 +200,194 @@
     window.onscroll = () => {
       this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
+  </script>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+      <div class="cookie-header">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Gestion des Cookies</h3>
+      </div>
+      <p>
+        Ce site utilise des cookies pour améliorer votre expérience de navigation et analyser l'utilisation du site. 
+        En continuant à naviguer, vous acceptez notre utilisation des cookies.
+      </p>
+      <div class="cookie-buttons">
+        <button id="acceptAllCookies" class="cookie-btn primary">
+          <i class="fas fa-check"></i> Accepter tout
+        </button>
+        <button id="acceptNecessary" class="cookie-btn secondary">
+          <i class="fas fa-cog"></i> Nécessaires uniquement
+        </button>
+        <button id="customizeCookies" class="cookie-btn tertiary">
+          <i class="fas fa-sliders-h"></i> Personnaliser
+        </button>
+      </div>
+      <div class="cookie-links">
+        <a href="legal.html" target="_blank">
+          <i class="fas fa-info-circle"></i> Plus d'informations
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Settings Modal -->
+  <div id="cookieModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+        <h3><i class="fas fa-cog"></i> Paramètres des Cookies</h3>
+        <button id="closeCookieModal" class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cookie-modal-body">
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Nécessaires</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="necessaryCookies" checked disabled>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies Analytiques</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="analyticsCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies nous aident à comprendre comment vous utilisez le site pour améliorer votre expérience.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <h4>Cookies de Performance</h4>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="performanceCookies">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <p>Ces cookies collectent des informations sur les performances du site.</p>
+        </div>
+      </div>
+      <div class="cookie-modal-footer">
+        <button id="savePreferences" class="cookie-btn primary">
+          <i class="fas fa-save"></i> Sauvegarder les préférences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Script -->
+  <script>
+    // Cookie Consent Management
+    document.addEventListener('DOMContentLoaded', function() {
+      const cookieConsent = document.getElementById('cookieConsent');
+      const cookieModal = document.getElementById('cookieModal');
+      const acceptAllBtn = document.getElementById('acceptAllCookies');
+      const acceptNecessaryBtn = document.getElementById('acceptNecessary');
+      const customizeBtn = document.getElementById('customizeCookies');
+      const closeCookieModalBtn = document.getElementById('closeCookieModal');
+      const savePreferencesBtn = document.getElementById('savePreferences');
+      
+      // Check if user has already made a choice
+      const cookiePreference = localStorage.getItem('cookieConsent');
+      if (!cookiePreference) {
+        // Show cookie consent after a small delay
+        setTimeout(() => {
+          cookieConsent.style.display = 'block';
+          setTimeout(() => {
+            cookieConsent.classList.add('show');
+          }, 100);
+        }, 1000);
+      }
+      
+      // Accept all cookies
+      acceptAllBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: true,
+          performance: true
+        });
+        hideCookieConsent();
+      });
+      
+      // Accept only necessary cookies
+      acceptNecessaryBtn.addEventListener('click', function() {
+        setCookiePreferences({
+          necessary: true,
+          analytics: false,
+          performance: false
+        });
+        hideCookieConsent();
+      });
+      
+      // Show customization modal
+      customizeBtn.addEventListener('click', function() {
+        cookieModal.style.display = 'flex';
+        setTimeout(() => {
+          cookieModal.classList.add('show');
+        }, 100);
+      });
+      
+      // Close modal
+      closeCookieModalBtn.addEventListener('click', function() {
+        closeCookieModal();
+      });
+      
+      // Close modal when clicking outside
+      cookieModal.addEventListener('click', function(e) {
+        if (e.target === cookieModal) {
+          closeCookieModal();
+        }
+      });
+      
+      // Save custom preferences
+      savePreferencesBtn.addEventListener('click', function() {
+        const preferences = {
+          necessary: true, // Always true
+          analytics: document.getElementById('analyticsCookies').checked,
+          performance: document.getElementById('performanceCookies').checked
+        };
+        setCookiePreferences(preferences);
+        closeCookieModal();
+        hideCookieConsent();
+      });
+      
+      function setCookiePreferences(preferences) {
+        localStorage.setItem('cookieConsent', JSON.stringify(preferences));
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        
+        // Here you would typically initialize analytics/tracking scripts based on preferences
+        if (preferences.analytics) {
+          // Initialize Google Analytics or other analytics
+          console.log('Analytics cookies accepted');
+        }
+        if (preferences.performance) {
+          // Initialize performance monitoring
+          console.log('Performance cookies accepted');
+        }
+      }
+      
+      function hideCookieConsent() {
+        cookieConsent.classList.remove('show');
+        setTimeout(() => {
+          cookieConsent.style.display = 'none';
+        }, 300);
+      }
+      
+      function closeCookieModal() {
+        cookieModal.classList.remove('show');
+        setTimeout(() => {
+          cookieModal.style.display = 'none';
+        }, 300);
+      }
+    });
   </script>
 </body>
 
