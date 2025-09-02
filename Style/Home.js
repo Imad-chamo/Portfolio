@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #dc2626, #f8fafc);
     display: flex;
     justify-content: center;
     align-items: center;

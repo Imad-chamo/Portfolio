@@ -119,7 +119,7 @@ function initializeCardHoverEffects() {
         // Mouse leave effect
         card.addEventListener('mouseleave', function() {
             // Only reset if not expanded
-            const showMoreBtn = this.querySelector('.show-more-btn');
+                const showMoreBtn = this.querySelector('.btn-secondary');
             if (!showMoreBtn.classList.contains('expanded')) {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.08)';
@@ -347,7 +347,7 @@ function initializeTouchGestures() {
                 
                 // Swipe up to expand, swipe down to collapse
                 const swipeDistance = touchStartY - touchEndY;
-                const showMoreBtn = this.querySelector('.show-more-btn');
+                    const showMoreBtn = this.querySelector('.btn-secondary');
                 
                 if (Math.abs(swipeDistance) > 50) {
                     if (swipeDistance > 0 && !showMoreBtn.classList.contains('expanded')) {

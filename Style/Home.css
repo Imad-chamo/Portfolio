@@ -48,7 +48,7 @@ body {
 }
 
 ::selection {
-  background: rgba(220, 38, 38, 0.2);
+  background: var(--primary-light);
   color: var(--text-primary);
 }
 
@@ -561,7 +561,7 @@ body {
 
 .soft-skills .category-header i {
   background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
+  color: #000000;
 }
 
 .soft-skills .skill-icon {
@@ -569,15 +569,15 @@ body {
 }
 
 .soft-skills .skill-icon i {
-  color: #3b82f6;
+  color: #000000;
 }
 
 .soft-skills .skill-card::before {
-  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+  background: linear-gradient(45deg, #000000, #000000);
 }
 
 .soft-skills .skill-card:hover {
-  border-color: #3b82f6;
+  border-color: #000000;
 }
 
 /* Responsive Design */

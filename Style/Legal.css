@@ -48,7 +48,7 @@ body {
 }
 
 ::selection {
-  background: rgba(220, 38, 38, 0.2);
+  background: var(--primary-light);
   color: var(--text-primary);
 }
 
