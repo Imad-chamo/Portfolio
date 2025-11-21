@@ -422,7 +422,10 @@ function optimizePerformance() {
 // Error handling
 function initializeErrorHandling() {
     window.addEventListener('error', function(e) {
-        console.error('Projects page error:', e.error);
+        // Log errors only in development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          console.error('Projects page error:', e.error);
+        }
         
         // Show user-friendly error message if needed
         const errorMessage = document.createElement('div');
@@ -470,5 +473,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Error handling
     initializeErrorHandling();
     
-    console.log('Projects page initialized successfully');
+    // Projects page initialized (logged only in development)
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      console.log('Projects page initialized successfully');
+    }
 });

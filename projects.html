@@ -23,16 +23,16 @@
   <nav class="navbar" id="navbar">
     <div class="content">
       <div class="logo">
-        <a href="index.html">Imad's <span style="color: var(--primary-color);">World</span></a>
+        <a href="index.html">Imad's World</a>
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="index.html#about">À propos</a></li>
-        <li><a href="index.html#experience">Compétences</a></li>
-        <li><a href="index.html#projects">Projets</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">Moi</a></li>
+        <li><a href="index.html#services">Mes services</a></li>
+        <li><a href="index.html#projects">Mes projets</a></li>
+        <li><a href="Contact.html">Me contacter</a></li>
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
@@ -515,17 +515,18 @@
         </div>
         <div class="footer-section">
           <h3>Navigation</h3>
-          <p><a href="index.html#about">• À propos de moi</a></p>
-          <p><a href="index.html#experience">• Mes compétences</a></p>
+          <p><a href="about.html">• Moi</a></p>
+          <p><a href="about.html#experience">• Mes compétences</a></p>
+          <p><a href="index.html#services">• Mes services</a></p>
           <p><a href="index.html#projects">• Mes projets</a></p>
           <p><a href="projects.html">• Portfolio détaillé</a></p>
           <p><a href="Contact.html">• Me contacter</a></p>
         </div>
         <div class="footer-section">
           <h3>Réseaux Sociaux</h3>
-          <p><a href="https://linkedin.com/in/imad-chamkhi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+          <p><a href="https://www.linkedin.com/in/imad-chamkhi-57a4a5246/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
           <p><a href="https://github.com/imad-chamo" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
-          <p><a href="mailto:imad.chamkhi@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
+          <p><a href="mailto:imadbussines@gmail.com"><i class="fas fa-envelope"></i> Email</a></p>
           <p><a href="./assets/cv-3.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger CV</a></p>
         </div>
       </div>
@@ -705,11 +706,17 @@
         // Here you would typically initialize analytics/tracking scripts based on preferences
         if (preferences.analytics) {
           // Initialize Google Analytics or other analytics
-          console.log('Analytics cookies accepted');
+          // Analytics cookies accepted (logged only in development)
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('Analytics cookies accepted');
+          }
         }
         if (preferences.performance) {
           // Initialize performance monitoring
-          console.log('Performance cookies accepted');
+          // Performance cookies accepted (logged only in development)
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('Performance cookies accepted');
+          }
         }
       }
       

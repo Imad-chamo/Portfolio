@@ -7,13 +7,22 @@ Sitemap: https://www.imadchamkhi.com/sitemap.xml
 # Disallow unnecessary files
 Disallow: /*.pdf$
 Disallow: /assets/*.pdf$
+# Allow CV download
+Allow: /assets/cv-3.pdf
 Disallow: /Style/
 
 # Allow important CSS and JS files for rendering
 Allow: /Style/Home.css
+Allow: /Style/Contact.css
+Allow: /Style/Projects.css
+Allow: /Style/Legal.css
 Allow: /Style/translations.js
 Allow: /Style/Home.js
 Allow: /Style/Projects.js
+
+# Disallow PHP files (no longer used, site is now 100% static)
+Disallow: /*.php$
+Disallow: /contact_log.txt
 
 # Crawl delay (optional)
 Crawl-delay: 1

@@ -1,55 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #dc2626;
-  --primary-light: #ef4444;
-  --secondary-color: #f8fafc;
-  --accent-color: #000000;
   --text-primary: #000000;
-  --text-secondary: #374151;
-  --text-light: #6b7280;
+  --text-secondary: #4a4a4a;
+  --text-light: #8a8a8a;
   --background: #ffffff;
-  --surface: #f8fafc;
-  --border: #e5e7eb;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: var(--text-primary);
-  background: var(--background);
-  overflow-x: hidden;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--surface);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
-}
-
-::selection {
-  background: var(--primary-light);
-  color: var(--text-primary);
+  --surface: #f5f5f5;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.1);
 }
 
 /* Legal Page Layout */
@@ -63,25 +22,9 @@ body {
 .legal-header {
   text-align: center;
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--surface) 0%, #e2e8f0 100%);
+  background: var(--background);
   margin-bottom: 4rem;
-  position: relative;
-}
-
-.legal-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.03'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  z-index: 1;
-}
-
-.legal-header > * {
-  position: relative;
-  z-index: 2;
+  border-bottom: 1px solid var(--border);
 }
 
 .back-button {
@@ -96,36 +39,39 @@ body {
   background: var(--background);
   color: var(--text-primary);
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  border: 2px solid var(--border);
+  border-radius: 0;
+  font-weight: 400;
+  border: 1px solid var(--border);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px var(--shadow);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .btn-back:hover {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+  background: var(--text-primary);
+  color: var(--background);
+  border-color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
 }
 
 .page-title {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 1rem;
   line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .page-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 700px;
   margin: 0 auto;
-  font-weight: 400;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 /* Legal Content */
@@ -136,8 +82,8 @@ body {
 }
 
 .legal-section {
-  background: var(--surface);
-  border-radius: 20px;
+  background: var(--background);
+  border-radius: 0;
   padding: 3rem;
   margin-bottom: 2.5rem;
   border: 1px solid var(--border);
@@ -151,16 +97,17 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 1px;
   height: 100%;
-  background: var(--gradient);
+  background: var(--text-primary);
   opacity: 0;
   transition: all 0.3s ease;
 }
 
 .legal-section:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px var(--shadow);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px var(--shadow);
+  border-color: var(--text-primary);
 }
 
 .legal-section:hover::before {
@@ -171,16 +118,17 @@ body {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--text-primary);
   margin-bottom: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Playfair Display', serif;
+  letter-spacing: -0.5px;
 }
 
 .legal-section h2 i {
-  color: var(--primary-color);
-  font-size: 1.4rem;
+  color: var(--text-secondary);
+  font-size: 1.3rem;
   width: 24px;
   text-align: center;
 }
@@ -189,7 +137,8 @@ body {
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .legal-info p:last-child {
@@ -198,20 +147,20 @@ body {
 
 .legal-info strong {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .legal-info a {
-  color: var(--primary-color);
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   transition: all 0.3s ease;
   border-bottom: 1px solid transparent;
 }
 
 .legal-info a:hover {
-  color: var(--primary-light);
-  border-bottom-color: var(--primary-light);
+  color: var(--text-secondary);
+  border-bottom-color: var(--text-secondary);
 }
 
 /* Contact Section */
@@ -221,27 +170,17 @@ body {
 }
 
 .contact-card {
-  background: var(--gradient);
-  color: white;
+  background: var(--text-primary);
+  color: var(--background);
   padding: 4rem;
-  border-radius: 20px;
+  border-radius: 0;
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  box-shadow: 0 25px 50px rgba(220, 38, 38, 0.25);
+  box-shadow: none;
+  border: 1px solid var(--text-primary);
   position: relative;
   overflow: hidden;
-}
-
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  z-index: 1;
 }
 
 .contact-card > * {
@@ -256,8 +195,9 @@ body {
   gap: 1rem;
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Playfair Display', serif;
+  letter-spacing: -0.5px;
 }
 
 .contact-card h3 i {
@@ -265,21 +205,22 @@ body {
 }
 
 .contact-card p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 2.5rem;
-  opacity: 0.95;
+  opacity: 0.9;
   line-height: 1.7;
+  font-weight: 300;
 }
 
 .contact-card .btn {
   padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
+  border-radius: 0;
+  font-weight: 400;
+  font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: none;
+  border: 1px solid var(--background);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -287,13 +228,15 @@ body {
   gap: 0.5rem;
   background: var(--background);
   color: var(--text-primary);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .contact-card .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  background: var(--surface);
+  transform: translateY(-2px);
+  background: transparent;
+  color: var(--background);
+  border-color: var(--background);
 }
 
 /* Desktop Enhancements */
@@ -307,7 +250,7 @@ body {
   }
   
   .page-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .legal-content {
@@ -319,12 +262,12 @@ body {
   }
   
   .legal-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-bottom: 2.5rem;
   }
   
   .legal-info p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.9;
   }
   
@@ -338,7 +281,7 @@ body {
   }
   
   .contact-card p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -357,7 +300,7 @@ body {
   }
   
   .page-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .legal-content {
@@ -370,14 +313,14 @@ body {
   }
   
   .legal-section h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     flex-direction: column;
     text-align: center;
     gap: 0.8rem;
   }
   
   .legal-info p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .contact-card {
@@ -403,7 +346,7 @@ body {
   }
   
   .page-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .legal-content {
@@ -415,11 +358,11 @@ body {
   }
   
   .legal-section h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .legal-info p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .contact-card {
@@ -432,11 +375,11 @@ body {
   }
   
   .contact-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .btn-back {
     padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }

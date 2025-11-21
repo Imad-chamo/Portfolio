@@ -1,0 +1,36 @@
+{
+  "name": "Imad Chamkhi - Portfolio Développeur Informatique",
+  "short_name": "Imad Chamkhi",
+  "description": "Portfolio de Imad Chamkhi, Développeur Informatique spécialisé en développement web, e-commerce, WordPress, Shopify et React",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "business", "developer"],
+  "lang": "fr",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "assets/profile picture.png",
+      "sizes": "400x400",
+      "type": "image/png"
+    }
+  ]
+}
+

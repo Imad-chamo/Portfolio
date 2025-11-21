@@ -1,0 +1,31 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# PHP files (no longer used, site is 100% static)
+contact.php
+send_mail.php
+export_csv.php
+contact_log.txt
+*.log
+

@@ -1,58 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #dc2626;
-  --primary-light: #ef4444;
-  --secondary-color: #f8fafc;
-  --accent-color: #000000;
   --text-primary: #000000;
-  --text-secondary: #374151;
-  --text-light: #6b7280;
+  --text-secondary: #4a4a4a;
+  --text-light: #8a8a8a;
   --background: #ffffff;
-  --surface: #f8fafc;
-  --border: #e5e7eb;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: var(--text-primary);
-  opacity: 0;
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-body.fade-in {
-  opacity: 1;
-}
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--surface);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
-}
-
-::selection {
-  background: var(--primary-light);
-  color: var(--text-primary);
+  --surface: #f5f5f5;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Page Layout */
@@ -66,25 +22,9 @@ body.fade-in {
 .contact-header {
   text-align: center;
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--surface) 0%, #e2e8f0 100%);
+  background: var(--background);
   margin-bottom: 4rem;
-  position: relative;
-}
-
-.contact-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.03'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  z-index: 1;
-}
-
-.contact-header > * {
-  position: relative;
-  z-index: 2;
+  border-bottom: 1px solid var(--border);
 }
 
 .back-button {
@@ -99,36 +39,39 @@ body.fade-in {
   background: var(--background);
   color: var(--text-primary);
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  border: 2px solid var(--border);
+  border-radius: 0;
+  font-weight: 400;
+  border: 1px solid var(--border);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px var(--shadow);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .btn-back:hover {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+  background: var(--text-primary);
+  color: var(--background);
+  border-color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
 }
 
 .page-title {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 1rem;
   line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .page-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
-  font-weight: 400;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 /* Contact Content */
@@ -147,8 +90,8 @@ body.fade-in {
 }
 
 .contact-card {
-  background: var(--surface);
-  border-radius: 20px;
+  background: var(--background);
+  border-radius: 0;
   padding: 2.5rem;
   text-align: center;
   border: 1px solid var(--border);
@@ -162,16 +105,17 @@ body.fade-in {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 1px;
   height: 100%;
-  background: var(--gradient);
+  background: var(--text-primary);
   opacity: 0;
   transition: all 0.3s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px var(--shadow);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px var(--shadow-hover);
+  border-color: var(--text-primary);
 }
 
 .contact-card:hover::before {
@@ -179,35 +123,48 @@ body.fade-in {
 }
 
 .card-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient);
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .card-icon {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
 }
 
 .card-icon i {
-  font-size: 2rem;
-  color: white;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .card-icon i {
+  color: var(--background);
 }
 
 .contact-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--text-primary);
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
 }
 
 .contact-card p {
   color: var(--text-secondary);
   margin-bottom: 2rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
+  font-weight: 300;
 }
 
 .card-btn {
@@ -215,19 +172,22 @@ body.fade-in {
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: var(--primary-color);
-  color: white;
+  background: var(--text-primary);
+  color: var(--background);
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
+  border-radius: 0;
+  font-weight: 400;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  border: 1px solid var(--text-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .card-btn:hover {
-  background: var(--primary-light);
+  background: var(--background);
+  color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
 }
 
 /* Contact Form Section */
@@ -236,11 +196,11 @@ body.fade-in {
 }
 
 .form-container {
-  background: var(--surface);
-  border-radius: 20px;
+  background: var(--background);
+  border-radius: 0;
   padding: 3rem;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 30px var(--shadow);
+  box-shadow: none;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -252,20 +212,22 @@ body.fade-in {
   font-size: 1.8rem;
   color: var(--text-primary);
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Playfair Display', serif;
+  letter-spacing: -0.5px;
 }
 
 .form-container h2 i {
-  color: var(--primary-color);
+  color: var(--text-secondary);
   font-size: 1.5rem;
 }
 
 .form-description {
   color: var(--text-secondary);
   margin-bottom: 2.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
+  font-weight: 300;
 }
 
 /* Form Styling */
@@ -284,13 +246,15 @@ body.fade-in {
   align-items: center;
   gap: 0.5rem;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .form-group label i {
-  color: var(--primary-color);
+  color: var(--text-secondary);
   width: 16px;
   text-align: center;
 }
@@ -299,10 +263,10 @@ body.fade-in {
 .form-group select,
 .form-group textarea {
   padding: 1rem;
-  border: 2px solid var(--border);
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: 0;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: var(--background);
   color: var(--text-primary);
   transition: all 0.3s ease;
@@ -312,8 +276,8 @@ body.fade-in {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 1px var(--text-primary);
 }
 
 .form-group textarea {
@@ -334,6 +298,7 @@ body.fade-in {
   cursor: pointer;
   font-size: 0.9rem;
   line-height: 1.5;
+  font-weight: 300;
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -343,8 +308,8 @@ body.fade-in {
 .checkmark {
   width: 20px;
   height: 20px;
-  border: 2px solid var(--border);
-  border-radius: 4px;
+  border: 1px solid var(--border);
+  border-radius: 0;
   position: relative;
   flex-shrink: 0;
   transition: all 0.3s ease;
@@ -352,8 +317,8 @@ body.fade-in {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
@@ -362,32 +327,35 @@ body.fade-in {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: var(--background);
   font-size: 12px;
   font-weight: bold;
 }
 
 .submit-btn {
-  background: var(--gradient);
-  color: white;
-  border: none;
+  background: var(--text-primary);
+  color: var(--background);
+  border: 1px solid var(--text-primary);
   padding: 1.2rem 2rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
   margin-top: 1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+  background: var(--background);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--shadow-hover);
 }
 
 /* Additional Info */
@@ -400,7 +368,7 @@ body.fade-in {
 
 .info-card {
   background: var(--background);
-  border-radius: 15px;
+  border-radius: 0;
   padding: 2rem;
   text-align: center;
   border: 1px solid var(--border);
@@ -408,26 +376,35 @@ body.fade-in {
 }
 
 .info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px var(--shadow);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px var(--shadow);
+  border-color: var(--text-primary);
 }
 
 .info-card i {
-  font-size: 2.5rem;
-  color: var(--primary-color);
+  font-size: 2rem;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover i {
+  color: var(--text-primary);
 }
 
 .info-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .info-card p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 /* Desktop Enhancements */
@@ -441,7 +418,7 @@ body.fade-in {
   }
   
   .page-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .contact-cards {
@@ -461,7 +438,7 @@ body.fade-in {
   }
   
   .form-description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -480,7 +457,7 @@ body.fade-in {
   }
   
   .page-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .contact-content {
@@ -517,7 +494,7 @@ body.fade-in {
   }
   
   .page-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .contact-content {
@@ -545,11 +522,11 @@ body.fade-in {
   
   .submit-btn {
     padding: 1rem 1.5rem;
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   
   .btn-back {
     padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
