@@ -21,6 +21,11 @@
   --border: #e0e0e0;
   --shadow: rgba(0, 0, 0, 0.05);
   --shadow-hover: rgba(0, 0, 0, 0.1);
+  /* Dark Blue Accent Colors */
+  --dark-blue: #1e3a8a;
+  --dark-blue-hover: #1e40af;
+  --dark-blue-light: #3b82f6;
+  --dark-blue-bg: rgba(30, 58, 138, 0.05);
 }
 
 * {
@@ -59,7 +64,7 @@ body {
 
 /* Improved focus visible for better accessibility */
 *:focus-visible {
-  outline: 3px solid #0066cc;
+  outline: 3px solid var(--dark-blue);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -69,7 +74,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #0066cc;
+  outline: 3px solid var(--dark-blue);
   outline-offset: 2px;
 }
 
@@ -138,7 +143,7 @@ textarea:focus-visible {
 }
 
 .navbar .logo a:hover {
-  color: var(--text-secondary);
+  color: var(--dark-blue);
 }
 
 .navbar .menu-list {
@@ -161,7 +166,7 @@ textarea:focus-visible {
 }
 
 .menu-list li a:hover {
-  color: var(--text-primary);
+  color: var(--dark-blue);
   background: transparent;
 }
 
@@ -172,7 +177,7 @@ textarea:focus-visible {
   left: 50%;
   width: 0;
   height: 1px;
-  background: var(--text-primary);
+  background: var(--dark-blue);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -351,9 +356,9 @@ textarea:focus-visible {
 }
 
 .scroll-indicator a:hover {
-  background: var(--text-primary);
+  background: var(--dark-blue);
   color: var(--background);
-  border-color: var(--text-primary);
+  border-color: var(--dark-blue);
   transform: scale(1.1);
 }
 
@@ -437,28 +442,30 @@ textarea:focus-visible {
 }
 
 .btn-color-1 {
-  background: var(--text-primary);
+  background: var(--dark-blue);
   color: var(--background);
   box-shadow: none;
-  border: 1px solid var(--text-primary);
+  border: 1px solid var(--dark-blue);
 }
 
 .btn-color-1:hover {
-  background: var(--background);
-  color: var(--text-primary);
+  background: var(--dark-blue-hover);
+  border-color: var(--dark-blue-hover);
+  color: var(--background);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px var(--shadow-hover);
+  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
 }
 
 .btn-color-2 {
   background: var(--background);
-  color: var(--text-primary);
-  border: 1px solid var(--text-primary);
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
 }
 
 .btn-color-2:hover {
-  background: var(--text-primary);
+  background: var(--dark-blue);
   color: var(--background);
+  border-color: var(--dark-blue);
   transform: translateY(-2px);
 }
 
@@ -922,11 +929,13 @@ textarea:focus-visible {
 }
 
 .project-btn {
+  border-color: var(--dark-blue);
+  color: var(--dark-blue);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: var(--text-primary);
+  background: var(--dark-blue);
   color: var(--background);
   text-decoration: none;
   border-radius: 0;
@@ -937,25 +946,27 @@ textarea:focus-visible {
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border: 1px solid var(--text-primary);
+  border: 1px solid var(--dark-blue);
 }
 
 .project-btn.secondary {
   background: var(--background);
-  color: var(--text-primary);
-  border: 1px solid var(--text-primary);
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
 }
 
 .project-btn:hover {
-  background: var(--background);
-  color: var(--text-primary);
+  background: var(--dark-blue-hover);
+  border-color: var(--dark-blue-hover);
+  color: var(--background);
   transform: translateY(-2px);
-  box-shadow: 0 3px 10px var(--shadow);
+  box-shadow: 0 3px 10px rgba(30, 58, 138, 0.3);
 }
 
 .project-btn.secondary:hover {
-  background: var(--text-primary);
+  background: var(--dark-blue);
   color: var(--background);
+  border-color: var(--dark-blue);
 }
 
 .project-actions {
@@ -1477,7 +1488,7 @@ textarea:focus-visible {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  outline: 3px solid #0066cc;
+  outline: 3px solid var(--dark-blue);
   outline-offset: 2px;
   border-color: var(--text-primary);
   box-shadow: 0 0 0 1px var(--text-primary);
@@ -1560,6 +1571,7 @@ textarea:focus-visible {
 }
 
 .contact-info-item a:hover {
+  color: var(--dark-blue);
   color: var(--text-secondary);
 }
 
@@ -1664,8 +1676,9 @@ footer {
 }
 
 .footer-section .button:hover {
-  background: var(--background);
-  color: var(--text-primary);
+  background: var(--dark-blue);
+  border-color: var(--dark-blue);
+  color: var(--background);
   transform: translateY(-2px);
 }
 
