@@ -227,8 +227,8 @@
         <a href="#home" title="Imad Chamkhi - Développeur Informatique Strasbourg">Imad's World</a>
       </div>
       <ul class="menu-list">
-        <div class="icon cancel-btn">
-          <i class="fas fa-times"></i>
+        <div class="icon cancel-btn" role="button" aria-label="Fermer le menu" tabindex="0">
+          <i class="fas fa-times" aria-hidden="true"></i>
         </div>
         <li><a href="#about" data-translate="nav.about">À propos</a></li>
         <li><a href="#education" data-translate="nav.education">Formation</a></li>
@@ -237,10 +237,10 @@
         <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
         <li class="language-selector">
           <div class="language-dropdown">
-            <button class="lang-btn" id="currentLang">
-              <i class="fas fa-globe"></i>
+            <button class="lang-btn" id="currentLang" aria-label="Sélectionner la langue" aria-expanded="false" aria-haspopup="true">
+              <i class="fas fa-globe" aria-hidden="true"></i>
               <span>FR</span>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="lang-options" id="langOptions">
               <div class="lang-option" data-lang="fr">
@@ -266,7 +266,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="banner" id="home">
+  <section class="banner" id="home" aria-label="Section d'accueil">
     <div id="profile">
       <div class="section__pic-container">
         <img src="assets/profile picture.png"
@@ -290,7 +290,7 @@
             <i class="fas fa-envelope" aria-hidden="true"></i> <span data-translate="hero.contact">Me contacter</span>
           </a>
           <button class="btn btn-color-2" onclick="window.open('./assets/cv.pdf', '_blank')"
-            aria-label="Télécharger le CV d'Imad Chamkhi en PDF">
+            aria-label="Télécharger le CV d'Imad Chamkhi en PDF" type="button">
             <i class="fas fa-download" aria-hidden="true"></i> <span data-translate="hero.downloadCV">Télécharger CV</span>
           </button>
         </div>
@@ -454,9 +454,8 @@
   <section class="projects" id="projects">
     <div class="content">
       <h1 class="title" data-translate="projects.title">Des Résultats Concrets Pour Mes Clients</h1>
-      <p style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;"
-        data-translate="projects.subtitle">
-        Découvrez comment j'ai aidé mes clients à <strong style="color: var(--text-primary);">augmenter leur trafic, leurs ventes et leur visibilité</strong>
+      <p class="section-subtitle-center" data-translate="projects.subtitle">
+        Découvrez comment j'ai aidé mes clients à <strong>augmenter leur trafic, leurs ventes et leur visibilité</strong>
       </p>
       <div class="projects-container">
         <article class="color-container">
@@ -605,10 +604,9 @@
       </div>
 
       <!-- View All Projects Button -->
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="projects.html" class="btn btn-color-1"
-          style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; font-size: 1.1rem;">
-          <i class="fas fa-folder-open"></i> <span data-translate="projects.viewAll">Voir tous mes projets</span>
+      <div class="view-all-projects">
+        <a href="projects.html" class="btn btn-color-1 view-all-projects-btn">
+          <i class="fas fa-folder-open" aria-hidden="true"></i> <span data-translate="projects.viewAll">Voir tous mes projets</span>
         </a>
       </div>
     </div>
