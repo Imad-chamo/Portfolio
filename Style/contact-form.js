@@ -84,8 +84,7 @@ async function sendEmailViaEmailJS(formData) {
     const serviceLabels = {
       'webdev': 'Développement Web',
       'ecommerce': 'E-commerce',
-      'backend': 'Développement Backend',
-      'design': 'Web Design',
+      'design': 'Identité Visuelle pour les Entreprises',
       'maintenance': 'Maintenance & Support',
       'seo': 'SEO & Performance',
       'other': 'Autre'

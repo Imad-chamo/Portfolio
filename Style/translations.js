@@ -3,19 +3,21 @@ const translations = {
   fr: {
     // Navigation
     nav: {
-      about: "Moi",
-      services: "Mes services",
-      projects: "Mes projets",
-      contact: "Me contacter"
+      about: "À propos",
+      education: "Formation",
+      experience: "Expérience",
+      skills: "Compétences",
+      projects: "Projets",
+      contact: "Contact"
     },
     
     // Hero Section
-    hero: {
-      greeting: "Bonjour, je suis",
-      role: "Développeur Full Stack Freelance",
-      downloadCV: "Télécharger CV",
-      contact: "Démarrer mon projet gratuitement"
-    },
+      hero: {
+        greeting: "Bonjour, je suis",
+        role: "Développeur Informatique",
+        downloadCV: "Télécharger CV",
+        contact: "Me contacter"
+      },
     
     // About Section
     about: {
@@ -40,21 +42,17 @@ const translations = {
         title: "E-commerce",
         desc: "Vendez en ligne 24/7 avec une boutique qui convertit. Mes clients e-commerce voient en moyenne +40% de chiffre d'affaires après optimisation."
       },
-      backend: {
-        title: "Développement Backend",
-        desc: "Automatisez vos processus et réduisez vos coûts opérationnels avec des solutions backend performantes et scalables."
-      },
       design: {
-        title: "Web Design",
-        desc: "Design qui convertit : interfaces élégantes qui reflètent votre marque et augmentent vos conversions de 30% en moyenne."
+        title: "Identité Visuelle pour les Entreprises",
+        desc: "Créez une image de marque forte et mémorable qui vous différencie de la concurrence et renforce la confiance de vos clients."
       },
       maintenance: {
         title: "Maintenance & Support",
-        desc: "Maintenance régulière, mises à jour de sécurité et support technique pour garantir la performance de votre site."
+        desc: "Expérience en maintenance préventive, mises à jour de sécurité et optimisation continue pour assurer la performance des applications."
       },
       seo: {
         title: "SEO & Performance",
-        desc: "Apparaissez en première page Google et multipliez votre trafic organique. Résultats visibles en 3-6 mois avec une stratégie SEO sur mesure."
+        desc: "Expertise SEO et optimisation : audit technique, optimisation des performances et stratégie de référencement pour améliorer la visibilité web."
       }
     },
     
@@ -80,14 +78,14 @@ const translations = {
     },
     
     // Contact Section
-    contact: {
-      title: "Transformez Votre Vision en Réalité",
-      subtitle: "Consultation gratuite de 30 minutes pour discuter de votre projet et découvrir comment je peux faire croître votre business"
-    },
+      contact: {
+        title: "Contactez-moi",
+        subtitle: "Intéressé par mon profil ? N'hésitez pas à me contacter pour discuter d'opportunités professionnelles ou de collaborations"
+      },
     
     // Footer
     footer: {
-      description: "Développeur Full Stack freelance passionné par la création de solutions digitales innovantes et performantes.",
+      description: "Développeur Informatique passionné par la création de solutions digitales innovantes et performantes.",
       navigation: "Navigation",
       aboutMe: "Moi",
       mySkills: "Mes compétences",
@@ -105,16 +103,18 @@ const translations = {
   en: {
     // Navigation
     nav: {
-      about: "Me",
-      services: "My Services",
-      projects: "My Projects", 
-      contact: "Contact Me"
+      about: "About",
+      education: "Education",
+      experience: "Experience",
+      skills: "Skills",
+      projects: "Projects",
+      contact: "Contact"
     },
     
     // Hero Section
     hero: {
       greeting: "Hello, I'm",
-      role: "Full Stack Developer Freelance",
+      role: "IT Developer",
       downloadCV: "Download CV",
       contact: "Start my project for free"
     },
@@ -142,13 +142,9 @@ const translations = {
         title: "E-commerce",
         desc: "Sell online 24/7 with a converting store. My e-commerce clients see an average +40% revenue after optimization."
       },
-      backend: {
-        title: "Backend Development",
-        desc: "Automate your processes and reduce operational costs with performant and scalable backend solutions."
-      },
       design: {
-        title: "Web Design",
-        desc: "Converting design: elegant interfaces that reflect your brand and increase your conversions by 30% on average."
+        title: "Visual Identity for Companies",
+        desc: "Create a strong and memorable brand image that differentiates you from the competition and strengthens your clients' trust."
       },
       maintenance: {
         title: "Maintenance & Support",
@@ -189,7 +185,7 @@ const translations = {
     
     // Footer
     footer: {
-      description: "Full Stack Developer freelance passionate about creating innovative and high-performance digital solutions.",
+      description: "IT Developer passionate about creating innovative and high-performance digital solutions.",
       navigation: "Navigation",
       aboutMe: "Me",
       mySkills: "My Skills",
@@ -208,15 +204,17 @@ const translations = {
     // Navigation
     nav: {
       about: "Über mich",
-      services: "Meine Dienstleistungen",
-      projects: "Meine Projekte", 
-      contact: "Kontaktieren Sie mich"
+      education: "Ausbildung",
+      experience: "Berufserfahrung",
+      skills: "Kompetenzen",
+      projects: "Projekte",
+      contact: "Kontakt"
     },
     
     // Hero Section
     hero: {
       greeting: "Hallo, ich bin",
-      role: "Full Stack Entwickler Freelance",
+      role: "IT-Entwickler",
       downloadCV: "Lebenslauf herunterladen",
       contact: "Mein Projekt kostenlos starten"
     },
@@ -244,13 +242,9 @@ const translations = {
         title: "E-Commerce",
         desc: "Verkaufen Sie online 24/7 mit einem konvertierenden Shop. Meine E-Commerce-Kunden sehen durchschnittlich +40% Umsatz nach Optimierung."
       },
-      backend: {
-        title: "Backend-Entwicklung",
-        desc: "Automatisieren Sie Ihre Prozesse und reduzieren Sie Betriebskosten mit leistungsstarken und skalierbaren Backend-Lösungen."
-      },
       design: {
-        title: "Webdesign",
-        desc: "Konvertierendes Design: elegante Benutzeroberflächen, die Ihre Marke widerspiegeln und Ihre Konversionen durchschnittlich um 30% steigern."
+        title: "Visuelle Identität für Unternehmen",
+        desc: "Erstellen Sie ein starkes und unvergessliches Markenimage, das Sie von der Konkurrenz abhebt und das Vertrauen Ihrer Kunden stärkt."
       },
       maintenance: {
         title: "Wartung & Support",
@@ -291,7 +285,7 @@ const translations = {
     
     // Footer
     footer: {
-      description: "Full Stack Entwickler Freelance, leidenschaftlich an der Erstellung innovativer und leistungsstarker digitaler Lösungen.",
+      description: "IT-Entwickler, leidenschaftlich an der Erstellung innovativer und leistungsstarker digitaler Lösungen.",
       navigation: "Navigation",
       aboutMe: "Über mich",
       mySkills: "Meine Fähigkeiten",
