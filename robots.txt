@@ -8,7 +8,7 @@ Sitemap: https://www.imadchamkhi.com/sitemap.xml
 Disallow: /*.pdf$
 Disallow: /assets/*.pdf$
 # Allow CV download
-Allow: /assets/cv-3.pdf
+Allow: /assets/cv.pdf
 Disallow: /Style/
 
 # Allow important CSS and JS files for rendering
