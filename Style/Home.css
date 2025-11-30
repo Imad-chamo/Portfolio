@@ -2536,6 +2536,7 @@ input:disabled + .slider {
   gap: 2rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .title-secondary {
@@ -2555,6 +2556,64 @@ input:disabled + .slider {
 .education-column,
 .experience-column {
   position: relative;
+}
+
+/* Soft Skills Section */
+.soft-skills-section {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--border);
+}
+
+.soft-skills-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.soft-skills-title::before {
+  content: '';
+  width: 4px;
+  height: 1.5rem;
+  background: var(--dark-blue);
+  border-radius: 2px;
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.soft-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.soft-skill-item:hover {
+  background: var(--background);
+  border-color: var(--dark-blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.soft-skill-item i {
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
 }
 
 .timeline-container {
