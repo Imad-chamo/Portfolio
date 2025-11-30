@@ -2933,6 +2933,12 @@ input:disabled + .slider {
   flex-direction: column;
 }
 
+.contact-info-grid p:first-of-type {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 .btn-submit-form {
   font-size: 1.1rem;
   padding: 1.2rem 3rem;
