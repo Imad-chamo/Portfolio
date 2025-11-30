@@ -2518,14 +2518,43 @@ input:disabled + .slider {
 
 /* Education & Experience Timeline */
 .education,
-.experience-section {
+.experience-section,
+.education-experience {
   padding: 5rem 0;
   background: var(--surface);
   position: relative;
 }
 
-.education {
+.education,
+.education-experience {
   background: var(--background);
+}
+
+.education-experience-header {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.title-secondary {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.education-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.education-column,
+.experience-column {
+  position: relative;
 }
 
 .timeline-container {
