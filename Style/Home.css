@@ -2706,3 +2706,135 @@ input:disabled + .slider {
     padding: 1.5rem;
   }
 }
+
+/* Utility classes to replace inline styles */
+.hero-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  font-weight: 300;
+  max-width: 600px;
+}
+
+.hero-subtitle strong {
+  color: var(--text-primary);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  font-size: 1.1rem;
+  padding: 1.2rem 2.5rem;
+}
+
+.hero-location {
+  margin-top: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.hero-location i {
+  margin-right: 0.5rem;
+}
+
+.section-subtitle-center {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle-center strong {
+  color: var(--text-primary);
+}
+
+.section-subtitle-faq {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle-contact {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle-contact strong {
+  color: var(--text-primary);
+}
+
+.contact-info-box {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.contact-info-item i {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.view-all-projects {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-all-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.contact-detail-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.3rem;
+}

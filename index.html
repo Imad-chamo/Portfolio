@@ -280,22 +280,22 @@
         <p class="section__text__p1" data-translate="hero.greeting">Bonjour, je suis</p>
         <h1 class="title">Imad CHAMKHI</h1>
         <p class="section__text__p2" data-translate="hero.role">Développeur Informatique</p>
-        <p class="hero-subtitle" style="color: var(--text-secondary); font-size: 1.2rem; margin: 1.5rem 0; font-weight: 300; max-width: 600px;">
-          Passionné par le développement web et les technologies innovantes, je transforme les idées en <strong style="color: var(--text-primary);">solutions digitales performantes</strong> à travers mes projets et expériences
+        <p class="hero-subtitle">
+          Passionné par le développement web et les technologies innovantes, je transforme les idées en <strong>solutions digitales performantes</strong> à travers mes projets et expériences
         </p>
-        <div class="hero-badges" style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; align-items: center;">
+        <div class="hero-badges">
         </div>
         <div class="btn-container">
-          <a href="#contact" class="btn btn-color-1" aria-label="Contacter Imad Chamkhi" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+          <a href="#contact" class="btn btn-color-1 btn-hero-primary" aria-label="Contacter Imad Chamkhi">
             <i class="fas fa-envelope" aria-hidden="true"></i> <span data-translate="hero.contact">Me contacter</span>
           </a>
-          <button class="btn btn-color-2" onclick="window.open('./assets/cv.pdf')"
+          <button class="btn btn-color-2" onclick="window.open('./assets/cv.pdf', '_blank')"
             aria-label="Télécharger le CV d'Imad Chamkhi en PDF">
             <i class="fas fa-download" aria-hidden="true"></i> <span data-translate="hero.downloadCV">Télécharger CV</span>
           </button>
         </div>
-        <p style="margin-top: 1.5rem; color: var(--text-light); font-size: 0.9rem; font-style: italic;">
-          <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> Strasbourg, France • Disponible pour opportunités
+        <p class="hero-location">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Strasbourg, France • Disponible pour opportunités
         </p>
       </div>
       
@@ -618,7 +618,7 @@
   <section class="faq-section" id="faq" aria-labelledby="faq-title">
     <div class="content">
       <h1 class="title" id="faq-title">Questions fréquentes</h1>
-      <p style="text-align: center; margin-bottom: 4rem; color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <p class="section-subtitle-faq">
         Informations complémentaires sur mon profil
       </p>
       
@@ -769,7 +769,7 @@
             <button type="submit" class="btn btn-color-1" style="font-size: 1.1rem; padding: 1.2rem 3rem; width: 100%;">
               <i class="fas fa-envelope"></i> Envoyer mon message
             </button>
-            <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);">
+            <p class="form-note">
               <i class="fas fa-lock" style="margin-right: 0.5rem;"></i> Vos données sont sécurisées et ne seront jamais partagées
             </p>
           </form>
@@ -790,7 +790,7 @@
               <div>
                 <strong>Localisation</strong>
                 <p>Strasbourg, France</p>
-                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.3rem;">Ouvert au télétravail</p>
+                <p class="contact-detail-text">Ouvert au télétravail</p>
               </div>
             </div>
             <div class="contact-info-item">
