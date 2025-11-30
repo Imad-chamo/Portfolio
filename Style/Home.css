@@ -2747,10 +2747,14 @@ input:disabled + .slider {
     margin: 0 1rem 2rem;
   }
   
-  .contact-info-box > div {
+  .contact-info-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem;
     text-align: center !important;
+  }
+  
+  .contact-info-grid > div {
+    align-items: center;
   }
   
   .contact-info-box i {
@@ -2915,4 +2919,26 @@ input:disabled + .slider {
   color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.contact-info-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-submit-form {
+  font-size: 1.1rem;
+  padding: 1.2rem 3rem;
+  width: 100%;
+}
+
+.form-note i {
+  margin-right: 0.5rem;
 }
