@@ -2469,47 +2469,53 @@ input:disabled + .slider {
    CV Sections - Modern Design
    ============================================ */
 
-/* About Profile Section */
+/* About Profile Section - Minimalist & Elegant */
 .about-profile {
-  padding: 5rem 0;
+  padding: 6rem 0;
   background: var(--background);
   position: relative;
 }
 
-.about-profile-card {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem;
-  background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+.about-profile .title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 4rem;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
   position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 1.5rem;
 }
 
-.about-profile-card::before {
+.about-profile .title::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--dark-blue) 0%, var(--dark-blue-light) 100%);
+  width: 60px;
+  height: 1px;
+  background: var(--dark-blue);
 }
 
-.about-profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+.about-profile-card {
+  max-width: 800px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  position: relative;
 }
 
 .about-profile-text {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  text-align: justify;
-  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+  text-align: left;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 .about-profile-text:last-child {
@@ -2518,7 +2524,7 @@ input:disabled + .slider {
 
 .about-profile-text strong {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Education & Experience Timeline */
@@ -2778,13 +2784,18 @@ input:disabled + .slider {
     align-self: flex-start;
   }
   
-  .about-profile-card {
-    padding: 2rem;
+  .about-profile {
+    padding: 4rem 0;
+  }
+  
+  .about-profile .title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
   }
   
   .about-profile-text {
     font-size: 1rem;
-    text-align: left;
+    line-height: 1.8;
   }
 }
 
