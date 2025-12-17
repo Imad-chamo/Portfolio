@@ -3028,28 +3028,73 @@ input:disabled + .slider {
 }
 
 /* Responsive Timeline */
+@media (max-width: 1024px) {
+  .education-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .education-experience-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .education-experience-header .title,
+  .title-secondary {
+    font-size: 2rem;
+  }
+  
+  .education-experience-header .title::after,
+  .title-secondary::after {
+    bottom: -1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .education-experience {
+    padding: 4rem 0;
+  }
+  
   .timeline-container::before {
-    left: 1.5rem;
+    left: 0;
   }
   
   .timeline-item {
-    margin-left: 3rem;
-    padding: 2rem;
+    margin-left: 1.5rem;
+    padding: 1.5rem;
+    padding-left: 2rem;
   }
   
   .timeline-item::before {
-    left: -3rem;
-    width: 12px;
-    height: 12px;
+    left: -1.5rem;
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
   }
   
   .timeline-header {
     flex-direction: column;
+    gap: 1rem;
   }
   
   .timeline-date {
     align-self: flex-start;
+  }
+  
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+  
+  .education-experience-header .title,
+  .title-secondary {
+    font-size: 1.75rem;
   }
   
   .about-profile {
