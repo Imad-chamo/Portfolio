@@ -3165,6 +3165,23 @@ input:disabled + .slider {
     padding: 0 1rem;
   }
   
+  .technical-skills {
+    padding: 4rem 0;
+  }
+  
+  .technical-skills .section-title {
+    font-size: 2rem;
+  }
+  
+  .skills-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .skill-tech-items {
+    grid-template-columns: 1fr;
+  }
+  
   .contact-detail-text {
     font-size: 0.8rem;
   }
