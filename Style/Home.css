@@ -21,11 +21,16 @@
   --border: #e0e0e0;
   --shadow: rgba(0, 0, 0, 0.05);
   --shadow-hover: rgba(0, 0, 0, 0.1);
-  /* Accent Colors - Black & Grey */
-  --dark-blue: #000000;
-  --dark-blue-hover: #1a1a1a;
-  --dark-blue-light: #4a4a4a;
-  --dark-blue-bg: rgba(0, 0, 0, 0.05);
+  /* Accent Color - Green */
+  --accent-green: #00CC6F;
+  --accent-green-hover: #00B863;
+  --accent-green-light: #33D689;
+  --accent-green-bg: rgba(0, 204, 111, 0.1);
+  /* Legacy variables for compatibility */
+  --dark-blue: #00CC6F;
+  --dark-blue-hover: #00B863;
+  --dark-blue-light: #33D689;
+  --dark-blue-bg: rgba(0, 204, 111, 0.1);
 }
 
 * {
