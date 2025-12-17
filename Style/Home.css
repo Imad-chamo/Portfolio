@@ -22,15 +22,15 @@
   --shadow: rgba(0, 0, 0, 0.05);
   --shadow-hover: rgba(0, 0, 0, 0.1);
   /* Accent Color - Green */
-  --accent-green: #00FF88;
-  --accent-green-hover: #00E67A;
-  --accent-green-light: #33FF9F;
-  --accent-green-bg: rgba(0, 255, 136, 0.1);
+  --accent-green: #00B894;
+  --accent-green-hover: #00A085;
+  --accent-green-light: #00D4AA;
+  --accent-green-bg: rgba(0, 184, 148, 0.1);
   /* Legacy variables for compatibility */
-  --dark-blue: #00FF88;
-  --dark-blue-hover: #00E67A;
-  --dark-blue-light: #33FF9F;
-  --dark-blue-bg: rgba(0, 255, 136, 0.1);
+  --dark-blue: #00B894;
+  --dark-blue-hover: #00A085;
+  --dark-blue-light: #00D4AA;
+  --dark-blue-bg: rgba(0, 184, 148, 0.1);
 }
 
 * {
