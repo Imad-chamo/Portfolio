@@ -2671,6 +2671,94 @@ input:disabled + .slider {
   letter-spacing: 1px;
 }
 
+/* Technical Skills Section */
+.technical-skills {
+  padding: 6rem 0;
+  background: var(--background);
+}
+
+.technical-skills .section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.technical-skills .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background: var(--dark-blue);
+}
+
+.skills-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.skill-tech-category {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.skill-tech-category:hover {
+  border-color: var(--dark-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.skill-category-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--dark-blue);
+  letter-spacing: -0.3px;
+}
+
+.skill-tech-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skill-tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.skill-tech-item:hover {
+  border-color: var(--dark-blue);
+  background: var(--dark-blue-bg);
+  transform: translateX(5px);
+}
+
+.skill-tech-item i {
+  color: var(--dark-blue);
+  font-size: 1.3rem;
+  width: 24px;
+  text-align: center;
+}
+
 /* Education & Experience Timeline */
 .education,
 .experience-section,
