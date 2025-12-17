@@ -3189,6 +3189,31 @@ input:disabled + .slider {
     padding: 0.4rem 0.7rem;
   }
   
+  .hero-availability {
+    font-size: 0.85rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-cta-banner {
+    padding: 1.5rem;
+  }
+  
+  .cta-banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .cta-banner-content i {
+    font-size: 2rem;
+  }
+  
+  .cta-banner-btn {
+    width: 100%;
+  }
+  
   /* Mobile styles for new utility classes */
   .hero-subtitle {
     font-size: 1rem;
@@ -3310,6 +3335,23 @@ input:disabled + .slider {
 .btn-hero-primary {
   font-size: 1.1rem;
   padding: 1.2rem 2.5rem;
+}
+
+.hero-availability {
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  line-height: 1.6;
+}
+
+.hero-availability i {
+  color: var(--dark-blue);
+  font-size: 0.9rem;
 }
 
 .hero-location {

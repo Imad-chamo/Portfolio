@@ -210,6 +210,20 @@
   <link rel="preload" href="Style/Home.css" as="style">
   <link rel="preload" href="Style/Home.js" as="script">
   <link rel="preload" href="assets/profile picture.png" as="image" fetchpriority="high">
+  
+  <!-- Performance: Resource Hints -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  
+  <!-- Additional SEO -->
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+  <meta name="coverage" content="worldwide">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -300,10 +314,6 @@
             <i class="fas fa-download" aria-hidden="true"></i> <span data-translate="hero.downloadCV">Télécharger CV</span>
           </button>
         </div>
-        <p class="hero-location">
-          <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Strasbourg, France • 
-          <strong>Disponible immédiatement</strong> • Ouvert au télétravail
-        </p>
       </div>
       
       <!-- Scroll Indicator -->
@@ -602,9 +612,9 @@
   <!-- Projects Section -->
   <section class="projects" id="projects">
     <div class="content">
-      <h1 class="title" data-translate="projects.title">Des Résultats Concrets Pour Mes Clients</h1>
+      <h1 class="title" data-translate="projects.title">Mes Projets</h1>
       <p class="section-subtitle-center" data-translate="projects.subtitle">
-        Découvrez comment j'ai aidé mes clients à <strong>augmenter leur trafic, leurs ventes et leur visibilité</strong>
+        Découvrez une sélection de mes réalisations : <strong>sites web, e-commerce et applications</strong> développés avec les technologies modernes
       </p>
       <div class="projects-container">
         <article class="color-container">
@@ -840,6 +850,18 @@
       <p class="section-subtitle-contact" data-translate="contact.subtitle">
         <strong>Recherche active d'un CDI</strong> • Disponible immédiatement • Flexible sur les modalités de travail
       </p>
+      <div class="contact-cta-banner">
+        <div class="cta-banner-content">
+          <i class="fas fa-briefcase" aria-hidden="true"></i>
+          <div>
+            <strong>Recherche active d'un CDI en développement web</strong>
+            <p>Poste à temps plein • Démarrage immédiat • Strasbourg ou télétravail</p>
+          </div>
+          <a href="mailto:imadbussines@gmail.com?subject=Opportunité CDI - Développeur Informatique" class="btn btn-color-1 cta-banner-btn">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Me contacter
+          </a>
+        </div>
+      </div>
       <div class="contact-info-box">
         <div class="contact-info-grid">
           <div>
