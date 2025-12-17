@@ -2527,6 +2527,150 @@ input:disabled + .slider {
   font-weight: 500;
 }
 
+/* Hero Badges */
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.hero-badge i {
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+}
+
+/* Why Hire Me Section */
+.why-hire-me {
+  padding: 6rem 0;
+  background: var(--surface);
+  position: relative;
+}
+
+.why-hire-me .section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 4rem;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.why-hire-me .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background: var(--dark-blue);
+}
+
+.why-hire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.why-hire-card {
+  padding: 2rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.why-hire-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dark-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.why-hire-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-blue-bg);
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--dark-blue);
+}
+
+.why-hire-icon i {
+  font-size: 1.5rem;
+  color: var(--dark-blue);
+}
+
+.why-hire-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.3px;
+}
+
+.why-hire-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 4rem 0;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Education & Experience Timeline */
 .education,
 .experience-section,
@@ -2835,6 +2979,47 @@ input:disabled + .slider {
     line-height: 1.75;
   }
   
+  .why-hire-me {
+    padding: 3rem 0;
+  }
+  
+  .why-hire-me .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .why-hire-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .why-hire-card {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  
+  .hero-badges {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
   /* Mobile styles for new utility classes */
   .hero-subtitle {
     font-size: 1rem;
@@ -2914,8 +3099,26 @@ input:disabled + .slider {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.hero-badge i {
+  color: var(--dark-blue);
+  font-size: 0.9rem;
 }
 
 .btn-hero-primary {
