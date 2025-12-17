@@ -2821,8 +2821,18 @@ input:disabled + .slider {
     font-size: 1.2rem;
   }
   
-  .about-profile-card {
-    padding: 1.5rem;
+  .about-profile {
+    padding: 3rem 0;
+  }
+  
+  .about-profile .title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-profile-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
   }
   
   /* Mobile styles for new utility classes */
