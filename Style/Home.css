@@ -1910,18 +1910,19 @@ footer {
     left: 0;
   }
   
-.menu-list .cancel-btn {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  display: block;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 2rem;
-}
-
-.menu-list .cancel-btn:hover {
-  color: #ffffff;
-}
+  .menu-list .cancel-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: block;
+    color: var(--dark-blue);
+    font-size: 2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-list .cancel-btn:hover {
+    color: var(--dark-blue-light);
+  }
   
   /* Language selector mobile styles */
   .language-selector {
