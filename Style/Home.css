@@ -365,6 +365,7 @@ textarea:focus-visible {
 .navbar.show .menu-btn i.fa-times {
   opacity: 1;
   transform: rotate(0deg);
+  color: var(--dark-blue);
 }
 
 .menu-btn i.fa-times {
@@ -372,6 +373,7 @@ textarea:focus-visible {
   opacity: 0;
   transform: rotate(-90deg);
   transition: all 0.3s ease;
+  color: var(--dark-blue);
 }
 
 /* Banner Section */
