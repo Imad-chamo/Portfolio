@@ -2681,82 +2681,54 @@ input:disabled + .slider {
   font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   font-weight: 300;
-  text-align: left;
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
   color: var(--text-primary);
   letter-spacing: -0.5px;
-  position: relative;
-  padding-bottom: 1.5rem;
 }
 
-.technical-skills .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 1px;
-  background: var(--dark-blue);
-}
-
-.skills-tech-grid {
+/* Minimalist Skills Grid */
+.skills-minimal-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.skill-tech-category {
-  padding: 2rem;
-  background: var(--surface);
+.skill-minimal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  background: transparent;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
-.skill-tech-category:hover {
+.skill-minimal-item:hover {
   border-color: var(--dark-blue);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.skill-category-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--dark-blue);
-  letter-spacing: -0.3px;
-}
-
-.skill-tech-items {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.skill-tech-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.8rem 1rem;
-  background: var(--background);
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-}
-
-.skill-tech-item:hover {
-  border-color: var(--dark-blue);
-  background: var(--dark-blue-bg);
-  transform: translateX(5px);
-}
-
-.skill-tech-item i {
+.skill-minimal-item i {
   color: var(--dark-blue);
-  font-size: 1.3rem;
-  width: 24px;
-  text-align: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.skill-minimal-item:hover i {
+  transform: scale(1.1);
+}
+
+.skill-minimal-item span {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 /* Education & Experience Timeline */
