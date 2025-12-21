@@ -96,24 +96,7 @@ document.querySelectorAll('.details-container, .color-container, article').forEa
   observer.observe(element);
 });
 
-// Add typing effect to title
-const title = document.querySelector('.section__text .title');
-if (title) {
-  const text = title.textContent;
-  title.textContent = '';
-  let i = 0;
-  
-  const typeWriter = () => {
-    if (i < text.length) {
-      title.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 100);
-    }
-  };
-  
-  // Start typing effect after a short delay
-  setTimeout(typeWriter, 1000);
-}
+// Typing effect removed for performance
 
 // Add counter animation for experience section
 const animateCounters = () => {
@@ -146,15 +129,7 @@ window.addEventListener('load', () => {
   animateCounters();
 });
 
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const parallax = document.querySelector('.banner');
-  if (parallax) {
-    const speed = scrolled * 0.5;
-    parallax.style.backgroundPosition = `center ${speed}px`;
-  }
-});
+// Parallax effect removed for performance
 
 // Add hover effect to project cards
 document.querySelectorAll('.color-container').forEach(card => {
@@ -167,57 +142,7 @@ document.querySelectorAll('.color-container').forEach(card => {
   });
 });
 
-// Add loading animation
-document.addEventListener('DOMContentLoaded', () => {
-  // Create loading overlay
-  const loadingOverlay = document.createElement('div');
-  loadingOverlay.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-  `;
-  
-  const loader = document.createElement('div');
-  loader.style.cssText = `
-    width: 50px;
-    height: 50px;
-    border: 3px solid #e0e0e0;
-    border-top: 3px solid #000000;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  `;
-  
-  // Add spin animation
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  `;
-  document.head.appendChild(style);
-  
-  loadingOverlay.appendChild(loader);
-  document.body.appendChild(loadingOverlay);
-  
-  // Remove loading overlay after page loads
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loadingOverlay.style.opacity = '0';
-      setTimeout(() => {
-        loadingOverlay.remove();
-      }, 500);
-    }, 1000);
-  });
-});
+// Loading animation removed for performance
 
 // Testimonials Carousel
 const testimonialsCarousel = () => {
