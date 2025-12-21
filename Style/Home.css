@@ -157,7 +157,7 @@ textarea:focus-visible {
   gap: 2rem;
 }
 
-/* Desktop: Hide menu list, show burger */
+/* Desktop: Full-page menu dropdown */
 .navbar .menu-list {
   position: fixed;
   top: 0;
@@ -169,47 +169,56 @@ textarea:focus-visible {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  transition: all 0.4s ease;
+  gap: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar.show .menu-list {
   left: 0;
 }
 
+.menu-list li {
+  width: 100%;
+  text-align: center;
+}
+
+.menu-list .language-selector {
+  margin-top: 2rem;
+}
+
+.menu-list .language-selector .lang-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
 .menu-list li a {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
   border-radius: 0;
   transition: all 0.3s ease;
   position: relative;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .menu-list li a:hover {
-  color: var(--dark-blue);
-  background: transparent;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .menu-list li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background: var(--dark-blue);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.menu-list li a:hover::after {
-  width: 80%;
+  display: none;
 }
 
 /* Language Selector */
