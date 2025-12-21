@@ -198,23 +198,28 @@ textarea:focus-visible {
 
 .menu-list li a {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
   text-decoration: none;
-  padding: 1.5rem 3rem;
+  padding: 2rem 4rem;
   border-radius: 0;
   transition: all 0.3s ease;
   position: relative;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   display: block;
   width: 100%;
   text-align: center;
 }
 
+.navbar.show .menu-list li a {
+  color: var(--dark-blue);
+  font-size: 3.5rem;
+}
+
 .menu-list li a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--dark-blue);
+  background: rgba(0, 184, 148, 0.1);
 }
 
 .menu-list li a::after {
@@ -313,7 +318,7 @@ textarea:focus-visible {
 .icon {
   display: block;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   cursor: pointer;
   z-index: 10000;
   transition: all 0.3s ease;
@@ -321,6 +326,10 @@ textarea:focus-visible {
 
 .icon:hover {
   color: #ffffff;
+}
+
+.menu-btn i {
+  font-size: 2.5rem;
 }
 
 /* Banner Section */
@@ -491,10 +500,10 @@ textarea:focus-visible {
 }
 
 .btn {
-  padding: 1.2rem 3rem;
+  padding: 0.9rem 2rem;
   border-radius: 0;
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -503,15 +512,15 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 0.8rem;
-  letter-spacing: 2px;
+  gap: 0.6rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .hero-minimal .btn {
-  padding: 1.5rem 4rem;
-  font-size: 1rem;
-  letter-spacing: 3px;
+  padding: 1rem 2.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
 }
 
 .btn-color-1 {
