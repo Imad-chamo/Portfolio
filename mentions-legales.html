@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions Légales — Imad Chamkhi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #39FF14;
+      --green-dim: #00c853;
+      --black: #000000;
+      --dark: #0a0a0a;
+      --card: #111111;
+      --white: #ffffff;
+      --gray: #888888;
+      --font: 'Poppins', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--black); color: var(--white); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1a1a1a;
+      padding: 0 5%; height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-size: 1.2rem; font-weight: 900; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
+    .logo-tag { font-size: 0.58rem; font-weight: 600; color: var(--green); letter-spacing: 3px; text-transform: uppercase; }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gray); border: 1px solid #2a2a2a; border-radius: 50px;
+      padding: 8px 18px; transition: all 0.3s ease;
+    }
+    .back-btn:hover { color: var(--green); border-color: var(--green); box-shadow: 0 0 12px rgba(57,255,20,0.15); }
+
+    /* Hero band */
+    .page-hero {
+      margin-top: 70px;
+      background: var(--dark);
+      border-bottom: 1px solid #111;
+      padding: 4rem 5%;
+    }
+    .page-hero-inner { max-width: 760px; margin: 0 auto; }
+    .page-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
+    }
+    .page-label::before { content: ''; width: 24px; height: 1px; background: var(--green); }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--gray); font-size: 0.85rem; line-height: 1.7; }
+
+    /* Content */
+    .legal-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 5% 6rem;
+    }
+
+    .legal-section { margin-bottom: 3rem; }
+
+    .legal-section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .legal-section p {
+      font-size: 0.88rem;
+      color: #bbb;
+      line-height: 1.9;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-section ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-section ul li {
+      font-size: 0.88rem;
+      color: #bbb;
+      line-height: 1.9;
+      list-style: disc;
+    }
+
+    .legal-section ul li::marker { color: var(--green); }
+
+    .info-block {
+      background: var(--card);
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #1a1a1a;
+      font-size: 0.85rem;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-row .lbl {
+      font-weight: 700;
+      color: var(--gray);
+      min-width: 150px;
+      letter-spacing: 0.5px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .info-row .val { color: #ddd; }
+    .info-row .val a { color: var(--green); }
+
+    .last-update {
+      font-size: 0.72rem;
+      color: #444;
+      text-align: center;
+      padding-top: 3rem;
+      border-top: 1px solid #111;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      border-top: 1px solid #111;
+      padding: 2rem 5%;
+      text-align: center;
+    }
+    footer p { font-size: 0.72rem; color: #333; }
+    footer a { color: var(--green); }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-name">Imad Chamkhi</span>
+      <span class="logo-tag">Junior IT Specialist</span>
+    </a>
+    <a href="index.html" class="back-btn">← Retour au site</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-label">Informations légales</div>
+      <h1>Mentions Légales</h1>
+      <p>Conformément aux dispositions de la loi n°2004-575 du 21 juin 2004 pour la Confiance en l'Économie Numérique (LCEN), il est précisé aux utilisateurs du site l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
+    </div>
+  </div>
+
+  <div class="legal-content">
+
+    <div class="legal-section">
+      <h2>1. Éditeur du site</h2>
+      <div class="info-block">
+        <div class="info-row">
+          <span class="lbl">Nom</span>
+          <span class="val">Imad Chamkhi</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Statut</span>
+          <span class="val">Particulier — Professionnel IT indépendant</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Adresse</span>
+          <span class="val">Strasbourg, Alsace, France</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Email</span>
+          <span class="val"><a href="mailto:chamkhiimad5@gmail.com">chamkhiimad5@gmail.com</a></span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Téléphone</span>
+          <span class="val"><a href="tel:+33753636541">+33 7 53 63 65 41</a></span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Site web</span>
+          <span class="val">Portfolio personnel — usage non commercial</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Hébergement</h2>
+      <div class="info-block">
+        <div class="info-row">
+          <span class="lbl">Hébergeur</span>
+          <span class="val">À compléter selon votre hébergeur</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Adresse</span>
+          <span class="val">À compléter</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">Site</span>
+          <span class="val">À compléter</span>
+        </div>
+      </div>
+      <p>En cas de besoin d'information complémentaire concernant l'hébergeur, vous pouvez nous contacter directement.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Propriété intellectuelle</h2>
+      <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+      <p>La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse de l'éditeur du site.</p>
+      <p>Les logos, marques et technologies mentionnés sur ce site (Laravel, PHP, MySQL, etc.) sont la propriété de leurs détenteurs respectifs.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Données personnelles</h2>
+      <p>Ce site collecte des données personnelles uniquement via le formulaire de contact (nom, prénom, adresse e-mail, message). Ces données sont utilisées exclusivement pour répondre aux demandes reçues et ne sont jamais transmises à des tiers.</p>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez des droits suivants :</p>
+      <ul>
+        <li>Droit d'accès à vos données personnelles</li>
+        <li>Droit de rectification de vos données inexactes</li>
+        <li>Droit à l'effacement de vos données</li>
+        <li>Droit à la limitation du traitement</li>
+        <li>Droit à la portabilité de vos données</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:chamkhiimad5@gmail.com" style="color:var(--green)">chamkhiimad5@gmail.com</a></p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Cookies</h2>
+      <p>Ce site utilise des cookies techniques nécessaires à son bon fonctionnement (préférence de langue). Aucun cookie publicitaire ou de traçage tiers n'est utilisé.</p>
+      <p>Pour plus d'informations, consultez notre <a href="politique-confidentialite.html" style="color:var(--green)">Politique de confidentialité &amp; Cookies</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Liens hypertextes</h2>
+      <p>Le site peut contenir des liens vers d'autres sites internet. Ces liens sont fournis à titre informatif uniquement. L'éditeur ne peut être tenu responsable du contenu des sites liés ni des éventuels dommages résultant de leur utilisation.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Droit applicable</h2>
+      <p>Les présentes mentions légales sont régies par la loi française. En cas de litige relatif à l'interprétation ou à l'exécution des présentes, les tribunaux français seront seuls compétents.</p>
+    </div>
+
+    <div class="last-update">Dernière mise à jour : Mars 2025</div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 <a href="index.html">Imad Chamkhi</a> — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></p>
+  </footer>
+
+</body>
+</html>

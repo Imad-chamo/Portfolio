@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imad Chamkhi — Alternance Master Expert IT & BDD — Strasbourg 2025</title>
+  <meta name="description" content="Imad Chamkhi, étudiant en Master Expert IT & Développement de Bases de Données, recherche un contrat d'alternance dès septembre 2025 à Strasbourg. 4 ans d'expérience, 6+ projets livrés." />
+  <meta name="keywords" content="alternance, master IT, développeur web, bases de données, Strasbourg, PHP, Laravel, MySQL, contrat d'alternance 2025" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #39FF14;
+      --green-dim: #00c853;
+      --black: #000000;
+      --dark: #0a0a0a;
+      --card: #111111;
+      --white: #ffffff;
+      --gray: #888888;
+      --font: 'Poppins', sans-serif;
+      --t: 0.35s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 {
+      transition-delay: .1s;
+    }
+
+    .d2 {
+      transition-delay: .2s;
+    }
+
+    .d3 {
+      transition-delay: .3s;
+    }
+
+    .d4 {
+      transition-delay: .4s;
+    }
+
+    /* NAVBAR */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, .95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1a1a1a;
+      padding: 0 5%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-logo .ln {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-logo .lt {
+      font-size: .58rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      transition: color var(--t);
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .btn-nav {
+      background: var(--green);
+      color: #000 !important;
+      padding: 9px 22px !important;
+      border-radius: 50px;
+      font-weight: 700 !important;
+    }
+
+    .btn-back {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: color var(--t);
+    }
+
+    .btn-back:hover {
+      color: var(--green);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #fff;
+      transition: all var(--t);
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .98);
+      backdrop-filter: blur(15px);
+      padding: 2rem 5%;
+      z-index: 999;
+      flex-direction: column;
+      gap: 1.5rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: .5rem 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    /* DISPO BANNER */
+    .dispo-banner {
+      background: rgba(57,255,20,.06);
+      border-top: 1px solid rgba(57,255,20,.15);
+      border-bottom: 1px solid rgba(57,255,20,.15);
+      padding: 14px 5%;
+    }
+    .dispo-inner {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .82rem;
+      color: #ccc;
+    }
+    .dispo-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      flex-shrink: 0;
+      animation: pulse-dot 1.5s ease infinite;
+    }
+    .dispo-cta {
+      background: var(--green);
+      color: #000;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      transition: all var(--t);
+    }
+    .dispo-cta:hover { box-shadow: 0 0 16px rgba(57,255,20,.5); transform: translateY(-1px); }
+
+    /* PROJETS */
+    #projets {
+      background: var(--black);
+      padding: 6rem 5%;
+    }
+    .projets-grid {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .projet-card {
+      background: var(--card);
+      border: 1px solid #1f1f1f;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all var(--t);
+    }
+    .projet-card:hover {
+      border-color: rgba(57,255,20,.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(57,255,20,.08);
+    }
+    .projet-header {
+      padding: 1.5rem 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .projet-ico { font-size: 2rem; }
+    .projet-link {
+      font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--green); border: 1px solid rgba(57,255,20,.3); border-radius: 50px;
+      padding: 5px 12px; transition: all var(--t);
+    }
+    .projet-link:hover { background: rgba(57,255,20,.1); }
+    .projet-body { padding: 1.2rem 1.5rem 1.5rem; }
+    .projet-title { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+    .projet-desc { font-size: .8rem; color: var(--gray); line-height: 1.7; margin-bottom: 1rem; }
+    .projet-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .projet-tag {
+      font-size: .62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--green); background: rgba(57,255,20,.07);
+      border: 1px solid rgba(57,255,20,.15); border-radius: 50px; padding: 4px 10px;
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(57, 255, 20, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, .035) 1px, transparent 1px);
+      background-size: 55px 55px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(57, 255, 20, .09) 0%, transparent 65%);
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .hero-glow-left {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(57, 255, 20, .04) 0%, transparent 70%);
+      top: 20%;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1150px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+
+    .hero-contract-type {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(57, 255, 20, .07);
+      border: 1px solid rgba(57, 255, 20, .18);
+      border-radius: 50px;
+      padding: 8px 18px;
+      margin-bottom: 1.8rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--green);
+      opacity: 0;
+      animation: fadeUp .7s ease .1s forwards;
+    }
+
+    .hero-contract-type .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse-dot 1.5s ease infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .3;
+        transform: scale(1.4);
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp .8s ease .3s forwards;
+    }
+
+    .hero-title .t-white {
+      color: #fff;
+      display: block;
+    }
+
+    .hero-title .t-green {
+      color: var(--green);
+      display: block;
+    }
+
+    .hero-title .t-outline {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(57, 255, 20, .5);
+    }
+
+    .hero-sub {
+      font-size: .95rem;
+      color: var(--gray);
+      line-height: 1.85;
+      max-width: 500px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp .8s ease .5s forwards;
+    }
+
+    .hero-sub strong {
+      color: #ddd;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeUp .8s ease .65s forwards;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: var(--card);
+      border: 1px solid #2a2a2a;
+      border-radius: 50px;
+      padding: 7px 14px;
+      font-size: .7rem;
+      font-weight: 600;
+      color: #bbb;
+    }
+
+    .hero-pill .pi {
+      font-size: .85rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .8s ease .8s forwards;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--green);
+      color: #000;
+      font-family: var(--font);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: all var(--t);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 25px var(--green), 0 0 50px rgba(57, 255, 20, .3);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      font-family: var(--font);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 1px solid #333;
+      cursor: pointer;
+      transition: all var(--t);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* RIGHT — Photo showcase */
+    .hero-right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp .9s ease .4s forwards;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      width: 300px;
+      height: 380px;
+    }
+
+    .hero-photo-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #1f1f1f;
+      box-shadow: 0 0 60px rgba(57, 255, 20, .1), 0 30px 80px rgba(0, 0, 0, .7);
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* Gradient overlay bottom */
+    .hero-photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background: linear-gradient(to top, rgba(0, 0, 0, .85) 0%, transparent 100%);
+      border-radius: 0 0 24px 24px;
+    }
+
+    /* Name overlay on photo */
+    .hero-photo-name {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    .hpn-name {
+      font-size: .95rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .hpn-title {
+      font-size: .62rem;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Floating badges */
+    .hero-float {
+      position: absolute;
+      background: rgba(8, 8, 8, .95);
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 10px 14px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+    }
+
+    .hf1 {
+      top: .5rem;
+      right: -3rem;
+      animation: hf-float1 4s ease-in-out infinite;
+    }
+
+    .hf2 {
+      bottom: 4rem;
+      left: -3rem;
+      animation: hf-float2 4s ease-in-out infinite 1.2s;
+    }
+
+    .hf3 {
+      top: 45%;
+      right: -2.8rem;
+      animation: hf-float1 5s ease-in-out infinite 0.6s;
+    }
+
+    @keyframes hf-float1 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes hf-float2 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
+    }
+
+    .hf-num {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hf-num span {
+      color: var(--green);
+    }
+
+    .hf-lbl {
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Avail pill on photo */
+    .avail-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse-dot 1.5s ease infinite;
+      flex-shrink: 0;
+    }
+
+    .hero-avail {
+      position: absolute;
+      top: 1rem;
+      left: -2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(8, 8, 8, .95);
+      border: 1px solid rgba(57, 255, 20, .25);
+      border-radius: 50px;
+      padding: 7px 14px;
+      backdrop-filter: blur(10px);
+      font-size: .65rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 1px;
+      white-space: nowrap;
+      animation: hf-float2 3.5s ease-in-out infinite;
+      box-shadow: 0 0 16px rgba(57, 255, 20, .08);
+    }
+
+    /* Decorative ring behind photo */
+    .hero-ring {
+      position: absolute;
+      width: 340px;
+      height: 420px;
+      border: 1px solid rgba(57, 255, 20, .08);
+      border-radius: 28px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-ring-2 {
+      position: absolute;
+      width: 380px;
+      height: 460px;
+      border: 1px solid rgba(57, 255, 20, .04);
+      border-radius: 32px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* SECTION COMMONS */
+    .sec-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .sec-label svg {
+      flex-shrink: 0;
+    }
+
+    .sec-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+    }
+
+    .sec-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+
+    .sec-header p {
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    /* PROFIL */
+    #profil {
+      background: #fff;
+      padding: 6rem 5%;
+      color: #000;
+    }
+
+    #profil .sec-label {
+      color: var(--green-dim);
+    }
+
+    #profil .sec-header p {
+      color: #666;
+    }
+
+    .profil-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .profil-block h3 {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-dim);
+      margin-bottom: 1.2rem;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .info-ico {
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 200, 83, .08);
+      border: 1px solid rgba(0, 200, 83, .15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+
+    .info-val {
+      font-size: .85rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .info-val strong {
+      color: #000;
+      font-weight: 700;
+      display: block;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+    }
+
+    .recherche-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .rech-card {
+      background: #f8f8f8;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1.2rem;
+      transition: all var(--t);
+    }
+
+    .rech-card:hover {
+      border-color: var(--green-dim);
+      box-shadow: 0 4px 16px rgba(0, 200, 83, .1);
+    }
+
+    .rech-card .rc-head {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: .4rem;
+    }
+
+    .rech-card .rc-ico {
+      font-size: 1.2rem;
+    }
+
+    .rech-card .rc-title {
+      font-size: .85rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .rech-card .rc-desc {
+      font-size: .78rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* APPORT */
+    #apport {
+      background: #000;
+      padding: 6rem 5%;
+    }
+
+    #apport .sec-label {
+      color: var(--green);
+    }
+
+    #apport .sec-header p {
+      color: var(--gray);
+    }
+
+    .apport-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .apport-card {
+      background: var(--card);
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all var(--t);
+    }
+
+    .apport-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 0 20px rgba(57, 255, 20, .12);
+      transform: translateY(-4px);
+    }
+
+    .apport-ico {
+      width: 48px;
+      height: 48px;
+      background: rgba(57, 255, 20, .08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .apport-card h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+    }
+
+    .apport-card p {
+      font-size: .82rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* COMPETENCES */
+    #competences {
+      background: #fff;
+      padding: 6rem 5%;
+      color: #000;
+    }
+
+    #competences .sec-label {
+      color: var(--green-dim);
+    }
+
+    #competences .sec-header h2 {
+      color: #000;
+    }
+
+    #competences .sec-header p {
+      color: #666;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .comp-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+      transition: all var(--t);
+    }
+
+    .comp-card:hover {
+      border-color: var(--green-dim);
+      box-shadow: 0 6px 24px rgba(0, 200, 83, .1);
+      transform: translateY(-3px);
+    }
+
+    .comp-head {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: 1rem;
+    }
+
+    .comp-ico {
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 200, 83, .1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .comp-cat {
+      font-size: .82rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .comp-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .comp-pill {
+      background: #f4f4f4;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      font-size: .7rem;
+      font-weight: 600;
+      color: #333;
+      padding: 4px 12px;
+      transition: all .2s;
+    }
+
+    .comp-card:hover .comp-pill {
+      background: rgba(0, 200, 83, .08);
+      border-color: rgba(0, 200, 83, .3);
+      color: #007a33;
+    }
+
+    /* PARCOURS */
+    #parcours {
+      background: #000;
+      padding: 6rem 5%;
+    }
+
+    #parcours .sec-label {
+      color: var(--green);
+    }
+
+    #parcours .sec-header p {
+      color: var(--gray);
+    }
+
+    .parcours-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .p-col-lbl {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .tl {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 1px solid #222;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .tl-it {
+      position: relative;
+    }
+
+    .tl-it .dot {
+      position: absolute;
+      left: -1.65rem;
+      top: .3rem;
+      width: 12px;
+      height: 12px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    .tl-it .dot-edu {
+      background: #555;
+      box-shadow: none;
+      border: 2px solid var(--green);
+    }
+
+    .tl-it .card {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      transition: border-color .3s;
+    }
+
+    .tl-it .card:hover {
+      border-color: #333;
+    }
+
+    .tl-it .date {
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: .3rem;
+    }
+
+    .tl-it .role {
+      font-size: .92rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .2rem;
+    }
+
+    .tl-it .co {
+      font-size: .76rem;
+      color: var(--gray);
+      margin-bottom: .8rem;
+    }
+
+    .tl-it ul {
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      margin-bottom: .8rem;
+      list-style: disc;
+    }
+
+    .tl-it ul li {
+      font-size: .78rem;
+      color: #bbb;
+      line-height: 1.5;
+    }
+
+    .tl-it ul li::marker {
+      color: var(--green);
+    }
+
+    .tl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .tl-tag {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      font-size: .62rem;
+      font-weight: 700;
+      color: var(--green);
+      padding: 2px 8px;
+    }
+
+    /* MOTIVATIONS */
+    #motivations {
+      background: #fff;
+      padding: 6rem 5%;
+      color: #000;
+    }
+
+    #motivations .sec-label {
+      color: var(--green-dim);
+    }
+
+    #motivations .sec-header h2 {
+      color: #000;
+    }
+
+    #motivations .sec-header p {
+      color: #666;
+    }
+
+    .motiv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .motiv-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+      transition: all var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motiv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--green-dim);
+      opacity: 0;
+      transition: opacity var(--t);
+    }
+
+    .motiv-card:hover::before {
+      opacity: 1;
+    }
+
+    .motiv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    }
+
+    .motiv-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #f0f0f0;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    .motiv-card h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: .6rem;
+    }
+
+    .motiv-card p {
+      font-size: .82rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: #0a0a0a;
+      padding: 6rem 5%;
+      border-top: 1px solid #111;
+    }
+
+    .contact-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-wrap h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-wrap h2 span {
+      color: var(--green);
+    }
+
+    .contact-wrap p {
+      color: var(--gray);
+      font-size: .95rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .cc {
+      background: var(--card);
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all var(--t);
+      cursor: pointer;
+    }
+
+    .cc:hover {
+      border-color: var(--green);
+      box-shadow: 0 0 20px rgba(57, 255, 20, .15);
+      transform: translateY(-3px);
+    }
+
+    .cc .cc-ico {
+      font-size: 1.8rem;
+      margin-bottom: .6rem;
+    }
+
+    .cc .cc-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: .3rem;
+    }
+
+    .cc .cc-val {
+      font-size: .82rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .contact-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      border-top: 1px solid #111;
+      padding: 2.5rem 5%;
+    }
+
+    .foot-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .foot-logo .ln {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .foot-logo .lt {
+      font-size: .58rem;
+      color: var(--green);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .foot-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .foot-links a {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray);
+      transition: color var(--t);
+    }
+
+    .foot-links a:hover {
+      color: var(--green);
+    }
+
+    .foot-copy {
+      width: 100%;
+      text-align: center;
+      font-size: .72rem;
+      color: #333;
+      padding-top: 2rem;
+      border-top: 1px solid #111;
+      margin-top: 1rem;
+    }
+
+    .foot-copy span {
+      color: var(--green);
+    }
+
+    /* WHATSAPP */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .wa-btn {
+      width: 54px;
+      height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .5);
+      transition: all var(--t);
+      position: relative;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37, 211, 102, .7);
+    }
+
+    .wa-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+
+    .wa-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, .3);
+      animation: wpulse 2s ease-out infinite;
+    }
+
+    @keyframes wpulse {
+      0% {
+        transform: scale(1);
+        opacity: .8;
+      }
+
+      100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    .wa-lbl {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #25D366;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      .hero-pills {
+        justify-content: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-contract-type {
+        margin: 0 auto 1.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .profil-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .parcours-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="ln">Imad Chamkhi</span>
+      <span class="lt">Recherche Alternance</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <ul class="nav-links">
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#apport">Apport</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact" class="btn-nav">Me Contacter</a></li>
+      </ul>
+      <a href="index.html" class="btn-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Portfolio
+      </a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#profil" onclick="closeMobile()">Profil</a>
+    <a href="#apport" onclick="closeMobile()">Apport</a>
+    <a href="#competences" onclick="closeMobile()">Compétences</a>
+    <a href="#parcours" onclick="closeMobile()">Parcours</a>
+    <a href="#projets" onclick="closeMobile()">Projets</a>
+    <a href="#contact" onclick="closeMobile()">Me Contacter</a>
+    <a href="index.html">← Portfolio</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-left"></div>
+    <div class="hero-inner">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-contract-type">
+          <span class="dot"></span>
+          Étudiant en Informatique à la recherche d'une alternance
+        </div>
+        <h1 class="hero-title">
+          <span class="t-white">Imad Chamkhi</span>
+          <span class="t-green">etudiant en 3eme annee </span>
+          <span class="t-outline">en informatique</span>
+        </h1>
+        <p class="hero-sub">
+          Passionné par l'informatique, basé à <strong>Strasbourg</strong>. Je cherche un
+          contrat d'alternance pour mettre mes compétences au service d'une entreprise ambitieuse dès <strong>septembre
+            2026</strong>.
+        </p>
+        <div class="hero-pills">
+          <span class="hero-pill"><span class="pi">📍</span> Strasbourg</span>
+          <span class="hero-pill"><span class="pi">📅</span> Dispo. sept. 2025</span>
+          <span class="hero-pill"><span class="pi">🎓</span> Master 2 ans</span>
+          <span class="hero-pill"><span class="pi">🔄</span> 3j entreprise / 2j école</span>
+          <span class="hero-pill"><span class="pi">🌍</span> FR · EN · DE</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Proposer une alternance</a>
+          <a href="#parcours" class="btn-outline">Voir mon parcours</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <div class="hero-ring-2"></div>
+          <div class="hero-ring"></div>
+          <div class="hero-photo-frame">
+            <img src="Myimg.PNG" alt="Imad Chamkhi" />
+          </div>
+          <div class="hero-photo-name">
+            <div class="hpn-name">Imad Chamkhi</div>
+            <div class="hpn-title">Junior IT Specialist</div>
+          </div>
+          <!-- Availability badge -->
+          <div class="hero-avail">
+            <div class="avail-dot"></div>
+            Disponible
+          </div>
+          <!-- Floating cards -->
+          <div class="hero-float hf1">
+            <div class="hf-num">20<span>+</span></div>
+            <div class="hf-lbl">Projets</div>
+          </div>
+          <div class="hero-float hf2">
+            <div class="hf-num">4<span>+</span></div>
+            <div class="hf-lbl">Ans exp.</div>
+          </div>
+          <div class="hero-float hf3">
+            <div class="hf-num" style="font-size:1rem;">🎓</div>
+            <div class="hf-lbl">Master</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DISPO BANNER -->
+  <div class="dispo-banner">
+    <div class="dispo-inner">
+      <div class="dispo-dot"></div>
+      <span><strong>Disponible dès septembre 2025</strong> — Contrat d'alternance 2 ans · Strasbourg &amp; région · Rythme 3j/2j</span>
+      <a href="#contact" class="dispo-cta">Me contacter →</a>
+    </div>
+  </div>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Mon Profil
+      </div>
+      <h2 style="color:#000;">Qui suis-je &amp; <span style="color:#00c853;">ce que je cherche</span></h2>
+      <p>Un profil IT polyvalent, motivé et opérationnel dès le premier jour.</p>
+    </div>
+    <div class="profil-grid">
+      <div class="profil-block reveal">
+        <h3>Informations personnelles</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-ico">👤</div>
+            <div class="info-val"><strong>Nom</strong>Imad Chamkhi</div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">📍</div>
+            <div class="info-val"><strong>Localisation</strong>Strasbourg, France</div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">🎓</div>
+            <div class="info-val"><strong>Niveau</strong>Bachelor — Digital Solutions Design</div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">💼</div>
+            <div class="info-val"><strong>Expérience</strong>2 ans (3 stages + co-fondateur)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">📧</div>
+            <div class="info-val"><strong>Email</strong>chamkhiimad5@gmail.com</div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">📞</div>
+            <div class="info-val"><strong>Téléphone</strong>+33 7 53 63 65 41</div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">🌍</div>
+            <div class="info-val"><strong>Langues</strong>Arabe (natif) · Français (courant) · Anglais (pro) · Allemand
+              (A1)</div>
+          </div>
+        </div>
+      </div>
+      <div class="profil-block reveal d2">
+        <h3>Ce que je recherche</h3>
+        <div class="recherche-cards">
+          <div class="rech-card">
+            <div class="rc-head"><span class="rc-ico">💻</span><span class="rc-title">Développement Web / Full
+                Stack</span></div>
+            <div class="rc-desc">PHP, Laravel, JavaScript, React — développement d'applications métier et web</div>
+          </div>
+          <div class="rech-card">
+            <div class="rc-head"><span class="rc-ico">🖥️</span><span class="rc-title">IT Systèmes &amp;
+                Infrastructure</span></div>
+            <div class="rc-desc">Administration serveurs, configuration réseau, support IT et déploiement</div>
+          </div>
+          <div class="rech-card">
+            <div class="rc-head"><span class="rc-ico">🔁</span><span class="rc-title">DevOps / Administration</span>
+            </div>
+            <div class="rc-desc">Git, CI/CD, Linux, Apache — gestion des environnements de développement</div>
+          </div>
+          <div class="rech-card">
+            <div class="rc-head"><span class="rc-ico">🛡️</span><span class="rc-title">Cybersécurité / IT Support</span>
+            </div>
+            <div class="rc-desc">Sécurité applicative, helpdesk, maintenance et support technique</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPORT -->
+  <section id="apport">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="justify-content:center;color:#39FF14;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Ce que j'apporte
+      </div>
+      <h2>Pourquoi me choisir <span style="color:#39FF14;">?</span></h2>
+      <p>Des compétences concrètes, une expérience terrain et une vraie motivation à contribuer.</p>
+    </div>
+    <div class="apport-grid">
+      <div class="apport-card reveal">
+        <div class="apport-ico">⚡</div>
+        <h3>Opérationnel dès J1</h3>
+        <p>3 stages et une co-fondation d'entreprise — j'arrive avec des compétences concrètes, pas seulement
+          théoriques. Zéro temps de chauffe.</p>
+      </div>
+      <div class="apport-card reveal d1">
+        <div class="apport-ico">🔧</div>
+        <h3>Profil polyvalent IT</h3>
+        <p>Du backend au réseau en passant par les bases de données et le déploiement — je m'adapte aux besoins réels de
+          votre équipe.</p>
+      </div>
+      <div class="apport-card reveal d2">
+        <div class="apport-ico">🤖</div>
+        <h3>Veille &amp; Innovation</h3>
+        <p>Intégration d'APIs IA, automatisation, chatbots — je suis au fait des nouvelles technologies et je sais les
+          mettre en production.</p>
+      </div>
+      <div class="apport-card reveal d3">
+        <div class="apport-ico">🌍</div>
+        <h3>Multilingue</h3>
+        <p>Arabe natif, français courant, anglais professionnel, allemand en cours — un atout pour les équipes
+          internationales ou les clients étrangers.</p>
+      </div>
+      <div class="apport-card reveal d1">
+        <div class="apport-ico">🎯</div>
+        <h3>Sens des responsabilités</h3>
+        <p>Co-fondateur de DIGIPROJEKT.com, j'ai géré des projets client réels de A à Z — livraison, qualité, deadlines
+          respectés.</p>
+      </div>
+      <div class="apport-card reveal d2">
+        <div class="apport-ico">📈</div>
+        <h3>Résultats mesurables</h3>
+        <p>6+ sites déployés, amélioration SEO mesurée, systèmes de paiement sécurisés intégrés — je produis des
+          résultats concrets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section id="competences">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Stack Technique
+      </div>
+      <h2>Compétences <span style="color:#00c853;">techniques</span></h2>
+      <p>Les technologies que je maîtrise et que j'apporte à votre équipe.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card reveal">
+        <div class="comp-head">
+          <div class="comp-ico">💻</div><span class="comp-cat">Programmation</span>
+        </div>
+        <div class="comp-pills"><span class="comp-pill">PHP</span><span class="comp-pill">JavaScript (ES6+)</span><span
+            class="comp-pill">Java</span><span class="comp-pill">Python</span><span class="comp-pill">OOP</span></div>
+      </div>
+      <div class="comp-card reveal d1">
+        <div class="comp-head">
+          <div class="comp-ico">⚡</div><span class="comp-cat">Frameworks</span>
+        </div>
+        <div class="comp-pills"><span class="comp-pill">Laravel</span><span class="comp-pill">Symfony</span><span
+            class="comp-pill">React</span><span class="comp-pill">Node.js</span></div>
+      </div>
+      <div class="comp-card reveal d2">
+        <div class="comp-head">
+          <div class="comp-ico">🗄️</div><span class="comp-cat">Bases de données</span>
+        </div>
+        <div class="comp-pills"><span class="comp-pill">MySQL</span><span class="comp-pill">PostgreSQL</span><span class="comp-pill">MongoDB</span><span class="comp-pill">SQL avancé</span><span class="comp-pill">Modélisation</span><span class="comp-pill">Optimisation</span></div>
+      </div>
+      <div class="comp-card reveal d3">
+        <div class="comp-head">
+          <div class="comp-ico">🔁</div><span class="comp-cat">DevOps</span>
+        </div>
+        <div class="comp-pills"><span class="comp-pill">Git</span><span class="comp-pill">GitHub / GitLab</span><span
+            class="comp-pill">CI/CD</span><span class="comp-pill">Linux</span><span class="comp-pill">Apache</span>
+        </div>
+      </div>
+      <div class="comp-card reveal d1">
+        <div class="comp-head">
+          <div class="comp-ico">🛒</div><span class="comp-cat">CMS &amp; E-Commerce</span>
+        </div>
+        <div class="comp-pills"><span class="comp-pill">WordPress</span><span class="comp-pill">WooCommerce</span><span
+            class="comp-pill">Shopify</span></div>
+      </div>
+      <div class="comp-card reveal d2">
+        <div class="comp-head">
+          <div class="comp-ico">🌐</div><span class="comp-cat">Réseau &amp; Sécurité</span>
+        </div>
+        <div class="comp-pills"><span class="comp-pill">TCP/IP</span><span class="comp-pill">DNS</span><span
+            class="comp-pill">SSL/HTTPS</span><span class="comp-pill">Firewall</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section id="parcours">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="justify-content:center;color:#39FF14;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Mon Parcours
+      </div>
+      <h2>Expériences &amp; <span style="color:#39FF14;">Formation</span></h2>
+      <p>Un parcours concret, avec des expériences terrain depuis 2023.</p>
+    </div>
+    <div class="parcours-wrap">
+      <div>
+        <div class="p-col-lbl reveal"><span>💼</span> Expérience Professionnelle</div>
+        <div class="tl">
+          <div class="tl-it reveal">
+            <div class="dot"></div>
+            <div class="card">
+              <div class="date">Juin 2025 – Présent</div>
+              <div class="role">Co-Fondateur &amp; Développeur Digital</div>
+              <div class="co"><a href="https://digiprojekt.com" target="_blank" rel="noopener"
+                  style="color:#39FF14;text-decoration:underline;text-underline-offset:3px;">DIGIPROJEKT.com</a> —
+                Strasbourg</div>
+              <ul>
+                <li>6+ sites &amp; applications web déployés pour des PME</li>
+                <li>Intégration d'APIs IA et systèmes chatbot</li>
+                <li>SEO technique, déploiement et maintenance</li>
+              </ul>
+              <div class="tl-tags"><span class="tl-tag">PHP</span><span class="tl-tag">Laravel</span><span
+                  class="tl-tag">MySQL</span><span class="tl-tag">AI</span></div>
+            </div>
+          </div>
+          <div class="tl-it reveal d1">
+            <div class="dot"></div>
+            <div class="card">
+              <div class="date">Mars – Juin 2025</div>
+              <div class="role">Assistant Projet Digital — Stage</div>
+              <div class="co">SILVER PLAQUE — Toulouse</div>
+              <ul>
+                <li>Développement sites responsives (HTML, CSS, PHP, JS)</li>
+                <li>SEO technique : meta, schema markup, maillage interne</li>
+                <li>Suivi Agile Trello</li>
+              </ul>
+              <div class="tl-tags"><span class="tl-tag">PHP</span><span class="tl-tag">JS</span><span
+                  class="tl-tag">SEO</span></div>
+            </div>
+          </div>
+          <div class="tl-it reveal d2">
+            <div class="dot"></div>
+            <div class="card">
+              <div class="date">Janvier – Mars 2024</div>
+              <div class="role">Développeur Web — Stage</div>
+              <div class="co">SCIENDI — Strasbourg</div>
+              <ul>
+                <li>Configuration Apache, PHP, MySQL</li>
+                <li>Intégration paiement en ligne sécurisé</li>
+                <li>Sécurité et sauvegarde</li>
+              </ul>
+              <div class="tl-tags"><span class="tl-tag">Apache</span><span class="tl-tag">PHP</span><span
+                  class="tl-tag">MySQL</span></div>
+            </div>
+          </div>
+          <div class="tl-it reveal d3">
+            <div class="dot"></div>
+            <div class="card">
+              <div class="date">Juin – Août 2023</div>
+              <div class="role">Développeur Full Stack — Stage</div>
+              <div class="co">TROISETPLUS — Strasbourg</div>
+              <ul>
+                <li>Sites full stack PHP, MySQL, JS, MVC</li>
+                <li>Intégration BDD et maintenance client</li>
+              </ul>
+              <div class="tl-tags"><span class="tl-tag">PHP</span><span class="tl-tag">MySQL</span><span
+                  class="tl-tag">MVC</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="p-col-lbl reveal"><span>🎓</span> Formation</div>
+        <div class="tl">
+          <div class="tl-it reveal">
+            <div class="dot dot-edu"></div>
+            <div class="card">
+              <div class="date">2025 – 2027</div>
+              <div class="role">Master Expert IT & Développement de Bases de Données</div>
+              <div class="co">IRIS Campus Mediaschool — Strasbourg</div>
+            </div>
+          </div>
+          <div class="tl-it reveal d1">
+            <div class="dot dot-edu"></div>
+            <div class="card">
+              <div class="date">2024 – 2025</div>
+              <div class="role">Bachelor — Digital Solutions Design</div>
+              <div class="co">IRIS Campus Mediaschool — Strasbourg</div>
+            </div>
+          </div>
+          <div class="tl-it reveal d1">
+            <div class="dot dot-edu"></div>
+            <div class="card">
+              <div class="date">2022 – 2024</div>
+              <div class="role">BTS — Services Informatiques aux Organisations</div>
+              <div class="co">IRIS Campus Mediaschool — Strasbourg</div>
+            </div>
+          </div>
+          <div class="tl-it reveal d2">
+            <div class="dot dot-edu"></div>
+            <div class="card">
+              <div class="date">2021 – 2022</div>
+              <div class="role">Technicien Spécialisé — Développement Digital</div>
+              <div class="co">INTIC — Rabat, Maroc</div>
+            </div>
+          </div>
+          <div class="tl-it reveal d3">
+            <div class="dot dot-edu"></div>
+            <div class="card">
+              <div class="date">2020 – 2021</div>
+              <div class="role">Baccalauréat — Physique &amp; Chimie</div>
+              <div class="co">Rabat, Maroc</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="justify-content:center;color:#39FF14;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Réalisations
+      </div>
+      <h2>Projets <span style="color:#39FF14;">concrets livrés</span></h2>
+      <p>Des projets réels déployés pour des clients — pas des exercices scolaires.</p>
+    </div>
+    <div class="projets-grid">
+      <div class="projet-card reveal">
+        <div class="projet-header">
+          <div class="projet-ico">🛒</div>
+          <a href="index.html#portfolio" class="projet-link">Voir plus →</a>
+        </div>
+        <div class="projet-body">
+          <div class="projet-title">Plateforme E-Commerce</div>
+          <div class="projet-desc">Boutique en ligne complète avec panier, paiement sécurisé Stripe, gestion des stocks, tableau de bord admin et suivi commandes.</div>
+          <div class="projet-tags">
+            <span class="projet-tag">PHP</span><span class="projet-tag">Laravel</span><span class="projet-tag">MySQL</span><span class="projet-tag">Stripe API</span>
+          </div>
+        </div>
+      </div>
+      <div class="projet-card reveal d1">
+        <div class="projet-header">
+          <div class="projet-ico">🎓</div>
+          <a href="index.html#portfolio" class="projet-link">Voir plus →</a>
+        </div>
+        <div class="projet-body">
+          <div class="projet-title">LMS — Plateforme de Formation</div>
+          <div class="projet-desc">Système de gestion de cours en ligne : inscriptions, suivi étudiant, évaluations, dashboard instructeur et rapports BDD.</div>
+          <div class="projet-tags">
+            <span class="projet-tag">PHP</span><span class="projet-tag">MySQL</span><span class="projet-tag">JS</span><span class="projet-tag">MVC</span>
+          </div>
+        </div>
+      </div>
+      <div class="projet-card reveal d2">
+        <div class="projet-header">
+          <div class="projet-ico">🤖</div>
+          <a href="index.html#portfolio" class="projet-link">Voir plus →</a>
+        </div>
+        <div class="projet-body">
+          <div class="projet-title">Chatbot IA Intégré</div>
+          <div class="projet-desc">Intégration d'une API IA sur site client : chatbot conversationnel, réponses automatisées, historique en base de données.</div>
+          <div class="projet-tags">
+            <span class="projet-tag">JavaScript</span><span class="projet-tag">API IA</span><span class="projet-tag">MySQL</span><span class="projet-tag">PHP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTIVATIONS -->
+  <section id="motivations">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Pourquoi l'alternance
+      </div>
+      <h2>Mes <span style="color:#00c853;">motivations</span></h2>
+      <p>Ce que je veux apporter et développer à travers cette alternance.</p>
+    </div>
+    <div class="motiv-grid">
+      <div class="motiv-card reveal">
+        <div class="motiv-num">01</div>
+        <h3>Maîtriser les BDD en contexte réel</h3>
+        <p>Mon Master porte sur les bases de données avancées. Je veux appliquer modélisation, optimisation de requêtes et administration en production — pas seulement en cours.</p>
+      </div>
+      <div class="motiv-card reveal d1">
+        <div class="motiv-num">02</div>
+        <h3>Apporter une valeur immédiate</h3>
+        <p>4 ans d'expérience, 6 projets livrés, 3 stages en entreprise — je ne pars pas de zéro. J'arrive avec des compétences concrètes et une capacité à travailler en équipe dès le premier jour.</p>
+      </div>
+      <div class="motiv-card reveal d2">
+        <div class="motiv-num">03</div>
+        <h3>Construire une relation durable</h3>
+        <p>Je cherche une entreprise avec une vraie culture IT, pas juste un contrat. Objectif : alternance qui se transforme en CDI ou en collaboration long terme après le Master.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="sec-label reveal" style="justify-content:center;color:#39FF14;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Me Contacter
+      </div>
+      <h2 class="reveal d1">Vous avez une <span>opportunité</span> ?</h2>
+      <p class="reveal d2">Disponible immédiatement pour un entretien. Réponse garantie en moins de 24h.</p>
+      <div class="contact-cards reveal d2">
+        <a class="cc" href="mailto:chamkhiimad5@gmail.com">
+          <div class="cc-ico">✉️</div>
+          <div class="cc-label">Email</div>
+          <div class="cc-val">chamkhiimad5@gmail.com</div>
+        </a>
+        <a class="cc" href="tel:+33753636541">
+          <div class="cc-ico">📞</div>
+          <div class="cc-label">Téléphone</div>
+          <div class="cc-val">+33 7 53 63 65 41</div>
+        </a>
+        <a class="cc" href="https://wa.me/33753636541" target="_blank" rel="noopener">
+          <div class="cc-ico">💬</div>
+          <div class="cc-label">WhatsApp</div>
+          <div class="cc-val">Message direct</div>
+        </a>
+        <a class="cc" href="https://linkedin.com/in/imad-chamkhi-57a4a5246/" target="_blank" rel="noopener">
+          <div class="cc-ico">💼</div>
+          <div class="cc-label">LinkedIn</div>
+          <div class="cc-val">imad-chamkhi</div>
+        </a>
+        <a class="cc" href="https://github.com/imadchamkhi" target="_blank" rel="noopener">
+          <div class="cc-ico">💻</div>
+          <div class="cc-label">GitHub</div>
+          <div class="cc-val">imadchamkhi</div>
+        </a>
+        <div class="cc">
+          <div class="cc-ico">📍</div>
+          <div class="cc-label">Localisation</div>
+          <div class="cc-val">bas-rhin, France</div>
+        </div>
+      </div>
+      <div class="contact-cta reveal d3">
+        <a href="mailto:chamkhiimad5@gmail.com" class="btn-primary">✉️ Envoyer un email</a>
+        <a href="https://wa.me/33753636541" target="_blank" rel="noopener" class="btn-outline">💬 WhatsApp</a>
+        <a href="https://linkedin.com/in/imad-chamkhi-57a4a5246/" target="_blank" rel="noopener" class="btn-outline">💼 LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-logo">
+        <div class="ln">Imad Chamkhi</div>
+        <div class="lt">Recherche Alternance</div>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Portfolio</a>
+        <a href="#profil">Profil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+        <a href="https://linkedin.com/in/imad-chamkhi-57a4a5246/" target="_blank" rel="noopener" style="color:var(--green)">LinkedIn</a>
+        <a href="https://github.com/imadchamkhi" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="foot-copy">© 2025 <span>Imad Chamkhi</span>. Tous droits réservés. · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <div class="wa-float">
+    <a class="wa-btn" href="https://wa.me/33753636541" target="_blank" rel="noopener">
+      <div class="wa-pulse"></div>
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+      </svg>
+    </a>
+    <span class="wa-lbl">WhatsApp</span>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+</body>
+
+</html>
