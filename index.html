@@ -1714,7 +1714,6 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#portfolio">Work</a></li>
         <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="alternance.html" style="color:var(--green);font-weight:700;">Alternance</a></li>
         <li><a href="#contact" class="btn-primary" style="padding:9px 22px;font-size:0.7rem;">Hire Me</a></li>
       </ul>
       <div class="lang-switcher">
@@ -1736,7 +1735,6 @@
     <a href="#experience" onclick="closeMobile()">Experience</a>
     <a href="#portfolio" onclick="closeMobile()">Work</a>
     <a href="#testimonials" onclick="closeMobile()">Reviews</a>
-    <a href="alternance.html" onclick="closeMobile()" style="color:var(--green);">Alternance</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
     <div class="mobile-lang">
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -2476,6 +2474,10 @@
     </div>
     <div class="footer-copy">
       © 2025 <span>Imad Chamkhi</span>. All rights reserved.
+      &nbsp;·&nbsp;
+      <a href="mentions-legales.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a>
+      &nbsp;·&nbsp;
+      <a href="politique-confidentialite.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>
     </div>
   </footer>
 
@@ -2508,9 +2510,9 @@
     // ── TRANSLATIONS ───────────────────────────────────────
     const T = {
       fr: {
-        nav: ['À propos','Services','Compétences','Expérience','Projets','Avis','Alternance',"M'engager"],
-        mobileNav: ['À propos','Services','Compétences','Expérience','Projets','Avis','Alternance','Contact'],
-        heroEyebrow: 'Master Expert IT & BDD — En recherche d\'alternance · Strasbourg',
+        nav: ['À propos','Services','Compétences','Expérience','Projets','Avis',"M'engager"],
+        mobileNav: ['À propos','Services','Compétences','Expérience','Projets','Avis','Contact'],
+        heroEyebrow: 'Master Expert IT & BDD — IT Specialist Freelance & Recherche CDI · Strasbourg',
         heroBtn1: 'Voir mes projets', heroBtn2: 'Me contacter',
         badges: ['<span class="icon">✓</span> Satisfaction garantie','<span class="icon">⊞</span> Sécurisé &amp; Fiable','<span class="icon">⏱</span> Réponse 24h','<span class="icon">★</span> Top noté'],
         scroll: 'Défiler',
@@ -2566,9 +2568,9 @@
         footerCopy: 'Tous droits réservés.'
       },
       en: {
-        nav: ['About','Services','Skills','Experience','Work','Reviews','Alternance','Hire Me'],
-        mobileNav: ['About','Services','Skills','Experience','Work','Reviews','Alternance','Contact'],
-        heroEyebrow: 'Master Expert IT & BDD — Seeking Apprenticeship · Strasbourg',
+        nav: ['About','Services','Skills','Experience','Work','Reviews','Hire Me'],
+        mobileNav: ['About','Services','Skills','Experience','Work','Reviews','Contact'],
+        heroEyebrow: 'Master Expert IT & BDD — IT Specialist Freelance & Seeking Full-Time (CDI) · Strasbourg',
         heroBtn1: 'View My Work', heroBtn2: 'Get In Touch',
         badges: ['<span class="icon">✓</span> Satisfaction Guarantee','<span class="icon">⊞</span> Secure &amp; Reliable','<span class="icon">⏱</span> 24h Response','<span class="icon">★</span> Top Rated'],
         scroll: 'Scroll',
@@ -2624,9 +2626,9 @@
         footerCopy: 'All rights reserved.'
       },
       de: {
-        nav: ['Über mich','Leistungen','Fähigkeiten','Erfahrung','Projekte','Bewertungen','Alternanz','Kontakt'],
-        mobileNav: ['Über mich','Leistungen','Fähigkeiten','Erfahrung','Projekte','Bewertungen','Alternanz','Kontakt'],
-        heroEyebrow: 'Master Expert IT & BDD — Ausbildungssuche · Straßburg',
+        nav: ['Über mich','Leistungen','Fähigkeiten','Erfahrung','Projekte','Bewertungen','Kontakt'],
+        mobileNav: ['Über mich','Leistungen','Fähigkeiten','Erfahrung','Projekte','Bewertungen','Kontakt'],
+        heroEyebrow: 'Master Expert IT & BDD — IT Specialist Freelance & Vollzeit (CDI) · Straßburg',
         heroBtn1: 'Meine Projekte', heroBtn2: 'Kontakt aufnehmen',
         badges: ['<span class="icon">✓</span> Zufriedenheitsgarantie','<span class="icon">⊞</span> Sicher &amp; Zuverlässig','<span class="icon">⏱</span> 24h Antwort','<span class="icon">★</span> Top bewertet'],
         scroll: 'Scrollen',
@@ -2696,19 +2698,17 @@
 
       const set = (sel, val, html = false) => { const el = document.querySelector(sel); if (el) html ? el.innerHTML = val : el.textContent = val; };
 
-      // Navbar — skip the alternance link (index 6, static green link)
+      // Navbar
       const navLinks = document.querySelectorAll('#navbar .nav-links li a');
       let ni = 0;
       navLinks.forEach(a => {
-        if (a.getAttribute('href') === 'alternance.html') return;
-        if (t.nav[ni] !== undefined && t.nav[ni] !== 'Alternance' && t.nav[ni] !== 'Alternanz') a.textContent = t.nav[ni];
+        if (t.nav[ni] !== undefined) a.textContent = t.nav[ni];
         ni++;
       });
-      // Mobile menu — skip alternance link
+      // Mobile menu
       const mLinks = document.querySelectorAll('#mobileMenu a');
       let mi = 0;
       mLinks.forEach(a => {
-        if (a.getAttribute('href') === 'alternance.html') return;
         if (t.mobileNav[mi] !== undefined) { a.textContent = t.mobileNav[mi]; mi++; }
       });
 
