@@ -2816,7 +2816,7 @@
       const fLinks = document.querySelectorAll('.footer-links a');
       t.footerLinks.forEach((txt, i) => { if (fLinks[i]) fLinks[i].textContent = txt; });
       const copyEl = document.querySelector('.footer-copy');
-      if (copyEl) copyEl.innerHTML = `© 2025 <span>Imad Chamkhi</span>. ${t.footerCopy}`;
+      if (copyEl) copyEl.innerHTML = `© 2025 <span>Imad Chamkhi</span>. ${t.footerCopy} &nbsp;·&nbsp; <a href="mentions-legales.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Mentions légales</a> &nbsp;·&nbsp; <a href="politique-confidentialite.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Politique de confidentialité</a>`;
 
       window._currentLang = lang;
     }
