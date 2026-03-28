@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allsafe Cybersecurity — Amélioration de la Sécurité Informatique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0A0E1A;
+    --bg-secondary: #0D1B2A;
+    --bg-card: #0F1F35;
+    --color-primary: #1A6FE8;
+    --color-accent: #00B4D8;
+    --color-text: #FFFFFF;
+    --color-muted: #B0BEC5;
+    --color-border: #1E3A5F;
+    --color-code-bg: #111827;
+    --color-danger: #FF3B3B;
+    --color-success: #2ECC71;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+  /* ── REVEAL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-border), transparent);
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section { padding: 5rem 0; }
+
+  /* ════════════════════════════════
+     1. HERO
+  ════════════════════════════════ */
+  .hero {
+    min-height: 60vh;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem;
+  }
+
+  /* dot grid background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,180,216,0.18) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  /* subtle top glow */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(26,111,232,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(26,111,232,0.15);
+    border: 1px solid rgba(0,180,216,0.3);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  /* Allsafe Logo SVG */
+  .logo-wrap {
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .logo-svg-ring {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .logo-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.15;
+  }
+  .logo-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .logo-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--color-accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    color: var(--color-text);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+  }
+  .hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .hero-meta .sep {
+    color: var(--color-border);
+    font-size: 1.1rem;
+  }
+
+  /* ════════════════════════════════
+     2. CONTEXTE
+  ════════════════════════════════ */
+  .section-contexte {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .contexte-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    background: rgba(15,31,53,0.6);
+    backdrop-filter: blur(8px);
+  }
+
+  .card-company {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .card-company .logo-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.25rem;
+  }
+  .company-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .card-company p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  .card-threat {
+    background: #1A0A0A;
+    border-color: var(--color-danger);
+    position: relative;
+    overflow: hidden;
+  }
+  .card-threat::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-danger), transparent);
+  }
+  .threat-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-danger);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .card-threat p {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .threat-vector {
+    background: rgba(255,59,59,0.08);
+    border: 1px solid rgba(255,59,59,0.2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .threat-vector strong {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-danger);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .threat-vector span {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    border: 1px solid;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tag-red {
+    background: rgba(255,59,59,0.12);
+    border-color: rgba(255,59,59,0.4);
+    color: var(--color-danger);
+  }
+
+  /* ════════════════════════════════
+     3. PÉRIMÈTRE
+  ════════════════════════════════ */
+  .section-perimetre { background: var(--bg-primary); }
+
+  .perimetre-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .perim-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .perim-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .perim-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .perim-card.blue::before { background: linear-gradient(90deg, var(--color-primary), transparent); }
+  .perim-card.cyan::before { background: linear-gradient(90deg, var(--color-accent), transparent); }
+  .perim-card.violet::before { background: linear-gradient(90deg, #7B2FBE, transparent); }
+
+  .perim-card.blue { border-color: rgba(26,111,232,0.35); }
+  .perim-card.cyan { border-color: rgba(0,180,216,0.35); }
+  .perim-card.violet { border-color: rgba(123,47,190,0.35); }
+
+  .perim-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .perim-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin-bottom: 0.3rem;
+  }
+  .perim-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+  .perim-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .perim-list li {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+  }
+  .perim-list li::before {
+    content: '›';
+    color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+    font-size: 1rem;
+  }
+
+  /* ════════════════════════════════
+     4. SOLUTIONS
+  ════════════════════════════════ */
+  .section-solutions {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tabs-header {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    padding-bottom: 0;
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    transition: color 0.2s, border-color 0.2s;
+    text-transform: uppercase;
+  }
+  .tab-btn:hover { color: var(--color-text); }
+  .tab-btn.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .solution-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .solution-info h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+  .solution-info .tool-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(26,111,232,0.15);
+    border: 1px solid rgba(26,111,232,0.35);
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .solution-info p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .solution-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .extra-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+  }
+  .extra-item::before {
+    content: '✓';
+    color: var(--color-accent);
+    flex-shrink: 0;
+    font-size: 0.8rem;
+  }
+
+  /* Terminal block */
+  .terminal {
+    background: var(--color-code-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: var(--font-mono);
+  }
+  .terminal-bar {
+    background: #1a2332;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #FF5F57; }
+  .dot-y { background: #FEBC2E; }
+  .dot-g { background: #28C840; }
+  .terminal-filename {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    letter-spacing: 0.05em;
+  }
+  .terminal-body {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.9;
+    color: var(--color-accent);
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .terminal-body .line-prompt { color: #B0BEC5; }
+  .terminal-body .line-ok { color: #2ECC71; }
+  .terminal-body .line-alert { color: #FF5F57; }
+  .terminal-body .line-info { color: #B0BEC5; }
+  .terminal-body .line-cmd { color: #F8F8F2; }
+  .terminal-body .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    background: var(--color-accent);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  .terminal-gap { margin-top: 1rem; }
+
+  /* ════════════════════════════════
+     5. RÉSULTATS
+  ════════════════════════════════ */
+  .section-resultats { background: var(--bg-primary); }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .metric-card:hover {
+    border-color: rgba(0,180,216,0.4);
+    transform: translateY(-3px);
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .metric-card:hover::before { opacity: 1; }
+
+  .metric-number {
+    font-family: var(--font-mono);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .metric-label {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+    font-family: var(--font-body);
+  }
+
+  .result-box {
+    background: #0A1F0A;
+    border: 1px solid var(--color-success);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-success), transparent);
+  }
+  .result-box-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .result-box p {
+    font-size: 0.95rem;
+    color: #a8f0b8;
+    line-height: 1.7;
+    font-family: var(--font-body);
+  }
+  .result-box strong {
+    color: var(--color-success);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  /* ════════════════════════════════
+     6. STACK
+  ════════════════════════════════ */
+  .section-stack {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stack-groups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .stack-group {
+    background: rgba(15,31,53,0.5);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  .stack-group-title {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .stag {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    background: rgba(26,111,232,0.1);
+    border: 1px solid rgba(26,111,232,0.25);
+    color: var(--color-text);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .stag:hover {
+    background: rgba(26,111,232,0.2);
+    border-color: rgba(26,111,232,0.5);
+  }
+
+  /* ════════════════════════════════
+     7. FOOTER
+  ════════════════════════════════ */
+  footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--color-primary);
+    padding: 2.5rem 0;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .footer-info {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+  .footer-info strong {
+    display: block;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba(0,180,216,0.3);
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .back-link:hover {
+    background: rgba(0,180,216,0.08);
+    border-color: rgba(0,180,216,0.6);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .contexte-grid,
+    .solution-layout,
+    .stack-groups { grid-template-columns: 1fr; }
+    .perimetre-grid { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .hero-meta .sep { display: none; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .tabs-header { flex-direction: column; border-bottom: none; gap: 0; }
+    .tab-btn { border-bottom: none; border-left: 2px solid transparent; margin-bottom: 0; padding-left: 1rem; }
+    .tab-btn.active { border-left-color: var(--color-accent); border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ 1. HERO ════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">BTS SIO · Décembre 2023</div>
+
+    <div class="logo-wrap">
+      <div class="logo-svg-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" stroke="#1A6FE8" stroke-width="2" fill="rgba(26,111,232,0.08)"/>
+          <line x1="14" y1="17" x2="34" y2="17" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="24" x2="34" y2="24" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="31" x2="34" y2="31" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text-block">
+          <span class="logo-name">Allsafe</span>
+          <span class="logo-sub">Cybersecurity</span>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="hero-title">Amélioration de la Sécurité Informatique</h1>
+    <p class="hero-subtitle">Projet Cybersécurité — ALLSAFE CYBERSECURITY</p>
+
+    <div class="hero-meta">
+      <span>📅 Décembre 2023</span>
+      <span class="sep">|</span>
+      <span>👤 Imad CHAMKHI</span>
+      <span class="sep">|</span>
+      <span>🏢 Allsafe Cybersecurity</span>
+      <span class="sep">|</span>
+      <span>🎓 BTS SIO</span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ 2. CONTEXTE ════════ -->
+<section class="section-contexte">
+  <div class="container">
+    <div class="section-title reveal">[ Contexte ]</div>
+    <div class="contexte-grid">
+
+      <div class="card card-company reveal reveal-delay-1">
+        <div class="logo-mini">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" stroke="#1A6FE8" stroke-width="2" fill="rgba(26,111,232,0.08)"/>
+            <line x1="14" y1="17" x2="34" y2="17" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="14" y1="24" x2="34" y2="24" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="14" y1="31" x2="34" y2="31" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="company-name">Allsafe Cybersecurity</span>
+        </div>
+        <p>Entreprise spécialisée dans les solutions de cybersécurité pour les professionnels (banques, assurances, grande distribution). Sous la direction de M. Gideon GODDARD.</p>
+        <p>Infrastructure : ~100 postes de travail + serveurs virtualisés en datacenter local + cloud hybride (PRA).</p>
+      </div>
+
+      <div class="card card-threat reveal reveal-delay-2">
+        <div class="threat-title">⚠️ Menace détectée</div>
+        <p>Suite à des incidents internes, un pentest réalisé par M. ALDERSON Elliot (approche ethical hacking <em>"gray hat"</em>) a révélé des attaques Man-In-The-Middle (MITM) non détectées par l'équipe IT.</p>
+        <div class="threat-vector">
+          <strong>Vecteur d'attaque : ARP Spoofing</strong>
+          <span>Risques : reniflage de paquets · piratage de session · écoute VoIP · manipulation des données</span>
+        </div>
+        <div class="tags">
+          <span class="tag tag-red">MITM</span>
+          <span class="tag tag-red">ARP Spoofing</span>
+          <span class="tag tag-red">Non détecté</span>
+          <span class="tag tag-red">Critique</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 3. PÉRIMÈTRE ════════ -->
+<section class="section-perimetre">
+  <div class="container">
+    <div class="section-title reveal">[ Périmètre ]</div>
+    <div class="perimetre-grid">
+
+      <div class="perim-card blue reveal reveal-delay-1">
+        <span class="perim-icon">💻</span>
+        <div class="perim-title">100 Laptops</div>
+        <span class="perim-subtitle">Windows 10 Enterprise</span>
+        <ul class="perim-list">
+          <li>Protection MITM</li>
+          <li>XArp</li>
+          <li>HTTPS / VPN obligatoire</li>
+          <li>Chiffrement disque</li>
+          <li>NetCut Defender</li>
+        </ul>
+      </div>
+
+      <div class="perim-card cyan reveal reveal-delay-2">
+        <span class="perim-icon">🖥️</span>
+        <div class="perim-title">Serveurs</div>
+        <span class="perim-subtitle">Windows Server 2019 + Debian 10</span>
+        <ul class="perim-list">
+          <li>IDS/IPS Colasoft Capsa</li>
+          <li>ARPWatch</li>
+          <li>ARP statiques</li>
+          <li>Segmentation réseau</li>
+          <li>OpenVPN</li>
+          <li>iptables</li>
+        </ul>
+      </div>
+
+      <div class="perim-card violet reveal reveal-delay-3">
+        <span class="perim-icon">🔌</span>
+        <div class="perim-title">Commutateurs CISCO 2960</div>
+        <span class="perim-subtitle">Cisco IOS</span>
+        <ul class="perim-list">
+          <li>Port Security</li>
+          <li>VLANs</li>
+          <li>DHCP Snooping</li>
+          <li>Dynamic ARP Inspection (DAI)</li>
+          <li>Surveillance trafic ARP</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 4. SOLUTIONS ════════ -->
+<section class="section-solutions">
+  <div class="container">
+    <div class="section-title reveal">[ Solutions ]</div>
+
+    <div class="tabs-header reveal">
+      <button class="tab-btn active" data-tab="axe1">AXE 1 — Laptops</button>
+      <button class="tab-btn" data-tab="axe2">AXE 2 — Serveurs</button>
+      <button class="tab-btn" data-tab="axe3">AXE 3 — Switch CISCO</button>
+    </div>
+
+    <!-- AXE 1 -->
+    <div class="tab-panel active" id="axe1">
+      <div class="solution-layout">
+        <div class="solution-info">
+          <h3>Sécurité Réseau des Laptops</h3>
+          <span class="tool-badge">⚙ Outil principal : XArp</span>
+          <p>XArp surveille en temps réel la table ARP des postes Windows et déclenche des alertes immédiates en cas de modification suspecte (ARP Spoofing). Déployé sur les 100 laptops via GPO Active Directory.</p>
+          <div class="solution-extras">
+            <div class="extra-item">NetCut Defender — blocage actif des attaques ARP</div>
+            <div class="extra-item">Activation HTTPS forcé via proxy</div>
+            <div class="extra-item">VPN obligatoire hors réseau entreprise</div>
+            <div class="extra-item">Chiffrement BitLocker sur tous les disques</div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="terminal-filename">xarp-monitor.sh</span>
+          </div>
+          <div class="terminal-body" id="term1"><span class="line-prompt">&gt; </span><span class="line-cmd">xarp --monitor --alert-email admin@allsafe.fr</span>
+<span class="line-ok">[+]</span> Surveillance ARP active
+<span class="line-ok">[+]</span> Interface: eth0
+<span class="line-ok">[+]</span> Mode: high sensitivity
+<span class="line-alert">[!]</span> ARP Spoofing détecté — 192.168.1.105
+<span class="line-alert">[!]</span> MAC conflit: 00:1a:2b:3c:4d:5e
+<span class="line-ok">[+]</span> Alerte envoyée à admin@allsafe.fr<span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AXE 2 -->
+    <div class="tab-panel" id="axe2">
+      <div class="solution-layout">
+        <div class="solution-info">
+          <h3>Sécurité des Serveurs</h3>
+          <span class="tool-badge">⚙ Colasoft Capsa · ARPWatch</span>
+          <p>Colasoft Capsa assure la surveillance IDS/IPS du trafic réseau serveur. ARPWatch journalise tous les changements ARP et alerte en cas d'activité suspecte. Combinés à des règles iptables anti-spoofing.</p>
+          <div class="solution-extras">
+            <div class="extra-item">ARP statiques pour les hôtes critiques</div>
+            <div class="extra-item">OpenVPN site-à-site chiffré</div>
+            <div class="extra-item">Segmentation réseau par VLAN</div>
+            <div class="extra-item">Filtrage rpfilter via iptables</div>
+          </div>
+        </div>
+        <div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="terminal-filename">arpwatch.log</span>
+            </div>
+            <div class="terminal-body"><span class="line-prompt">$ </span><span class="line-cmd">arpwatch -i eth0 -f /var/lib/arpwatch/arp.dat</span>
+<span class="line-info">[INFO]</span> Monitoring ARP table changes...
+<span class="line-alert">[ALERT]</span> New station: 192.168.1.200 (aa:bb:cc:dd:ee:ff)
+<span class="line-alert">[ALERT]</span> Changed ethernet address: 192.168.1.1</div>
+          </div>
+          <div class="terminal terminal-gap">
+            <div class="terminal-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="terminal-filename">iptables-antispoofing.sh</span>
+            </div>
+            <div class="terminal-body"><span class="line-cmd">iptables -A INPUT -m rpfilter --invert -j DROP</span>
+<span class="line-cmd">iptables -A FORWARD -m rpfilter --invert -j DROP</span>
+<span class="line-ok">[+]</span> Règles anti-spoofing appliquées<span class="cursor"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AXE 3 -->
+    <div class="tab-panel" id="axe3">
+      <div class="solution-layout">
+        <div class="solution-info">
+          <h3>Sécurité des Commutateurs CISCO</h3>
+          <span class="tool-badge">⚙ Cisco IOS · DAI · Port Security</span>
+          <p>La Dynamic ARP Inspection (DAI) valide chaque paquet ARP contre la table DHCP Snooping. Seuls les paquets légitimes sont autorisés. Port Security limite le nombre de MAC par port pour bloquer les attaques physiques.</p>
+          <div class="solution-extras">
+            <div class="extra-item">DAI sur tous les VLANs actifs</div>
+            <div class="extra-item">DHCP Snooping — binding table sécurisée</div>
+            <div class="extra-item">Port Security max 2 adresses MAC</div>
+            <div class="extra-item">Violation mode : restrict + logging</div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="terminal-filename">cisco-2960-config.ios</span>
+          </div>
+          <div class="terminal-body"><span class="line-cmd">Switch(config)# ip arp inspection vlan 10,20</span>
+<span class="line-cmd">Switch(config-if)# ip arp inspection trust</span>
+<span class="line-ok">%DAI-6-PACKET_LOGGED:</span> ARP packet on trusted port
+
+<span class="line-cmd">Switch(config-if)# switchport port-security max 2</span>
+<span class="line-cmd">Switch(config-if)# switchport port-security violation restrict</span>
+
+<span class="line-cmd">Switch(config)# ip dhcp snooping</span>
+<span class="line-cmd">Switch(config)# ip dhcp snooping vlan 10,20</span>
+<span class="line-ok">%DHCP_SNOOPING-6:</span> Binding table updated<span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ 5. RÉSULTATS ════════ -->
+<section class="section-resultats">
+  <div class="container">
+    <div class="section-title reveal">[ Résultats ]</div>
+
+    <div class="metrics-grid">
+      <div class="metric-card reveal reveal-delay-1">
+        <span class="metric-number" data-target="0" data-suffix="">0</span>
+        <div class="metric-label">Attaques MITM<br>détectées post-déploiement</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-2">
+        <span class="metric-number" data-target="100" data-suffix="%">0%</span>
+        <div class="metric-label">Postes sécurisés<br>XArp + NetCut</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-3">
+        <span class="metric-number" data-target="3" data-suffix="">0</span>
+        <div class="metric-label">Couches de protection<br>Endpoints / Serveurs / Réseau</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-4">
+        <span class="metric-number" data-target="24" data-suffix="/7">0/7</span>
+        <div class="metric-label">Surveillance active<br>ARPWatch + Colasoft</div>
+      </div>
+    </div>
+
+    <div class="result-box reveal">
+      <div class="result-box-icon">✅</div>
+      <div>
+        <strong>Résultat final</strong>
+        <p>Aucune attaque MITM détectée depuis le déploiement. Infrastructure sécurisée sur les 3 niveaux (endpoints, serveurs, réseau). Rapport de sécurité validé par M. GODDARD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 6. STACK ════════ -->
+<section class="section-stack">
+  <div class="container">
+    <div class="section-title reveal">[ Stack Technique ]</div>
+    <div class="stack-groups">
+
+      <div class="stack-group reveal reveal-delay-1">
+        <div class="stack-group-title">🛡️ Sécurité Réseau</div>
+        <div class="stack-tags">
+          <span class="stag">XArp</span>
+          <span class="stag">ARPWatch</span>
+          <span class="stag">Colasoft Capsa</span>
+          <span class="stag">NetCut Defender</span>
+        </div>
+      </div>
+
+      <div class="stack-group reveal reveal-delay-2">
+        <div class="stack-group-title">🖧 Infrastructure</div>
+        <div class="stack-tags">
+          <span class="stag">Cisco IOS</span>
+          <span class="stag">OpenVPN</span>
+          <span class="stag">iptables</span>
+          <span class="stag">VLANs</span>
+          <span class="stag">DHCP Snooping</span>
+        </div>
+      </div>
+
+      <div class="stack-group reveal reveal-delay-3">
+        <div class="stack-group-title">💻 Systèmes</div>
+        <div class="stack-tags">
+          <span class="stag">Windows 10 Enterprise</span>
+          <span class="stag">Windows Server 2019</span>
+          <span class="stag">Debian 10</span>
+        </div>
+      </div>
+
+      <div class="stack-group reveal reveal-delay-4">
+        <div class="stack-group-title">🔧 Protocoles</div>
+        <div class="stack-tags">
+          <span class="stag">ARP</span>
+          <span class="stag">TCP/IP</span>
+          <span class="stag">HTTPS</span>
+          <span class="stag">VPN</span>
+          <span class="stag">DAI</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 7. FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" stroke="#1A6FE8" stroke-width="2" fill="rgba(26,111,232,0.08)"/>
+          <line x1="14" y1="17" x2="34" y2="17" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="24" x2="34" y2="24" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="31" x2="34" y2="31" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div class="footer-info">
+          <strong>Imad CHAMKHI</strong>
+          BTS SIO · Décembre 2023
+        </div>
+      </div>
+      <a href="index.html" class="back-link">← Retour au portfolio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── TABS ──
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ── REVEAL ON SCROLL ──
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // ── COUNTER ANIMATION ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const start = performance.now();
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const metricCards = document.querySelectorAll('.metric-card');
+  const metricObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const num = e.target.querySelector('.metric-number');
+        if (num) animateCounter(num);
+        metricObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  metricCards.forEach(c => metricObserver.observe(c));
+</script>
+</body>
+</html>
