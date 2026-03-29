@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets — Imad Chamkhi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    /* ── PRINT BUTTON (screen only) ── */
+    .print-btn {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #39FF14;
+      color: #000;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      padding: .75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(57,255,20,.4);
+    }
+    .print-btn:hover { opacity: .85; }
+
+    /* ── COVER PAGE ── */
+    .cover {
+      min-height: 100vh;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      page-break-after: always;
+    }
+    .cover-tag {
+      display: inline-block;
+      border: 1px solid rgba(57,255,20,.4);
+      color: #39FF14;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+    .cover h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .cover h1 span { color: #39FF14; }
+    .cover-sub {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 3rem;
+      max-width: 480px;
+    }
+    .cover-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .cover-meta-item { text-align: center; }
+    .cover-meta-num { font-size: 2.2rem; font-weight: 900; color: #39FF14; line-height: 1; }
+    .cover-meta-lbl { font-size: .75rem; color: #666; margin-top: .25rem; }
+    .cover-divider { width: 60px; height: 2px; background: #39FF14; margin: 2rem auto; }
+    .cover-info { font-size: .85rem; color: #555; }
+    .cover-info strong { color: #fff; }
+
+    /* ── SECTION BREAK ── */
+    .section-title {
+      background: #000;
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .section-title span { color: #39FF14; }
+
+    /* ── PROJECT PAGE ── */
+    .project-page {
+      padding: 3rem 3.5rem;
+      page-break-after: always;
+      border-bottom: 1px solid #eee;
+    }
+    .project-page:last-child { page-break-after: auto; border-bottom: none; }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .project-number {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #39FF14;
+      margin-bottom: .4rem;
+    }
+    .project-name {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #000;
+      line-height: 1.15;
+      margin-bottom: .5rem;
+    }
+    .project-category {
+      display: inline-block;
+      background: #f0fff0;
+      border: 1px solid #c0e8c0;
+      color: #1a7a1a;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: .2rem .7rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .project-img {
+      width: 260px;
+      min-width: 260px;
+      height: 160px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+      background: #f5f5f5;
+    }
+    .project-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .project-body { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+
+    .block-title {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: .6rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: .4rem;
+    }
+    .block-text { font-size: .88rem; color: #333; line-height: 1.75; }
+
+    .tech-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tech-pill {
+      background: #000;
+      color: #39FF14;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .25rem .7rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .features-list { list-style: none; padding: 0; }
+    .features-list li {
+      font-size: .85rem;
+      color: #333;
+      padding: .3rem 0;
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+    }
+    .features-list li::before { content: '✓'; color: #39FF14; font-weight: 700; min-width: 16px; margin-top: .05rem; }
+
+    .project-link-box {
+      background: #f9f9f9;
+      border: 1px solid #e8e8e8;
+      border-left: 4px solid #39FF14;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .project-link-label { font-size: .72rem; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .2rem; }
+    .project-link-url { font-size: .85rem; color: #1a7a1a; font-weight: 600; word-break: break-all; }
+    .project-status { font-size: .72rem; font-weight: 700; padding: .25rem .75rem; border-radius: 100px; }
+    .status-live { background: #e8fff0; color: #1a7a1a; border: 1px solid #c0e8c0; }
+    .status-demo { background: #fff8e0; color: #7a5a00; border: 1px solid #e8d890; }
+
+    /* ── SUMMARY PAGE ── */
+    .summary-page {
+      padding: 3rem 3.5rem;
+      page-break-before: always;
+    }
+    .summary-page h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      color: #000;
+    }
+    .summary-page h2 span { color: #39FF14; }
+    .summary-table { width: 100%; border-collapse: collapse; font-size: .83rem; }
+    .summary-table th {
+      background: #000;
+      color: #fff;
+      padding: .75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: .75rem;
+      letter-spacing: .05em;
+    }
+    .summary-table th:first-child { border-radius: 6px 0 0 6px; }
+    .summary-table th:last-child { border-radius: 0 6px 6px 0; }
+    .summary-table td { padding: .7rem 1rem; border-bottom: 1px solid #f0f0f0; color: #333; }
+    .summary-table tr:last-child td { border-bottom: none; }
+    .summary-table tr:hover td { background: #f9fff9; }
+    .tag-sm {
+      background: #000;
+      color: #39FF14;
+      font-size: .68rem;
+      font-weight: 600;
+      padding: .15rem .5rem;
+      border-radius: 3px;
+      font-family: monospace;
+      margin-right: .25rem;
+      display: inline-block;
+      margin-bottom: .2rem;
+    }
+    .dot-live { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #39FF14; margin-right: .4rem; }
+    .dot-demo { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FFD700; margin-right: .4rem; }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      .print-btn { display: none !important; }
+      body { font-size: 11pt; }
+      .cover { min-height: 100vh; }
+      .project-page { padding: 2rem 2.5rem; }
+      .summary-page { padding: 2rem 2.5rem; }
+      @page { margin: 0; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">⬇ Exporter en PDF</button>
+
+  <!-- ─── COVER ─── -->
+  <div class="cover">
+    <div class="cover-tag">Portfolio · 2025</div>
+    <h1>Projets<br/><span>Livrés</span></h1>
+    <p class="cover-sub">Présentation complète des réalisations clients développées par Imad Chamkhi</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-num">6</div>
+        <div class="cover-meta-lbl">Projets livrés</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-num">4+</div>
+        <div class="cover-meta-lbl">Ans d'expérience</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-num">100%</div>
+        <div class="cover-meta-lbl">Satisfaction client</div>
+      </div>
+    </div>
+    <div class="cover-divider"></div>
+    <div class="cover-info">
+      <strong>Imad Chamkhi</strong> · Master Expert IT &amp; BDD<br/>
+      chamkhiimad5@gmail.com · +33 7 53 63 65 41 · Strasbourg, France
+    </div>
+  </div>
+
+  <!-- ─── PROJECT 1 ─── -->
+  <div class="section-title"><span>01</span> CarteGriseOne</div>
+  <div class="project-page">
+    <div class="project-header">
+      <div>
+        <div class="project-number">Projet 01 / 06</div>
+        <div class="project-name">CarteGriseOne</div>
+        <span class="project-category">Site Vitrine</span>
+      </div>
+      <div class="project-img">
+        <img src="assets/img/cartegriseone.png" alt="CarteGriseOne"/>
+      </div>
+    </div>
+    <div class="project-body">
+      <div>
+        <div class="block-title">Description</div>
+        <p class="block-text">Site vitrine professionnel pour une agence spécialisée dans les démarches de carte grise. Design moderne et responsive, entièrement optimisé pour la conversion avec un système de prise de rendez-vous intégré. Référencement local ciblé pour apparaître sur les recherches géolocalisées.</p>
+      </div>
+      <div>
+        <div class="block-title">Fonctionnalités clés</div>
+        <ul class="features-list">
+          <li>Design responsive mobile-first</li>
+          <li>Formulaire de demande de devis en ligne</li>
+          <li>Système de prise de rendez-vous</li>
+          <li>Optimisation SEO locale (balises, schema.org)</li>
+          <li>Page tarifs dynamique</li>
+          <li>Intégration Google Maps</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Stack technique</div>
+        <div class="tech-list">
+          <span class="tech-pill">PHP</span>
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">SEO</span>
+          <span class="tech-pill">Schema.org</span>
+        </div>
+      </div>
+      <div>
+        <div class="block-title">Résultats</div>
+        <ul class="features-list">
+          <li>Taux de conversion +35% dès la mise en ligne</li>
+          <li>Score PageSpeed &gt; 90/100</li>
+          <li>Positionnement page 1 Google local</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <div>
+        <div class="project-link-label">URL du site</div>
+        <div class="project-link-url">cartegriseone.fr</div>
+      </div>
+      <span class="project-status status-live"><span class="dot-live"></span>En ligne</span>
+    </div>
+  </div>
+
+  <!-- ─── PROJECT 2 ─── -->
+  <div class="section-title"><span>02</span> AniimalCorner</div>
+  <div class="project-page">
+    <div class="project-header">
+      <div>
+        <div class="project-number">Projet 02 / 06</div>
+        <div class="project-name">AniimalCorner</div>
+        <span class="project-category">E-Commerce</span>
+      </div>
+      <div class="project-img">
+        <img src="assets/img/Aniimalcorner.png" alt="AniimalCorner"/>
+      </div>
+    </div>
+    <div class="project-body">
+      <div>
+        <div class="block-title">Description</div>
+        <p class="block-text">Plateforme e-commerce complète dédiée aux produits animaliers. Développement full-stack avec gestion des stocks en temps réel, panier intelligent, paiement sécurisé via Stripe et tableau de bord administrateur pour le suivi des commandes et la gestion des produits.</p>
+      </div>
+      <div>
+        <div class="block-title">Fonctionnalités clés</div>
+        <ul class="features-list">
+          <li>Catalogue produits avec filtres et recherche</li>
+          <li>Panier persistant et tunnel d'achat optimisé</li>
+          <li>Paiement sécurisé Stripe (carte, Apple Pay)</li>
+          <li>Gestion des stocks en temps réel</li>
+          <li>Tableau de bord admin complet</li>
+          <li>Emails transactionnels automatisés</li>
+          <li>Avis et notes produits</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Stack technique</div>
+        <div class="tech-list">
+          <span class="tech-pill">PHP</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Stripe API</span>
+          <span class="tech-pill">WooCommerce</span>
+          <span class="tech-pill">REST API</span>
+        </div>
+      </div>
+      <div>
+        <div class="block-title">Avis client</div>
+        <p class="block-text" style="font-style:italic;color:#555;">"Notre boutique en ligne tourne parfaitement. Les paiements Stripe, la gestion des stocks, tout fonctionne sans accroc. Le design est soigné et nos clients adorent naviguer sur le site."<br/><strong style="color:#333;font-style:normal;">— Sarah L., Fondatrice AniimalCorner</strong></p>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <div>
+        <div class="project-link-label">URL du site</div>
+        <div class="project-link-url">aniimal-corner.vercel.app</div>
+      </div>
+      <span class="project-status status-live"><span class="dot-live"></span>En ligne</span>
+    </div>
+  </div>
+
+  <!-- ─── PROJECT 3 ─── -->
+  <div class="section-title"><span>03</span> AllSafe Security</div>
+  <div class="project-page">
+    <div class="project-header">
+      <div>
+        <div class="project-number">Projet 03 / 06</div>
+        <div class="project-name">AllSafe Security</div>
+        <span class="project-category">Cybersécurité</span>
+      </div>
+      <div class="project-img">
+        <img src="assets/img/Allsafe.png" alt="AllSafe Security"/>
+      </div>
+    </div>
+    <div class="project-body">
+      <div>
+        <div class="block-title">Description</div>
+        <p class="block-text">Application web sécurisée développée selon les standards OWASP. Système d'authentification multi-facteurs (MFA), gestion avancée des rôles et permissions, journalisation complète des actions (logs) et architecture MVC robuste. Projet démonstratif des bonnes pratiques de sécurité web.</p>
+      </div>
+      <div>
+        <div class="block-title">Fonctionnalités clés</div>
+        <ul class="features-list">
+          <li>Authentification MFA (TOTP + email)</li>
+          <li>Gestion des rôles (admin, manager, user)</li>
+          <li>Système de logs et audit trail</li>
+          <li>Protection CSRF, XSS, injections SQL</li>
+          <li>Sessions sécurisées (HttpOnly, Secure, SameSite)</li>
+          <li>Hachage bcrypt des mots de passe</li>
+          <li>Architecture MVC découplée</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Stack technique</div>
+        <div class="tech-list">
+          <span class="tech-pill">PHP</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">MVC</span>
+          <span class="tech-pill">MFA/TOTP</span>
+          <span class="tech-pill">bcrypt</span>
+          <span class="tech-pill">PDO</span>
+          <span class="tech-pill">OWASP</span>
+        </div>
+      </div>
+      <div>
+        <div class="block-title">Sécurité couverte</div>
+        <ul class="features-list">
+          <li>OWASP Top 10 intégralement adressé</li>
+          <li>Zéro vulnérabilité SQL injection</li>
+          <li>Politique de mot de passe renforcée</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <div>
+        <div class="project-link-label">Case Study complet</div>
+        <div class="project-link-url">allsafe.html (portfolio)</div>
+      </div>
+      <span class="project-status status-demo"><span class="dot-demo"></span>Démonstration</span>
+    </div>
+  </div>
+
+  <!-- ─── PROJECT 4 ─── -->
+  <div class="section-title"><span>04</span> Matou Creations</div>
+  <div class="project-page">
+    <div class="project-header">
+      <div>
+        <div class="project-number">Projet 04 / 06</div>
+        <div class="project-name">Matou Creations</div>
+        <span class="project-category">Site Vitrine</span>
+      </div>
+      <div class="project-img">
+        <img src="assets/img/MATOU.png" alt="Matou Creations"/>
+      </div>
+    </div>
+    <div class="project-body">
+      <div>
+        <div class="block-title">Description</div>
+        <p class="block-text">Site vitrine créatif pour une marque de créations artisanales. Design unique avec identité visuelle forte, animations CSS fluides et galerie d'images optimisée. Interface soignée mettant en valeur les créations avec une expérience utilisateur mémorable.</p>
+      </div>
+      <div>
+        <div class="block-title">Fonctionnalités clés</div>
+        <ul class="features-list">
+          <li>Design sur mesure avec identité visuelle unique</li>
+          <li>Animations CSS avancées et transitions fluides</li>
+          <li>Galerie interactive avec lightbox</li>
+          <li>Formulaire de contact intégré</li>
+          <li>Optimisation des images (WebP, lazy loading)</li>
+          <li>100% responsive mobile</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Stack technique</div>
+        <div class="tech-list">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Animations CSS</span>
+          <span class="tech-pill">WebP</span>
+          <span class="tech-pill">Vercel</span>
+        </div>
+      </div>
+      <div>
+        <div class="block-title">Points forts</div>
+        <ul class="features-list">
+          <li>Score Lighthouse design/UX : 98/100</li>
+          <li>Temps de chargement &lt; 1.5s</li>
+          <li>Expérience mobile irréprochable</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <div>
+        <div class="project-link-label">URL du site</div>
+        <div class="project-link-url">matous-creations.vercel.app</div>
+      </div>
+      <span class="project-status status-live"><span class="dot-live"></span>En ligne</span>
+    </div>
+  </div>
+
+  <!-- ─── PROJECT 5 ─── -->
+  <div class="section-title"><span>05</span> Atelier H</div>
+  <div class="project-page">
+    <div class="project-header">
+      <div>
+        <div class="project-number">Projet 05 / 06</div>
+        <div class="project-name">Atelier H</div>
+        <span class="project-category">Site Vitrine</span>
+      </div>
+      <div class="project-img">
+        <img src="assets/img/Atelier-h.jpg" alt="Atelier H"/>
+      </div>
+    </div>
+    <div class="project-body">
+      <div>
+        <div class="block-title">Description</div>
+        <p class="block-text">Site web professionnel pour un atelier d'artisanat alsacien. Design épuré et élégant mettant en valeur le savoir-faire artisanal, avec une galerie de réalisations, un système de contact avancé et une présentation soignée des services. Base de données pour la gestion du contenu.</p>
+      </div>
+      <div>
+        <div class="block-title">Fonctionnalités clés</div>
+        <ul class="features-list">
+          <li>Galerie de réalisations filtrable par catégorie</li>
+          <li>Formulaire de contact avec validation</li>
+          <li>Panel d'administration pour gérer le contenu</li>
+          <li>Carte interactive (localisation atelier)</li>
+          <li>Optimisation SEO local (Alsace)</li>
+          <li>Design responsive et performant</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Stack technique</div>
+        <div class="tech-list">
+          <span class="tech-pill">PHP</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Apache</span>
+          <span class="tech-pill">SEO Local</span>
+        </div>
+      </div>
+      <div>
+        <div class="block-title">Contexte</div>
+        <ul class="features-list">
+          <li>Client local basé en Alsace</li>
+          <li>Projet livré dans les délais impartis</li>
+          <li>Site actif et maintenu</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <div>
+        <div class="project-link-label">URL du site</div>
+        <div class="project-link-url">atelierh-alsace.fr</div>
+      </div>
+      <span class="project-status status-live"><span class="dot-live"></span>En ligne</span>
+    </div>
+  </div>
+
+  <!-- ─── PROJECT 6 ─── -->
+  <div class="section-title"><span>06</span> Formatech</div>
+  <div class="project-page">
+    <div class="project-header">
+      <div>
+        <div class="project-number">Projet 06 / 06</div>
+        <div class="project-name">Formatech</div>
+        <span class="project-category">LMS · Plateforme de formation</span>
+      </div>
+      <div class="project-img">
+        <img src="assets/img/Formatech.png" alt="Formatech"/>
+      </div>
+    </div>
+    <div class="project-body">
+      <div>
+        <div class="block-title">Description</div>
+        <p class="block-text">Plateforme LMS (Learning Management System) complète développée avec Laravel et React. Gestion des cours, inscriptions, suivi de progression des étudiants, évaluations en ligne et dashboard administrateur avancé. API REST pour communication front/back. Architecture modulaire et scalable.</p>
+      </div>
+      <div>
+        <div class="block-title">Fonctionnalités clés</div>
+        <ul class="features-list">
+          <li>Gestion complète des cours et modules</li>
+          <li>Espace apprenant avec progression personnalisée</li>
+          <li>Système d'évaluations et quiz interactifs</li>
+          <li>Dashboard instructeur et rapports BDD</li>
+          <li>Notifications et messagerie interne</li>
+          <li>API REST documentée (Swagger)</li>
+          <li>Authentification JWT sécurisée</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Stack technique</div>
+        <div class="tech-list">
+          <span class="tech-pill">Laravel</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">REST API</span>
+          <span class="tech-pill">JWT</span>
+          <span class="tech-pill">Swagger</span>
+          <span class="tech-pill">Vercel</span>
+        </div>
+      </div>
+      <div>
+        <div class="block-title">Avis client</div>
+        <p class="block-text" style="font-style:italic;color:#555;">"La plateforme LMS développée par Imad est complète et intuitive. Le dashboard admin nous fait gagner un temps précieux au quotidien. Résultat au-delà de nos attentes."<br/><strong style="color:#333;font-style:normal;">— Dr. Mehdi A., Directeur Pédagogique Formatech</strong></p>
+      </div>
+    </div>
+    <div class="project-link-box">
+      <div>
+        <div class="project-link-label">URL du site</div>
+        <div class="project-link-url">forma-tech-futur.vercel.app</div>
+      </div>
+      <span class="project-status status-live"><span class="dot-live"></span>En ligne</span>
+    </div>
+  </div>
+
+  <!-- ─── SUMMARY ─── -->
+  <div class="summary-page">
+    <h2>Récapitulatif <span>des projets</span></h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Projet</th>
+          <th>Catégorie</th>
+          <th>Technologies</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td><strong>CarteGriseOne</strong></td>
+          <td>Site Vitrine</td>
+          <td><span class="tag-sm">PHP</span><span class="tag-sm">JS</span><span class="tag-sm">SEO</span></td>
+          <td><span class="dot-live"></span>En ligne</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td><strong>AniimalCorner</strong></td>
+          <td>E-Commerce</td>
+          <td><span class="tag-sm">PHP</span><span class="tag-sm">MySQL</span><span class="tag-sm">Stripe</span></td>
+          <td><span class="dot-live"></span>En ligne</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td><strong>AllSafe Security</strong></td>
+          <td>Cybersécurité</td>
+          <td><span class="tag-sm">PHP</span><span class="tag-sm">MFA</span><span class="tag-sm">MVC</span></td>
+          <td><span class="dot-demo"></span>Démonstration</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td><strong>Matou Creations</strong></td>
+          <td>Site Vitrine</td>
+          <td><span class="tag-sm">HTML/CSS</span><span class="tag-sm">JS</span><span class="tag-sm">Animations</span></td>
+          <td><span class="dot-live"></span>En ligne</td>
+        </tr>
+        <tr>
+          <td>05</td>
+          <td><strong>Atelier H</strong></td>
+          <td>Site Vitrine</td>
+          <td><span class="tag-sm">PHP</span><span class="tag-sm">MySQL</span><span class="tag-sm">CSS</span></td>
+          <td><span class="dot-live"></span>En ligne</td>
+        </tr>
+        <tr>
+          <td>06</td>
+          <td><strong>Formatech</strong></td>
+          <td>LMS</td>
+          <td><span class="tag-sm">Laravel</span><span class="tag-sm">React</span><span class="tag-sm">API</span></td>
+          <td><span class="dot-live"></span>En ligne</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-weight:700;font-size:.95rem;">Imad Chamkhi</div>
+        <div style="font-size:.8rem;color:#666;margin-top:.2rem;">Master Expert IT &amp; BDD · Développeur Web Full-Stack</div>
+        <div style="font-size:.8rem;color:#666;">chamkhiimad5@gmail.com · +33 7 53 63 65 41 · Strasbourg</div>
+      </div>
+      <div style="font-size:.75rem;color:#aaa;">Document généré en 2025</div>
+    </div>
+  </div>
+
+</body>
+</html>
