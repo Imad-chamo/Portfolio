@@ -1217,14 +1217,7 @@
 
     /* ─── WHATSAPP FLOAT ────────────────────────────────── */
     .whatsapp-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 900;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
+      display: contents;
     }
 
     .wa-btn {
@@ -1238,6 +1231,7 @@
       box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
       transition: all var(--transition);
       cursor: pointer;
+      position: relative;
     }
 
     .wa-btn:hover {
@@ -1262,13 +1256,11 @@
 
     .wa-pulse {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 56px;
-      height: 56px;
+      inset: 0;
       border-radius: 50%;
       background: rgba(37, 211, 102, 0.3);
       animation: pulse 2s ease-out infinite;
+      pointer-events: none;
     }
 
     @keyframes pulse {
@@ -1281,6 +1273,224 @@
         transform: scale(1.8);
         opacity: 0;
       }
+    }
+
+    /* ─── CALENDLY FLOAT ───────────────────────────────── */
+    .float-buttons {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .float-btn-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .calendly-btn {
+      width: 56px;
+      height: 56px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(57, 255, 20, 0.4);
+      transition: all var(--transition);
+      cursor: pointer;
+      border: none;
+      position: relative;
+      overflow: visible;
+    }
+    .calendly-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(57, 255, 20, 0.65);
+    }
+    .calendly-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: #000;
+    }
+    .calendly-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(57, 255, 20, 0.3);
+      animation: pulse 2s ease-out infinite;
+      pointer-events: none;
+    }
+    .cal-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      text-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+    }
+
+    /* ─── BOOKING CARD ──────────────────────────────────── */
+    .booking-card {
+      background: linear-gradient(135deg, #0a1a0a, #0d200d);
+      border: 1px solid rgba(57, 255, 20, 0.25);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      cursor: pointer;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .booking-card:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(57, 255, 20, 0.12);
+    }
+    .booking-icon {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      background: rgba(57, 255, 20, 0.1);
+      border: 1px solid rgba(57, 255, 20, 0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .booking-icon svg { width: 24px; height: 24px; fill: var(--green); }
+    .booking-text { flex: 1; }
+    .booking-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .booking-sub {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+    .booking-arrow {
+      color: var(--green);
+      font-size: 1.2rem;
+      transition: transform var(--transition);
+    }
+    .booking-card:hover .booking-arrow { transform: translateX(4px); }
+    .booking-badge {
+      display: inline-block;
+      background: rgba(57, 255, 20, 0.12);
+      color: var(--green);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.6rem;
+      border-radius: 100px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* ─── BLOG ─────────────────────────────────────────── */
+    #blog {
+      background: var(--dark);
+      padding: 6rem 5%;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .blog-card {
+      background: var(--card);
+      border: 1px solid #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .blog-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+    .blog-card-img {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      padding: 0;
+    }
+    .blog-card-img svg {
+      width: 100%;
+      height: 180px;
+      display: block;
+      flex-shrink: 0;
+    }
+    .blog-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.72rem;
+      color: var(--gray);
+    }
+    .blog-cat {
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .blog-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--white);
+    }
+    .blog-card p {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .blog-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-top: 0.5rem;
+      transition: gap var(--transition);
+    }
+    .blog-card:hover .blog-read-more { gap: 0.7rem; }
+    .blog-tag {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: var(--gray);
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .blog-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    @media(max-width:768px) {
+      .blog-grid { grid-template-columns: 1fr; }
     }
 
     /* ─── FOOTER ───────────────────────────────────────── */
@@ -1714,6 +1924,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#portfolio">Work</a></li>
         <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact" class="btn-primary" style="padding:9px 22px;font-size:0.7rem;">Hire Me</a></li>
       </ul>
       <div class="lang-switcher">
@@ -1735,6 +1946,7 @@
     <a href="#experience" onclick="closeMobile()">Experience</a>
     <a href="#portfolio" onclick="closeMobile()">Work</a>
     <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+    <a href="#blog" onclick="closeMobile()">Blog</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
     <div class="mobile-lang">
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -1775,7 +1987,7 @@
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
         <div class="about-photo">
-          <img src="Myimg.PNG" alt="Imad Chamkhi" style="width:100%;height:100%;object-fit:cover;" />
+          <img src="assets/img/Myimg.PNG" alt="Imad Chamkhi" style="width:100%;height:100%;object-fit:cover;" />
         </div>
         <div class="about-badge">
           <div class="num">4+</div>
@@ -2174,11 +2386,11 @@
 
       <div class="project-card reveal">
         <div class="project-img">
-          <img src="cartegriseone.png" alt="CarteGriseOne" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="assets/img/cartegriseone.png" alt="CarteGriseOne" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="project-overlay">
             <div class="overlay-links">
               <a href="cartegriseone.fr" class="overlay-link">Visiter le site</a>
-              <a href="cartegriseone.fr" class="overlay-link outline">Détails</a>
+              <a href="cartegriseone.fr" class="overlay-link outline">Voir le site</a>
             </div>
           </div>
         </div>
@@ -2194,10 +2406,10 @@
 
       <div class="project-card reveal reveal-delay-1">
         <div class="project-img">
-          <img src="Aniimalcorner.png" alt="AniimalCorner" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="assets/img/Aniimalcorner.png" alt="AniimalCorner" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="project-overlay">
             <div class="overlay-links">
-              <a href="https://aniimal-corner.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Détails</a>
+              <a href="https://aniimal-corner.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Voir le site</a>
             </div>
           </div>
         </div>
@@ -2213,11 +2425,10 @@
 
       <div class="project-card reveal reveal-delay-2">
         <div class="project-img">
-          <img src="Allsafe.png" alt="Allsafe Cybersecurity" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="assets/img/Allsafe.png" alt="Allsafe Cybersecurity" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="project-overlay">
             <div class="overlay-links">
               <a href="allsafe.html" class="overlay-link outline">Détails</a>
-              <a href="#" class="overlay-link outline">PDF</a>
             </div>
           </div>
         </div>
@@ -2233,13 +2444,10 @@
 
       <div class="project-card reveal">
         <div class="project-img">
-          <div class="project-img-placeholder" style="background:linear-gradient(135deg,#1a0f2e,#3d1f6e);">
-            <span style="font-size:2.5rem;">🎨</span>
-          </div>
+          <img src="assets/img/MATOU.png" alt="Matou Creations" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="project-overlay">
             <div class="overlay-links">
-              <a href="https://matous-creations.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Détails</a>
-              <a href="#" class="overlay-link outline">PDF</a>
+              <a href="https://matous-creations.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Voir le site</a>
             </div>
           </div>
         </div>
@@ -2255,13 +2463,10 @@
 
       <div class="project-card reveal reveal-delay-1">
         <div class="project-img">
-          <div class="project-img-placeholder" style="background:linear-gradient(135deg,#1a1200,#4a3500);">
-            <span style="font-size:2.5rem;">🔨</span>
-          </div>
+          <img src="assets/img/Atelier-h.jpg" alt="Atelier H" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="project-overlay">
             <div class="overlay-links">
-              <a href="#" class="overlay-link outline">Détails</a>
-              <a href="#" class="overlay-link outline">PDF</a>
+              <a href="https://atelierh-alsace.fr/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Voir le site</a>
             </div>
           </div>
         </div>
@@ -2277,11 +2482,10 @@
 
       <div class="project-card reveal reveal-delay-2">
         <div class="project-img">
-          <img src="Formatech.png" alt="Formatech" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="assets/img/Formatech.png" alt="Formatech" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="project-overlay">
             <div class="overlay-links">
-              <a href="https://forma-tech-futur.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Détails</a>
-              <a href="#" class="overlay-link outline">PDF</a>
+              <a href="https://forma-tech-futur.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-link outline">Voir le site</a>
             </div>
           </div>
         </div>
@@ -2366,6 +2570,338 @@
     </div>
   </section>
 
+  <!-- ─── BLOG ────────────────────────────────────────────── -->
+  <section id="blog" itemscope itemtype="https://schema.org/Blog">
+    <div class="section-header reveal">
+      <div class="section-label" style="color:var(--green)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        Ressources &amp; Insights
+      </div>
+      <h2 class="reveal reveal-delay-1">Blog &amp; <span>Articles</span></h2>
+      <p class="reveal reveal-delay-2" style="color:var(--gray);max-width:560px;margin:0 auto;">Conseils pratiques, retours d'expérience et tendances pour les entreprises qui veulent réussir leur présence digitale.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- Article 1 -->
+      <article class="blog-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-img" style="overflow:hidden;padding:0;">
+          <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" width="100%" height="180">
+            <defs>
+              <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#010d01"/><stop offset="100%" stop-color="#001a08"/></linearGradient>
+              <filter id="glow1" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <pattern id="dots1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.8" fill="#39FF14" opacity="0.12"/></pattern>
+              <style>.cur1{animation:bl1 1s step-start infinite}@keyframes bl1{50%{opacity:0}}</style>
+            </defs>
+            <rect width="400" height="180" fill="url(#bg1)"/>
+            <rect width="400" height="180" fill="url(#dots1)"/>
+            <ellipse cx="200" cy="90" rx="130" ry="55" fill="#39FF14" opacity="0.03"/>
+            <!-- Browser chrome -->
+            <rect x="78" y="18" width="244" height="148" rx="8" fill="#0a140a" stroke="#39FF14" stroke-width="1.2" filter="url(#glow1)"/>
+            <rect x="78" y="18" width="244" height="26" rx="8" fill="#0d1c0d"/>
+            <rect x="78" y="32" width="244" height="12" fill="#0d1c0d"/>
+            <!-- Traffic lights -->
+            <circle cx="94" cy="31" r="4" fill="#ff5f57"/><circle cx="107" cy="31" r="4" fill="#febc2e"/><circle cx="120" cy="31" r="4" fill="#28c840"/>
+            <!-- Address bar -->
+            <rect x="134" y="24" width="148" height="14" rx="4" fill="#071207" stroke="#1a3a1a" stroke-width="1"/>
+            <text x="141" y="34.5" font-family="monospace" font-size="7" fill="#39FF14" opacity="0.75">&#9679; imad-chamkhi.fr</text>
+            <!-- Code lines -->
+            <text x="90" y="62"  font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.45">&lt;!DOCTYPE html&gt;</text>
+            <text x="90" y="75"  font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.8">&lt;<tspan fill="#5dde5d">html</tspan> lang=<tspan fill="#a8ff78">"fr"</tspan>&gt;</text>
+            <text x="98" y="88"  font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.65">&lt;<tspan fill="#5dde5d">title</tspan>&gt;Strasbourg&lt;/<tspan fill="#5dde5d">title</tspan>&gt;</text>
+            <text x="90" y="101" font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.8">&lt;<tspan fill="#5dde5d">body</tspan>&gt;</text>
+            <!-- Active line highlight -->
+            <rect x="78" y="106" width="244" height="14" fill="#39FF14" opacity="0.05" rx="2"/>
+            <text x="98" y="117" font-family="monospace" font-size="7.5" fill="#39FF14">&lt;<tspan fill="#5dde5d">h1</tspan>&gt;Dev Web Pro&lt;/<tspan fill="#5dde5d">h1</tspan>&gt;</text>
+            <rect x="221" y="108" width="5" height="9" fill="#39FF14" class="cur1"/>
+            <text x="90" y="130" font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.55">&lt;<tspan fill="#5dde5d">p</tspan>&gt;Strasbourg, France&lt;/<tspan fill="#5dde5d">p</tspan>&gt;</text>
+            <text x="90" y="143" font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.4">&lt;/<tspan fill="#5dde5d">body</tspan>&gt;</text>
+            <text x="90" y="156" font-family="monospace" font-size="7.5" fill="#39FF14" opacity="0.3">&lt;/<tspan fill="#5dde5d">html</tspan>&gt;</text>
+            <!-- Floating decorative tag -->
+            <text x="18" y="70" font-family="monospace" font-size="8" fill="#39FF14" opacity="0.18" transform="rotate(-12,18,70)">&lt;/div&gt;</text>
+            <text x="335" y="110" font-family="monospace" font-size="7" fill="#39FF14" opacity="0.14" transform="rotate(10,335,110)">&lt;nav&gt;</text>
+            <!-- Bottom bar -->
+            <rect x="78" y="152" width="244" height="14" rx="0" fill="#060e06"/>
+            <circle cx="200" cy="159" r="4" fill="none" stroke="#39FF14" stroke-width="1" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-cat" itemprop="articleSection">Développement Web</div>
+          <div class="blog-meta">
+            <time itemprop="datePublished" datetime="2025-03-10">10 Mars 2025</time>
+            <span>· 5 min de lecture</span>
+          </div>
+          <h3 itemprop="headline">Pourquoi votre entreprise à Strasbourg a besoin d'un site web professionnel en 2025</h3>
+          <p itemprop="description">Un site web bien conçu est aujourd'hui le premier point de contact avec vos clients. Découvrez comment un développeur web local peut transformer votre présence en ligne et augmenter votre chiffre d'affaires.</p>
+          <div class="blog-tags">
+            <span class="blog-tag">Site Vitrine</span>
+            <span class="blog-tag">Strasbourg</span>
+            <span class="blog-tag">PME</span>
+          </div>
+          <a href="blog-site-web-strasbourg.html" class="blog-read-more">Lire l'article <span>→</span></a>
+          <meta itemprop="author" content="Imad Chamkhi" />
+          <meta itemprop="url" content="blog-site-web-strasbourg.html" />
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card reveal reveal-delay-1" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-img" style="overflow:hidden;padding:0;">
+          <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" width="100%" height="180">
+            <defs>
+              <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#040008"/><stop offset="100%" stop-color="#080018"/></linearGradient>
+              <filter id="glow2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow2s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <pattern id="hex2" x="0" y="0" width="28" height="16" patternUnits="userSpaceOnUse">
+                <path d="M7 0 L21 0 L28 8 L21 16 L7 16 L0 8 Z" fill="none" stroke="#39FF14" stroke-width="0.3" opacity="0.12"/>
+              </pattern>
+              <style>
+                @keyframes scan2{0%{transform:translateY(-5px);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(160px);opacity:0}}
+                @keyframes pulse2{0%,100%{opacity:.15}50%{opacity:.5}}
+                @keyframes rot2{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+                .sc2{animation:scan2 3s ease-in-out infinite}
+                .pl2{animation:pulse2 2s ease-in-out infinite}
+                .rt2{animation:rot2 8s linear infinite;transform-origin:200px 90px}
+              </style>
+            </defs>
+            <rect width="400" height="180" fill="url(#bg2)"/>
+            <rect width="400" height="180" fill="url(#hex2)"/>
+            <!-- Glow center -->
+            <ellipse cx="200" cy="90" rx="90" ry="70" fill="#39FF14" opacity="0.03"/>
+            <!-- Shield outer ring (rotating dashes) -->
+            <circle cx="200" cy="90" r="72" fill="none" stroke="#39FF14" stroke-width="0.6" stroke-dasharray="4 8" opacity="0.2" class="rt2"/>
+            <!-- Shield shape -->
+            <path d="M200 22 L255 48 L255 95 Q255 130 200 158 Q145 130 145 95 L145 48 Z" fill="#0a0015" stroke="#39FF14" stroke-width="1.8" filter="url(#glow2)"/>
+            <path d="M200 30 L248 53 L248 96 Q248 126 200 150 Q152 126 152 96 L152 53 Z" fill="#0d001f" stroke="#39FF14" stroke-width="0.6" opacity="0.4"/>
+            <!-- Lock body -->
+            <rect x="185" y="85" width="30" height="26" rx="4" fill="#39FF14" opacity="0.9" filter="url(#glow2s)"/>
+            <!-- Lock shackle -->
+            <path d="M192 85 L192 76 Q192 66 200 66 Q208 66 208 76 L208 85" fill="none" stroke="#39FF14" stroke-width="3.5" stroke-linecap="round" filter="url(#glow2s)"/>
+            <!-- Lock keyhole -->
+            <circle cx="200" cy="96" r="4" fill="#0a0015"/>
+            <rect x="198.5" y="96" width="3" height="6" rx="1" fill="#0a0015"/>
+            <!-- Scan line -->
+            <rect x="145" y="0" width="110" height="2" fill="#39FF14" opacity="0" class="sc2" rx="1"/>
+            <!-- Side circuit traces -->
+            <polyline points="60,50 90,50 90,70 115,70" fill="none" stroke="#39FF14" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="60" cy="50" r="2.5" fill="#39FF14" opacity="0.3" class="pl2"/>
+            <polyline points="340,110 310,110 310,90 285,90" fill="none" stroke="#39FF14" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="340" cy="110" r="2.5" fill="#39FF14" opacity="0.3" class="pl2"/>
+            <polyline points="45,120 75,120 75,140 115,140" fill="none" stroke="#39FF14" stroke-width="0.6" opacity="0.2"/>
+            <polyline points="355,60 325,60 325,45 285,45" fill="none" stroke="#39FF14" stroke-width="0.6" opacity="0.2"/>
+            <!-- Threat badges -->
+            <rect x="18" y="30" width="60" height="16" rx="4" fill="#1a0000" stroke="#ff4444" stroke-width="0.8" opacity="0.6"/>
+            <text x="28" y="41" font-family="monospace" font-size="7" fill="#ff6666" opacity="0.8">SQL Inject</text>
+            <rect x="322" y="50" width="58" height="16" rx="4" fill="#1a0000" stroke="#ff4444" stroke-width="0.8" opacity="0.5"/>
+            <text x="330" y="61" font-family="monospace" font-size="7" fill="#ff6666" opacity="0.7">XSS Attack</text>
+            <!-- SECURED badge -->
+            <rect x="160" y="160" width="80" height="16" rx="4" fill="#001a00" stroke="#39FF14" stroke-width="1" filter="url(#glow2s)"/>
+            <text x="172" y="171" font-family="monospace" font-size="7.5" fill="#39FF14" font-weight="bold">✓ SECURED</text>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-cat" itemprop="articleSection">Cybersécurité</div>
+          <div class="blog-meta">
+            <time itemprop="datePublished" datetime="2025-02-18">18 Février 2025</time>
+            <span>· 7 min de lecture</span>
+          </div>
+          <h3 itemprop="headline">Les 5 erreurs de sécurité les plus courantes sur les sites web d'entreprises</h3>
+          <p itemprop="description">Injections SQL, mots de passe faibles, certificats expirés… Ces vulnérabilités coûtent cher. Voici comment les identifier et les corriger avant qu'il ne soit trop tard.</p>
+          <div class="blog-tags">
+            <span class="blog-tag">Sécurité</span>
+            <span class="blog-tag">OWASP</span>
+            <span class="blog-tag">PHP</span>
+          </div>
+          <a href="blog-securite-web.html" class="blog-read-more">Lire l'article <span>→</span></a>
+          <meta itemprop="author" content="Imad Chamkhi" />
+          <meta itemprop="url" content="blog-securite-web.html" />
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card reveal reveal-delay-2" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-img" style="overflow:hidden;padding:0;">
+          <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" width="100%" height="180">
+            <defs>
+              <linearGradient id="bg3" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#060400"/><stop offset="100%" stop-color="#0d0800"/></linearGradient>
+              <radialGradient id="grd3" cx="50%" cy="55%" r="45%"><stop offset="0%" stop-color="#39FF14" stop-opacity="0.07"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <filter id="glow3s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <style>
+                @keyframes needle3{0%,100%{transform:rotate(-60deg)}50%{transform:rotate(50deg)}}
+                @keyframes fl3{0%,100%{opacity:.4;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+                @keyframes sc3{0%{stroke-dashoffset:220}100%{stroke-dashoffset:0}}
+                .ndl3{animation:needle3 4s ease-in-out infinite;transform-origin:200px 130px}
+                .fl3{animation:fl3 2s ease-in-out infinite}
+                .arc3{stroke-dasharray:220;animation:sc3 2s ease-out forwards}
+              </style>
+            </defs>
+            <rect width="400" height="180" fill="url(#bg3)"/>
+            <rect width="400" height="180" fill="url(#grd3)"/>
+            <!-- Star field -->
+            <circle cx="30" cy="20" r="1" fill="white" opacity="0.3"/><circle cx="70" cy="45" r="0.7" fill="white" opacity="0.2"/>
+            <circle cx="350" cy="25" r="1" fill="white" opacity="0.3"/><circle cx="320" cy="55" r="0.8" fill="white" opacity="0.25"/>
+            <circle cx="15" cy="80" r="0.7" fill="white" opacity="0.2"/><circle cx="385" cy="90" r="1" fill="white" opacity="0.3"/>
+            <circle cx="55" cy="155" r="0.8" fill="white" opacity="0.15"/><circle cx="360" cy="150" r="0.7" fill="white" opacity="0.2"/>
+            <!-- Gauge arc background -->
+            <path d="M 90,140 A 110,110 0 0,1 310,140" fill="none" stroke="#1a1a00" stroke-width="14" stroke-linecap="round"/>
+            <!-- Gauge zones -->
+            <path d="M 90,140 A 110,110 0 0,1 144,57" fill="none" stroke="#ff4444" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+            <path d="M 144,57 A 110,110 0 0,1 230,36" fill="none" stroke="#ffaa00" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+            <path d="M 230,36 A 110,110 0 0,1 310,140" fill="none" stroke="#39FF14" stroke-width="10" stroke-linecap="round" opacity="0.8" filter="url(#glow3s)"/>
+            <!-- Gauge inner shadow -->
+            <path d="M 90,140 A 110,110 0 0,1 310,140" fill="none" stroke="#0a0800" stroke-width="8" stroke-linecap="round"/>
+            <!-- Tick marks -->
+            <line x1="90" y1="140" x2="97" y2="128" stroke="#555" stroke-width="1.5"/>
+            <line x1="115" y1="75" x2="122" y2="85" stroke="#555" stroke-width="1.5"/>
+            <line x1="200" y1="30" x2="200" y2="42" stroke="#888" stroke-width="1.5"/>
+            <line x1="285" y1="75" x2="278" y2="85" stroke="#555" stroke-width="1.5"/>
+            <line x1="310" y1="140" x2="303" y2="128" stroke="#555" stroke-width="1.5"/>
+            <!-- Center hub -->
+            <circle cx="200" cy="130" r="10" fill="#111" stroke="#39FF14" stroke-width="1.5" filter="url(#glow3s)"/>
+            <circle cx="200" cy="130" r="4" fill="#39FF14" filter="url(#glow3s)"/>
+            <!-- Needle -->
+            <line x1="200" y1="130" x2="270" y2="50" stroke="#39FF14" stroke-width="2.5" stroke-linecap="round" class="ndl3" filter="url(#glow3s)"/>
+            <!-- Speed labels -->
+            <text x="82" y="160" font-family="monospace" font-size="7" fill="#ff6666">SLOW</text>
+            <text x="186" y="24" font-family="monospace" font-size="7" fill="#aaa">FAST</text>
+            <text x="300" y="160" font-family="monospace" font-size="7" fill="#39FF14">100</text>
+            <!-- Metric badges -->
+            <rect x="18" y="18" width="46" height="30" rx="5" fill="#0d0800" stroke="#39FF14" stroke-width="1" opacity="0.9"/>
+            <text x="25" y="30" font-family="monospace" font-size="7" fill="#39FF14" font-weight="bold">LCP</text>
+            <text x="22" y="42" font-family="monospace" font-size="7.5" fill="#39FF14">✓ 1.8s</text>
+            <rect x="177" y="148" width="46" height="30" rx="5" fill="#0d0800" stroke="#39FF14" stroke-width="1" opacity="0.9"/>
+            <text x="184" y="161" font-family="monospace" font-size="7" fill="#39FF14" font-weight="bold">INP</text>
+            <text x="181" y="173" font-family="monospace" font-size="7.5" fill="#39FF14">✓ 80ms</text>
+            <rect x="336" y="18" width="46" height="30" rx="5" fill="#0d0800" stroke="#39FF14" stroke-width="1" opacity="0.9"/>
+            <text x="343" y="30" font-family="monospace" font-size="7" fill="#39FF14" font-weight="bold">CLS</text>
+            <text x="340" y="42" font-family="monospace" font-size="7.5" fill="#39FF14">✓ 0.02</text>
+            <!-- Score badge -->
+            <circle cx="200" cy="90" r="22" fill="#0a0800" stroke="#39FF14" stroke-width="1.5" filter="url(#glow3s)" class="fl3"/>
+            <text x="192" y="86" font-family="monospace" font-size="8" fill="#aaa">Score</text>
+            <text x="188" y="100" font-family="monospace" font-size="13" fill="#39FF14" font-weight="bold">98</text>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-cat" itemprop="articleSection">Performance &amp; SEO</div>
+          <div class="blog-meta">
+            <time itemprop="datePublished" datetime="2025-01-25">25 Janvier 2025</time>
+            <span>· 6 min de lecture</span>
+          </div>
+          <h3 itemprop="headline">Core Web Vitals 2025 : comment optimiser votre site pour Google et attirer plus de clients</h3>
+          <p itemprop="description">LCP, CLS, INP… les métriques de performance influencent directement votre positionnement Google. Guide pratique pour améliorer la vitesse et l'expérience utilisateur de votre site.</p>
+          <div class="blog-tags">
+            <span class="blog-tag">SEO</span>
+            <span class="blog-tag">Performance</span>
+            <span class="blog-tag">Google</span>
+          </div>
+          <a href="blog-core-web-vitals.html" class="blog-read-more">Lire l'article <span>→</span></a>
+          <meta itemprop="author" content="Imad Chamkhi" />
+          <meta itemprop="url" content="blog-core-web-vitals.html" />
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="blog-card reveal reveal-delay-3" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-img" style="overflow:hidden;padding:0;">
+          <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" width="100%" height="180">
+            <defs>
+              <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00080f"/><stop offset="100%" stop-color="#001020"/></linearGradient>
+              <filter id="glow4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow4s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <pattern id="grid4" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><line x1="30" y1="0" x2="30" y2="30" stroke="#39FF14" stroke-width="0.2" opacity="0.1"/><line x1="0" y1="30" x2="30" y2="30" stroke="#39FF14" stroke-width="0.2" opacity="0.1"/></pattern>
+              <style>
+                @keyframes rise4a{0%{height:0;y:145}100%{height:40;y:105}}
+                @keyframes rise4b{0%{height:0;y:145}100%{height:60;y:85}}
+                @keyframes rise4c{0%{height:0;y:145}100%{height:85;y:60}}
+                @keyframes rise4d{0%{height:0;y:145}100%{height:105;y:40}}
+                @keyframes fl4{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                @keyframes blink4{0%,100%{opacity:1}50%{opacity:.3}}
+                .ra{animation:rise4a 1.5s .1s ease-out forwards}
+                .rb{animation:rise4b 1.5s .3s ease-out forwards}
+                .rc{animation:rise4c 1.5s .5s ease-out forwards}
+                .rd{animation:rise4d 1.5s .7s ease-out forwards}
+                .fl4{animation:fl4 2.5s ease-in-out infinite}
+                .bk4{animation:blink4 1.5s ease-in-out infinite}
+              </style>
+            </defs>
+            <rect width="400" height="180" fill="url(#bg4)"/>
+            <rect width="400" height="180" fill="url(#grid4)"/>
+            <ellipse cx="200" cy="90" rx="150" ry="60" fill="#39FF14" opacity="0.025"/>
+            <!-- Storefront -->
+            <!-- Building -->
+            <rect x="100" y="55" width="200" height="100" rx="3" fill="#071218" stroke="#39FF14" stroke-width="1.2"/>
+            <!-- Awning -->
+            <path d="M90 70 L310 70 L295 55 L105 55 Z" fill="#39FF14" opacity="0.85" filter="url(#glow4s)"/>
+            <!-- Awning stripes -->
+            <line x1="130" y1="55" x2="120" y2="70" stroke="#001a00" stroke-width="3"/>
+            <line x1="160" y1="55" x2="148" y2="70" stroke="#001a00" stroke-width="3"/>
+            <line x1="190" y1="55" x2="177" y2="70" stroke="#001a00" stroke-width="3"/>
+            <line x1="220" y1="55" x2="208" y2="70" stroke="#001a00" stroke-width="3"/>
+            <line x1="250" y1="55" x2="237" y2="70" stroke="#001a00" stroke-width="3"/>
+            <line x1="280" y1="55" x2="267" y2="70" stroke="#001a00" stroke-width="3"/>
+            <!-- Sign -->
+            <rect x="130" y="74" width="140" height="18" rx="3" fill="#002a10" stroke="#39FF14" stroke-width="0.8"/>
+            <text x="155" y="86" font-family="monospace" font-size="8" fill="#39FF14" font-weight="bold">BOUTIQUE EN LIGNE</text>
+            <!-- Window left -->
+            <rect x="110" y="96" width="52" height="50" rx="3" fill="#040e14" stroke="#39FF14" stroke-width="0.8" opacity="0.8"/>
+            <text x="122" y="118" font-family="monospace" font-size="16" fill="#39FF14" opacity="0.8" class="fl4">👜</text>
+            <text x="120" y="138" font-family="monospace" font-size="7" fill="#39FF14" opacity="0.6">€ 49,99</text>
+            <!-- Window right -->
+            <rect x="238" y="96" width="52" height="50" rx="3" fill="#040e14" stroke="#39FF14" stroke-width="0.8" opacity="0.8"/>
+            <text x="250" y="118" font-family="monospace" font-size="16" fill="#39FF14" opacity="0.8" class="fl4">📦</text>
+            <text x="248" y="138" font-family="monospace" font-size="7" fill="#39FF14" opacity="0.6">€ 29,99</text>
+            <!-- Door -->
+            <rect x="172" y="110" width="56" height="45" rx="3" fill="#040e14" stroke="#39FF14" stroke-width="0.8"/>
+            <circle cx="221" cy="133" r="2.5" fill="#39FF14" opacity="0.6"/>
+            <!-- Cart icon floating -->
+            <g transform="translate(320,30)" filter="url(#glow4)" class="fl4">
+              <path d="M0 6 L4 6 L7 18 L22 18 L25 10 L6 10" fill="none" stroke="#39FF14" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="10" cy="22" r="2.5" fill="#39FF14"/>
+              <circle cx="19" cy="22" r="2.5" fill="#39FF14"/>
+              <circle cx="-2" cy="4" r="2" fill="#39FF14" opacity="0.4"/>
+              <text x="10" y="16" font-family="monospace" font-size="6" fill="#39FF14">3</text>
+            </g>
+            <!-- Bar chart (bottom left) -->
+            <g opacity="0.9">
+              <rect x="22" y="145" width="12" height="0" rx="2" fill="#39FF14" opacity="0.5" class="ra"/>
+              <rect x="38" y="145" width="12" height="0" rx="2" fill="#39FF14" opacity="0.65" class="rb"/>
+              <rect x="54" y="145" width="12" height="0" rx="2" fill="#39FF14" opacity="0.8" class="rc"/>
+              <rect x="70" y="145" width="12" height="0" rx="2" fill="#39FF14" filter="url(#glow4s)" class="rd"/>
+              <line x1="18" y1="145" x2="88" y2="145" stroke="#39FF14" stroke-width="0.8" opacity="0.4"/>
+              <text x="22" y="157" font-family="monospace" font-size="6" fill="#39FF14" opacity="0.5">Conversions</text>
+            </g>
+            <!-- Price tag -->
+            <g transform="translate(335,110)" filter="url(#glow4s)" class="bk4">
+              <rect x="0" y="0" width="48" height="22" rx="4" fill="#001a05" stroke="#39FF14" stroke-width="1"/>
+              <circle cx="7" cy="7" r="2" fill="#39FF14" opacity="0.6"/>
+              <text x="12" y="15" font-family="monospace" font-size="9" fill="#39FF14" font-weight="bold">€ 1200</text>
+            </g>
+          </svg>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-cat" itemprop="articleSection">E-Commerce</div>
+          <div class="blog-meta">
+            <time itemprop="datePublished" datetime="2025-01-08">8 Janvier 2025</time>
+            <span>· 5 min de lecture</span>
+          </div>
+          <h3 itemprop="headline">Créer une boutique en ligne performante : les choix techniques qui font la différence</h3>
+          <p itemprop="description">WooCommerce, Shopify ou développement sur mesure ? Paiement sécurisé, gestion des stocks, tunnel d'achat optimisé… Décryptage des options pour choisir la solution adaptée à votre projet e-commerce.</p>
+          <div class="blog-tags">
+            <span class="blog-tag">E-Commerce</span>
+            <span class="blog-tag">UX</span>
+            <span class="blog-tag">Conversion</span>
+          </div>
+          <a href="blog-ecommerce.html" class="blog-read-more">Lire l'article <span>→</span></a>
+          <meta itemprop="author" content="Imad Chamkhi" />
+          <meta itemprop="url" content="blog-ecommerce.html" />
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <!-- ─── CONTACT ───────────────────────────────────────── -->
   <section id="contact">
     <div class="contact-grid">
@@ -2398,6 +2934,21 @@
             <span>Available on WhatsApp</span>
           </div>
         </div>
+
+        <!-- Calendly booking card -->
+        <div class="booking-card reveal reveal-delay-4" onclick="Calendly.initPopupWidget({url:'https://calendly.com/chamkhiimad5/30min'});return false;">
+          <div class="booking-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+            </svg>
+          </div>
+          <div class="booking-text">
+            <div class="booking-title">Réserver un appel <span class="booking-badge">30 min</span></div>
+            <div class="booking-sub">Discutons de votre projet — gratuit &amp; sans engagement</div>
+          </div>
+          <div class="booking-arrow">→</div>
+        </div>
+
       </div>
       <form class="contact-form reveal reveal-delay-2" onsubmit="handleSubmit(event)">
         <div class="form-row">
@@ -2447,6 +2998,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Work</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-social">
@@ -2470,8 +3022,22 @@
     </div>
   </footer>
 
-  <!-- ─── WHATSAPP FLOAT ────────────────────────────────── -->
-  <div class="whatsapp-float">
+  <!-- ─── FLOATING BUTTONS ─────────────────────────────── -->
+  <div class="float-buttons">
+
+    <!-- Calendly -->
+    <div class="float-btn-wrap">
+      <button class="calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/chamkhiimad5/30min'});return false;" title="Prendre un RDV">
+        <div class="calendly-pulse"></div>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+        </svg>
+      </button>
+      <span class="cal-label">RDV</span>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="float-btn-wrap">
     <a class="wa-btn" href="https://wa.me/1234567890" target="_blank" rel="noopener" title="Chat on WhatsApp">
       <div class="wa-pulse"></div>
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -2480,6 +3046,8 @@
       </svg>
     </a>
     <span class="wa-label">WhatsApp</span>
+    </div>
+
   </div>
 
   <!-- ─── JAVASCRIPT ─────────────────────────────────────── -->
@@ -2890,6 +3458,65 @@
       const navbar = document.getElementById('navbar');
       navbar.style.borderBottomColor = window.scrollY > 50 ? '#222' : '#1a1a1a';
     });
+  </script>
+
+  <!-- ─── CALENDLY WIDGET ─────────────────────────────────── -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- ─── STRUCTURED DATA (SEO / AEO / GEO) ─────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Imad Chamkhi — Développeur Web Strasbourg",
+    "description": "Conseils en développement web, cybersécurité, SEO et e-commerce par Imad Chamkhi, développeur web à Strasbourg.",
+    "url": "https://imad-chamkhi.fr/#blog",
+    "author": {
+      "@type": "Person",
+      "name": "Imad Chamkhi",
+      "jobTitle": "Développeur Web Full-Stack",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Strasbourg",
+        "addressCountry": "FR"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Pourquoi votre entreprise à Strasbourg a besoin d'un site web professionnel en 2025",
+        "description": "Un site web bien conçu est aujourd'hui le premier point de contact avec vos clients. Découvrez comment un développeur web local peut transformer votre présence en ligne.",
+        "datePublished": "2025-03-10",
+        "author": { "@type": "Person", "name": "Imad Chamkhi" },
+        "keywords": "développeur web Strasbourg, site web entreprise, présence en ligne"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Les 5 erreurs de sécurité les plus courantes sur les sites web d'entreprises",
+        "description": "Injections SQL, mots de passe faibles, certificats expirés… Ces vulnérabilités coûtent cher. Voici comment les identifier et les corriger.",
+        "datePublished": "2025-02-18",
+        "author": { "@type": "Person", "name": "Imad Chamkhi" },
+        "keywords": "cybersécurité site web, OWASP, sécurité PHP, vulnérabilités web"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Core Web Vitals 2025 : comment optimiser votre site pour Google et attirer plus de clients",
+        "description": "LCP, CLS, INP… les métriques de performance influencent directement votre positionnement Google. Guide pratique pour améliorer la vitesse.",
+        "datePublished": "2025-01-25",
+        "author": { "@type": "Person", "name": "Imad Chamkhi" },
+        "keywords": "Core Web Vitals, SEO technique, optimisation site web, Google 2025"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Créer une boutique en ligne performante : les choix techniques qui font la différence",
+        "description": "WooCommerce, Shopify ou développement sur mesure ? Décryptage des options pour choisir la solution adaptée à votre projet e-commerce.",
+        "datePublished": "2025-01-08",
+        "author": { "@type": "Person", "name": "Imad Chamkhi" },
+        "keywords": "création boutique en ligne, e-commerce, WooCommerce, Shopify, tunnel d'achat"
+      }
+    ]
+  }
   </script>
 </body>
 

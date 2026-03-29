@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Core Web Vitals 2025 : optimiser votre site pour Google — Imad Chamkhi</title>
+  <meta name="description" content="LCP, INP, CLS : guide complet pour comprendre et optimiser les Core Web Vitals de Google en 2025. Améliorez votre score PageSpeed et votre positionnement SEO."/>
+  <meta name="keywords" content="Core Web Vitals, LCP, INP, CLS, PageSpeed, SEO technique, optimisation performance web, Google 2025"/>
+  <meta name="author" content="Imad Chamkhi"/>
+  <meta property="og:title" content="Core Web Vitals 2025 : comment optimiser votre site pour Google"/>
+  <meta property="og:type" content="article"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--green:#39FF14;--black:#000;--dark:#0a0a0a;--card:#111;--white:#fff;--gray:#888;--font:'Poppins',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;padding:1rem 5%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-weight:700;font-size:.95rem}.nav-logo span{color:var(--green)}
+    .nav-back{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--gray);transition:color .2s}.nav-back:hover{color:var(--green)}
+
+    .hero{background:var(--dark);padding:5rem 5% 4rem;border-bottom:1px solid #1a1a1a;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(57,255,20,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+    .hero::after{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(57,255,20,.06) 0%,transparent 70%);pointer-events:none}
+    .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
+    .article-cat{display:inline-flex;align-items:center;gap:.5rem;background:rgba(57,255,20,.1);border:1px solid rgba(57,255,20,.25);color:var(--green);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .9rem;border-radius:100px;margin-bottom:1.5rem}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.2;margin-bottom:1.25rem}
+    .hero h1 span{color:var(--green)}
+    .article-meta{display:flex;flex-wrap:wrap;gap:1.5rem;color:var(--gray);font-size:.82rem;margin-bottom:2rem}
+    .article-meta strong{color:var(--white)}
+
+    .article-layout{max-width:820px;margin:0 auto;padding:3.5rem 5%}
+    .article-body h2{font-size:1.4rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--white);padding-left:1rem;border-left:3px solid var(--green)}
+    .article-body h3{font-size:1.05rem;font-weight:600;margin:1.5rem 0 .6rem;color:var(--green)}
+    .article-body p{color:#ccc;font-size:.95rem;margin-bottom:1.2rem}
+    .article-body ul{margin:1rem 0 1.5rem 1.5rem;color:#ccc;font-size:.95rem}
+    .article-body li{margin-bottom:.5rem}
+    .article-body strong{color:var(--white)}
+
+    /* METRIC CARD */
+    .metric-card{background:var(--card);border:1px solid #1e1e1e;border-radius:14px;padding:2rem;margin:2rem 0;position:relative}
+    .metric-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+    .metric-badge{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;font-family:monospace}
+    .metric-badge.lcp{background:rgba(57,255,20,.1);border:1px solid rgba(57,255,20,.3);color:var(--green)}
+    .metric-badge.inp{background:rgba(100,180,255,.1);border:1px solid rgba(100,180,255,.3);color:#64b4ff}
+    .metric-badge.cls{background:rgba(255,170,0,.1);border:1px solid rgba(255,170,0,.3);color:#ffaa00}
+    .metric-title{font-size:1.1rem;font-weight:700;color:var(--white)}
+    .metric-subtitle{font-size:.8rem;color:var(--gray)}
+
+    /* THRESHOLD BAR */
+    .thresholds{display:flex;gap:.5rem;margin:1rem 0;border-radius:8px;overflow:hidden;height:10px}
+    .th-good{flex:3;background:#39FF14;opacity:.7}
+    .th-ni{flex:2;background:#ffaa00;opacity:.7}
+    .th-poor{flex:2;background:#ff4444;opacity:.7}
+    .threshold-labels{display:flex;justify-content:space-between;font-size:.7rem;color:var(--gray);margin-top:.35rem}
+    .threshold-labels span{color:var(--green)}
+
+    /* CALLOUT */
+    .callout{background:#0d1a0d;border:1px solid rgba(57,255,20,.25);border-left:4px solid var(--green);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0}
+    .callout p{color:#b8e0b8;margin:0;font-size:.9rem}
+    .callout strong{color:var(--green)}
+
+    /* TIP */
+    .tip{background:#111;border-radius:8px;padding:1.25rem 1.5rem;margin:1.25rem 0;border:1px solid #222}
+    .tip-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
+    .tip p{color:#bbb;font-size:.88rem;margin:0}
+
+    /* CODE */
+    .code-block{background:#0a0a0a;border:1px solid #222;border-radius:8px;padding:1.25rem;margin:1rem 0;overflow-x:auto}
+    .code-block pre{font-family:'Courier New',monospace;font-size:.82rem;line-height:1.6;color:#a8ff78}
+    .code-block .code-label{font-size:.65rem;color:var(--gray);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em}
+
+    /* SCORE VISUAL */
+    .score-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0}
+    .score-box{background:var(--card);border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;text-align:center}
+    .score-circle{width:60px;height:60px;border-radius:50%;margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;border:3px solid}
+    .score-circle.good{border-color:var(--green);color:var(--green);background:rgba(57,255,20,.08)}
+    .score-circle.warn{border-color:#ffaa00;color:#ffaa00;background:rgba(255,170,0,.08)}
+    .score-label{font-size:.75rem;color:var(--gray)}
+
+    /* TOOLS */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
+    .tool-card{background:var(--card);border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;transition:border-color .2s}
+    .tool-card:hover{border-color:var(--green)}
+    .tool-icon{font-size:1.5rem;margin-bottom:.5rem}
+    .tool-name{font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+    .tool-desc{font-size:.78rem;color:var(--gray)}
+
+    /* CTA */
+    .cta-block{background:linear-gradient(135deg,#0d1a0d,#0a120a);border:1px solid rgba(57,255,20,.2);border-radius:14px;padding:2.5rem;text-align:center;margin:3rem 0}
+    .cta-block h3{font-size:1.4rem;font-weight:700;margin-bottom:.75rem}
+    .cta-block h3 span{color:var(--green)}
+    .cta-block p{color:var(--gray);font-size:.9rem;margin-bottom:1.5rem}
+    .btn-cta{display:inline-block;background:var(--green);color:#000;font-weight:700;font-size:.85rem;padding:.85rem 2rem;border-radius:8px;transition:opacity .2s,transform .2s}
+    .btn-cta:hover{opacity:.85;transform:translateY(-2px)}
+
+    .author-box{display:flex;gap:1.25rem;align-items:flex-start;background:var(--card);border:1px solid #1e1e1e;border-radius:12px;padding:1.5rem;margin:3rem 0}
+    .author-avatar{width:60px;height:60px;min-width:60px;border-radius:50%;background:linear-gradient(135deg,#100800,#2a1800);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+    .author-name{font-weight:700;font-size:.95rem;margin-bottom:.2rem}
+    .author-role{font-size:.78rem;color:var(--green);margin-bottom:.5rem}
+    .author-bio{font-size:.83rem;color:var(--gray)}
+
+    .related{margin:3rem 0}
+    .related h3{font-size:1.1rem;font-weight:700;margin-bottom:1.25rem}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+    .related-card{background:var(--card);border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;transition:border-color .2s}
+    .related-card:hover{border-color:var(--green)}
+    .related-cat{font-size:.68rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+    .related-title{font-size:.88rem;font-weight:600;color:var(--white);line-height:1.4}
+
+    footer{border-top:1px solid #1a1a1a;padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:.78rem;color:var(--gray)}.footer-copy span{color:var(--green)}
+
+    .reading-bar{position:fixed;top:0;left:0;height:3px;background:var(--green);z-index:200;width:0%;transition:width .1s linear;box-shadow:0 0 8px var(--green)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:600px){.article-meta{gap:.75rem}.author-box{flex-direction:column}.score-row{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="reading-bar" id="readingBar"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Imad <span>Chamkhi</span></a>
+    <a href="index.html#blog" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Retour au Blog
+    </a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="article-cat">⚡ Performance & SEO</div>
+      <h1><span>Core Web Vitals 2025</span> : comment optimiser votre site pour Google et attirer plus de clients</h1>
+      <div class="article-meta">
+        <span>Par <strong>Imad Chamkhi</strong></span>
+        <span><time datetime="2025-01-25">25 Janvier 2025</time></span>
+        <span>6 min de lecture</span>
+        <span>SEO · Performance · Google</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-layout">
+    <article class="article-body">
+
+      <p class="reveal">Depuis 2021, Google intègre les Core Web Vitals comme signal de classement. En 2025, leur poids est encore plus significatif. Un site lent ou instable est pénalisé dans les résultats de recherche — et perd des clients avant même qu'ils ne voient votre offre. Voici comment comprendre, mesurer et optimiser ces métriques.</p>
+
+      <div class="callout reveal">
+        <p><strong>Impact direct :</strong> Une amélioration de 100ms du temps de chargement augmente les conversions de 1%. Amazon a estimé qu'une seconde de délai supplémentaire leur coûte 1,6 milliard $ de ventes par an.</p>
+      </div>
+
+      <h2 class="reveal">Les 3 métriques Core Web Vitals</h2>
+
+      <!-- LCP -->
+      <div class="metric-card reveal">
+        <div class="metric-header">
+          <div class="metric-badge lcp">LCP</div>
+          <div>
+            <div class="metric-title">Largest Contentful Paint</div>
+            <div class="metric-subtitle">Temps de chargement du plus grand élément visible</div>
+          </div>
+        </div>
+        <p>Le LCP mesure le temps nécessaire pour afficher le plus grand élément visible dans le viewport : généralement une image hero, une vidéo ou un bloc de texte important. C'est l'indicateur de la <strong>perception de rapidité</strong> par l'utilisateur.</p>
+        <div class="thresholds">
+          <div class="th-good"></div><div class="th-ni"></div><div class="th-poor"></div>
+        </div>
+        <div class="threshold-labels">
+          <span>✓ Bon : &lt;2.5s</span><span style="color:#ffaa00">⚠ Améliorer : 2.5–4s</span><span style="color:#ff4444">✗ Mauvais : &gt;4s</span>
+        </div>
+        <h3>Comment améliorer le LCP</h3>
+        <ul>
+          <li>Optimiser et compresser les images (format WebP ou AVIF)</li>
+          <li>Ajouter l'attribut <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">fetchpriority="high"</code> sur l'image hero</li>
+          <li>Utiliser un CDN pour rapprocher les ressources des utilisateurs</li>
+          <li>Activer la compression Gzip/Brotli sur le serveur</li>
+          <li>Précharger les polices critiques avec <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">rel="preload"</code></li>
+        </ul>
+        <div class="code-block">
+          <div class="code-label">✅ Optimisation image hero</div>
+          <pre>&lt;img
+  src="hero.webp"
+  alt="Hero image"
+  width="1200"
+  height="600"
+  fetchpriority="high"
+  decoding="async"
+/&gt;</pre>
+        </div>
+      </div>
+
+      <!-- INP -->
+      <div class="metric-card reveal">
+        <div class="metric-header">
+          <div class="metric-badge inp">INP</div>
+          <div>
+            <div class="metric-title">Interaction to Next Paint</div>
+            <div class="metric-subtitle">Réactivité aux interactions utilisateur (remplace FID en 2024)</div>
+          </div>
+        </div>
+        <p>L'INP mesure le temps entre une interaction utilisateur (clic, frappe, tap) et la prochaine mise à jour visuelle. Contrairement à l'ancien FID, il mesure <strong>toutes les interactions</strong> tout au long de la session, pas seulement la première.</p>
+        <div class="thresholds">
+          <div class="th-good"></div><div class="th-ni"></div><div class="th-poor"></div>
+        </div>
+        <div class="threshold-labels">
+          <span>✓ Bon : &lt;200ms</span><span style="color:#ffaa00">⚠ Améliorer : 200–500ms</span><span style="color:#ff4444">✗ Mauvais : &gt;500ms</span>
+        </div>
+        <h3>Comment améliorer l'INP</h3>
+        <ul>
+          <li>Découper les tâches JavaScript longues en petits morceaux (code splitting)</li>
+          <li>Différer le JavaScript non critique avec <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">defer</code> ou <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">async</code></li>
+          <li>Utiliser des Web Workers pour les calculs intensifs</li>
+          <li>Éviter les gestionnaires d'événements lourds</li>
+          <li>Minimiser les librairies JavaScript tierces</li>
+        </ul>
+        <div class="tip">
+          <div class="tip-label">Outil de diagnostic</div>
+          <p>Utilisez l'onglet Performance de Chrome DevTools et recherchez les "Long Tasks" (tâches &gt;50ms) sur le main thread. Ce sont vos candidats principaux à optimiser.</p>
+        </div>
+      </div>
+
+      <!-- CLS -->
+      <div class="metric-card reveal">
+        <div class="metric-header">
+          <div class="metric-badge cls">CLS</div>
+          <div>
+            <div class="metric-title">Cumulative Layout Shift</div>
+            <div class="metric-subtitle">Stabilité visuelle de la page</div>
+          </div>
+        </div>
+        <p>Le CLS mesure les déplacements inattendus de la mise en page pendant le chargement. Vous avez sûrement vécu ça : vous allez cliquer sur un bouton et à la dernière seconde, une publicité s'insère et vous cliquez sur le mauvais élément. C'est exactement ce que mesure le CLS.</p>
+        <div class="thresholds">
+          <div class="th-good"></div><div class="th-ni"></div><div class="th-poor"></div>
+        </div>
+        <div class="threshold-labels">
+          <span>✓ Bon : &lt;0.1</span><span style="color:#ffaa00">⚠ Améliorer : 0.1–0.25</span><span style="color:#ff4444">✗ Mauvais : &gt;0.25</span>
+        </div>
+        <h3>Comment améliorer le CLS</h3>
+        <ul>
+          <li>Toujours spécifier <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">width</code> et <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">height</code> sur toutes les images et vidéos</li>
+          <li>Réserver l'espace pour les publicités et embeds avant leur chargement</li>
+          <li>Éviter d'insérer du contenu au-dessus du contenu existant</li>
+          <li>Précharger les polices pour éviter le FOUT (Flash Of Unstyled Text)</li>
+          <li>Animer uniquement avec <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">transform</code> et <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">opacity</code></li>
+        </ul>
+        <div class="code-block">
+          <div class="code-label">✅ Réserve d'espace pour une image responsive</div>
+          <pre>/* Technique du padding-top */
+.img-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* ratio 16:9 */
+}
+.img-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</pre>
+        </div>
+      </div>
+
+      <h2 class="reveal">Score PageSpeed : objectif 90+</h2>
+      <div class="score-row reveal">
+        <div class="score-box">
+          <div class="score-circle good">98</div>
+          <div class="score-label">Performance</div>
+        </div>
+        <div class="score-box">
+          <div class="score-circle good">100</div>
+          <div class="score-label">Accessibilité</div>
+        </div>
+        <div class="score-box">
+          <div class="score-circle good">95</div>
+          <div class="score-label">Bonnes pratiques</div>
+        </div>
+        <div class="score-box">
+          <div class="score-circle good">100</div>
+          <div class="score-label">SEO</div>
+        </div>
+      </div>
+
+      <h2 class="reveal">Les outils pour mesurer vos Core Web Vitals</h2>
+      <div class="tools-grid reveal">
+        <div class="tool-card">
+          <div class="tool-icon">⚡</div>
+          <div class="tool-name">PageSpeed Insights</div>
+          <div class="tool-desc">L'outil officiel de Google. Analyse les données terrain (CrUX) et de lab. Indispensable.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">🔧</div>
+          <div class="tool-name">Chrome DevTools</div>
+          <div class="tool-desc">Onglet Performance + Lighthouse pour un diagnostic détaillé et des opportunités d'amélioration.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">📊</div>
+          <div class="tool-name">Search Console</div>
+          <div class="tool-desc">Rapport "Expérience sur la page" avec données réelles des utilisateurs sur toutes vos URLs.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">🌐</div>
+          <div class="tool-name">WebPageTest</div>
+          <div class="tool-desc">Tests avancés depuis différentes localisations et connexions. Visualisation filmstrip.</div>
+        </div>
+      </div>
+
+      <h2 class="reveal">Optimisations rapides à fort impact</h2>
+      <ul class="reveal">
+        <li><strong>Images en WebP/AVIF</strong> : 30 à 50% plus légères que JPEG/PNG pour la même qualité</li>
+        <li><strong>Lazy loading natif</strong> : <code style="color:var(--green);background:#0d1a0d;padding:1px 5px;border-radius:3px">loading="lazy"</code> sur toutes les images hors viewport</li>
+        <li><strong>Minification CSS/JS</strong> : supprimer les espaces, commentaires et code inutilisé</li>
+        <li><strong>HTTP/2 ou HTTP/3</strong> : multiplexage des requêtes, réduction de la latence</li>
+        <li><strong>Cache navigateur</strong> : headers Cache-Control pour les ressources statiques (365 jours)</li>
+        <li><strong>Critical CSS inline</strong> : intégrer le CSS above-the-fold directement dans le HTML</li>
+      </ul>
+
+      <div class="cta-block reveal">
+        <h3>Votre site mérite un score <span>PageSpeed 90+</span></h3>
+        <p>J'optimise les performances de votre site et améliore votre positionnement Google.</p>
+        <a href="index.html#contact" class="btn-cta">Optimiser mon site →</a>
+      </div>
+
+      <div class="author-box reveal">
+        <div class="author-avatar">🚀</div>
+        <div>
+          <div class="author-name">Imad Chamkhi</div>
+          <div class="author-role">Développeur Web & SEO Technique · Strasbourg</div>
+          <div class="author-bio">Master Expert IT & BDD, je développe des sites web à haute performance avec des scores PageSpeed optimisés. Spécialisé en SEO technique et optimisation des Core Web Vitals.</div>
+        </div>
+      </div>
+
+      <div class="related reveal">
+        <h3>Articles similaires</h3>
+        <div class="related-grid">
+          <a href="blog-site-web-strasbourg.html" class="related-card">
+            <div class="related-cat">Développement Web</div>
+            <div class="related-title">Pourquoi votre entreprise à Strasbourg a besoin d'un site web professionnel en 2025</div>
+          </a>
+          <a href="blog-securite-web.html" class="related-card">
+            <div class="related-cat">Cybersécurité</div>
+            <div class="related-title">Les 5 erreurs de sécurité les plus courantes sur les sites web</div>
+          </a>
+          <a href="blog-ecommerce.html" class="related-card">
+            <div class="related-cat">E-Commerce</div>
+            <div class="related-title">Créer une boutique en ligne performante : les choix techniques</div>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-copy">© 2025 <span>Imad Chamkhi</span>. Tous droits réservés.</div>
+    <a href="index.html" style="font-size:.8rem;color:var(--gray)">← Retour au portfolio</a>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const el = document.documentElement;
+      document.getElementById('readingBar').style.width = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100 + '%';
+    });
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold: 0.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
